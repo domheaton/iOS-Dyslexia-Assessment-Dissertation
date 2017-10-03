@@ -20,6 +20,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var logStatus: UILabel!
+    
+    var userName: String?
+    var passWord: String?
+    
+    @IBAction func enterButton(_ sender: UIButton) {
+        
+        userName = usernameField.text!
+        passWord = passwordField.text!
+        
+        print(userName!)
+        print(passWord!)
+        
+        if(userName! == "dhh1g15" && passWord! == "1234567") {
+            logStatus.text! = "Logged In"
+        }
+        else {
+            logStatus.text! = "Logged Out"
+        }
+    }
+    
 }
 
