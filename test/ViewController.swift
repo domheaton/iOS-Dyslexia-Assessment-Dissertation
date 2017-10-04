@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController {
+    
+    var refDatabase: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        FirebaseApp.configure()
+        refDatabase = Database.database().reference().child("Logins");
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -26,21 +33,42 @@ class ViewController: UIViewController {
     
     var userName: String?
     var passWord: String?
+    var queriedUsername: String?
     
     @IBAction func enterButton(_ sender: UIButton) {
-        
         userName = usernameField.text!
         passWord = passwordField.text!
         
+        //For debugging
         print(userName!)
         print(passWord!)
         
-        if(userName! == "dhh1g15" && passWord! == "1234567") {
-            logStatus.text! = "Logged In"
-        }
-        else {
-            logStatus.text! = "Logged Out"
-        }
+        checkLogins()
+    }
+    
+    @IBAction func registerButton(_ sender: UIButton) {
+        userName = usernameField.text!
+        passWord = passwordField.text!
+        
+        //For debugging
+        print(userName!)
+        print(passWord!)
+        
+        //call registration function
+        addUsername()
+    }
+    
+    //function to add username and password to the database
+    func addUsername() {
+        let key = refDatabase.childByAutoId().key
+        
+        let logins = ["id":key, "username":userName! as String, "password":passWord! as String]
+        
+        refDatabase.child(key).setValue(logins)
+    }
+    
+    func checkLogins() {
+        //function to verify login credentials against the database
     }
     
 }
