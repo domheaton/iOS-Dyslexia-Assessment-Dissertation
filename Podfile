@@ -8,5 +8,6 @@ target 'test' do
   # Pods for test
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end

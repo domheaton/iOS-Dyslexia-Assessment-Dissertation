@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1130A4301F8B7F98003A279C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130A42F1F8B7F98003A279C /* MenuController.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7D1F83EA57006D00DE /* AppDelegate.swift */; };
 		1164AD801F83EA57006D00DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7F1F83EA57006D00DE /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		0E8F9319A0AA262514C70812 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
+		1130A42F1F8B7F98003A279C /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1164AD7A1F83EA57006D00DE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1164AD7D1F83EA57006D00DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				115375BD1F852A7600ABF393 /* GoogleService-Info.plist */,
 				1164AD7D1F83EA57006D00DE /* AppDelegate.swift */,
 				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
+				1130A42F1F8B7F98003A279C /* MenuController.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
 				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
@@ -170,12 +173,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				1130A4301F8B7F98003A279C /* MenuController.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
