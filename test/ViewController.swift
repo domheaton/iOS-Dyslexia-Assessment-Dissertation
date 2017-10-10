@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var logStatus: UILabel!
+    //@IBOutlet weak var logStatus: UILabel!
     
     var userName: String?
     var passWord: String?
@@ -40,42 +40,6 @@ class ViewController: UIViewController {
         logUserIn()
     }
     
-    @IBAction func registerButton(_ sender: UIButton) {
-        userName = usernameField.text!
-        passWord = passwordField.text!
-        
-        //For debugging
-            print(userName!)
-            print(passWord!)
-        
-        addUser()
-    }
-    
-    //function to add username and password to the database
-    func addUser() {
-        
-        Auth.auth().createUser(withEmail: userName!,password: passWord!) { user, error in
-            if error == nil {
-                Auth.auth().signIn(withEmail: self.userName!, password: self.passWord!)
-                
-                Auth.auth().addStateDidChangeListener() { auth, user in
-                    if user != nil {
-                        self.performSegue(withIdentifier: "toMenuController", sender: nil)
-                    }
-                }
-                
-            }
-            else {
-                //Prints error message if email has already been registered
-                let alertController = UIAlertController(title: "Error", message:
-                    "This email has already been registered", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-    }
-    
     //function to verify login credentials against the database
     func logUserIn() {
         
@@ -85,15 +49,26 @@ class ViewController: UIViewController {
             if user != nil {
                 self.performSegue(withIdentifier: "toMenuController", sender: nil)
             }
+            else if user == nil {
+                let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
+    @IBAction func registerButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toRegisterController", sender: nil)
+    }
+    
+    //function for forgotten password recovery email
     @IBAction func forgotPassword(_ sender: UIButton) {
         Auth.auth().sendPasswordReset(withEmail: usernameField.text!) { error in
             if error != nil
             {
                 //For Debugging
-                    print("Error - Unidentified Email")
+                    print("Error - Email not found")
             }
             else
             {
@@ -102,7 +77,7 @@ class ViewController: UIViewController {
                 
                 let alertController = UIAlertController(title: "Forgotten Password", message:
                     "A recovery email has been sent to the entered email address", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
                 
                 self.present(alertController, animated: true, completion: nil)
             }
