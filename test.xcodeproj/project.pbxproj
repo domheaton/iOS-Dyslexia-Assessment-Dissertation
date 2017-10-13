@@ -14,6 +14,7 @@
 		1164AD831F83EA57006D00DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD811F83EA57006D00DE /* Main.storyboard */; };
 		1164AD851F83EA57006D00DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD841F83EA57006D00DE /* Assets.xcassets */; };
 		1164AD881F83EA57006D00DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */; };
+		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
 		74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF55275C1AC252C770F322E /* Pods_test.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		1164AD841F83EA57006D00DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1164AD871F83EA57006D00DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1164AD891F83EA57006D00DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117E9BE11F912F2D00BFEF59 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		ACF55275C1AC252C770F322E /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
 				1130A42F1F8B7F98003A279C /* MenuController.swift */,
 				11BE11A01F8CD46900006802 /* RegisterController.swift */,
+				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
 				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 			files = (
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				1130A4301F8B7F98003A279C /* MenuController.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 			);

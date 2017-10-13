@@ -64,24 +64,7 @@ class ViewController: UIViewController {
     
     //function for forgotten password recovery email
     @IBAction func forgotPassword(_ sender: UIButton) {
-        Auth.auth().sendPasswordReset(withEmail: usernameField.text!) { error in
-            if error != nil
-            {
-                //For Debugging
-                    print("Error - Email not found")
-            }
-            else
-            {
-                //For Debugging
-                    print("Success - Sent recovery email")
-                
-                let alertController = UIAlertController(title: "Forgotten Password", message:
-                    "A recovery email has been sent to the entered email address", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
+        self.performSegue(withIdentifier: "toForgotPassword", sender: nil)
     }
     
 }
