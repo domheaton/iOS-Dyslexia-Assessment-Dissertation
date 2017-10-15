@@ -29,6 +29,11 @@ class PasswordController: UIViewController {
             if error != nil {
                 //For Debugging
                 print("Error - Email not found")
+                
+                let alertController = UIAlertController(title: "Error", message: "No account was found for the entered email address. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                
+                 self.present(alertController, animated: true, completion: nil)
             }
             else {
                 //For Debugging
