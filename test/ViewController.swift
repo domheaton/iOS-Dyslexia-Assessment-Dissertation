@@ -61,8 +61,7 @@ class ViewController: UIViewController {
     @IBAction func registerButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toRegisterController", sender: nil)
     }
-    
-    //function for forgotten password recovery email
+
     @IBAction func forgotPassword(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toForgotPassword", sender: nil)
     }
