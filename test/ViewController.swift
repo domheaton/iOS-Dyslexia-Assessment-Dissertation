@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
     
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: "toMenuController", sender: nil)
+                self.performSegue(withIdentifier: "toTableMenuController", sender: nil)
             }
             else if user == nil {
                 let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)

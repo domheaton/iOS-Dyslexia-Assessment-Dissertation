@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1130A4301F8B7F98003A279C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130A42F1F8B7F98003A279C /* MenuController.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7D1F83EA57006D00DE /* AppDelegate.swift */; };
 		1164AD801F83EA57006D00DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7F1F83EA57006D00DE /* ViewController.swift */; };
@@ -16,12 +15,12 @@
 		1164AD881F83EA57006D00DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */; };
 		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
+		11E839191F98B98400EAA979 /* TableMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E839181F98B98400EAA979 /* TableMenuController.swift */; };
 		74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF55275C1AC252C770F322E /* Pods_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E8F9319A0AA262514C70812 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
-		1130A42F1F8B7F98003A279C /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1164AD7A1F83EA57006D00DE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1164AD7D1F83EA57006D00DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		1164AD891F83EA57006D00DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117E9BE11F912F2D00BFEF59 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		11E839181F98B98400EAA979 /* TableMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMenuController.swift; sourceTree = "<group>"; };
 		238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		ACF55275C1AC252C770F322E /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,8 +80,8 @@
 				115375BD1F852A7600ABF393 /* GoogleService-Info.plist */,
 				1164AD7D1F83EA57006D00DE /* AppDelegate.swift */,
 				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
-				1130A42F1F8B7F98003A279C /* MenuController.swift */,
 				11BE11A01F8CD46900006802 /* RegisterController.swift */,
+				11E839181F98B98400EAA979 /* TableMenuController.swift */,
 				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
@@ -239,8 +239,8 @@
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
-				1130A4301F8B7F98003A279C /* MenuController.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
+				11E839191F98B98400EAA979 /* TableMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

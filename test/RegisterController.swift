@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterController: UIViewController {
     
@@ -61,7 +62,7 @@ class RegisterController: UIViewController {
                 
                 Auth.auth().addStateDidChangeListener() { auth, user in
                     if user != nil {
-                        self.performSegue(withIdentifier: "registerToMenuController", sender: nil)
+                        self.performSegue(withIdentifier: "registerToTableMenuController", sender: nil)
                     }
                 }
                 
