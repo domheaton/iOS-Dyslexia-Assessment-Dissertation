@@ -13,6 +13,31 @@ import FirebaseDatabase
 
 class TableMenuController: UITableViewController {
     
+    let referenceTests = Database.database().reference().child("tests")
+    
+    //The labels used in the table
+    @IBOutlet var tableNames: UITableView!
+    
+    //Reference to the class containing test names
+    var testsList = [testModel]()
+    
+    //Sets number of rows in table from database list number
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testsList.count
+    }
+    
+    //Assigns data from the database to a cell in the table
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        let nameOfTest: testModel
+        
+        nameOfTest = testsList[indexPath.row]
+        
+        cell.labelName.text = nameOfTest.name
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,23 +59,22 @@ class TableMenuController: UITableViewController {
         self.performSegue(withIdentifier: "signOut", sender: nil)
     }
     
+    //function to read data from the database and fill table
     func loadTests() {
-        
-        let testsAvailable = Database.database().reference(withPath: "tests")
-        testsAvailable.observe(.value, with: { snapshot in
-            print(snapshot.value as Any)
-            
-            /*
-            var availableTests: [tests] = []
-            
-            for item in snapshot.children {
-                let test = tests(snapshot: item as! FIRDataSnapshot)
-                availableTests.append(test)
+        referenceTests.observe(DataEventType.value, with: {(snapshot) in
+            if snapshot.childrenCount>0 {
+                self.testsList.removeAll()
+                
+                for tests in snapshot.children.allObjects as![DataSnapshot]{
+                    let nameObject = tests.value as? [String: AnyObject]
+                    let testName = nameObject?["name"]
+                    
+                    let test = testModel(name: testName as! String?)
+                    
+                    self.testsList.append(test)
+                }
+                self.tableNames.reloadData()
             }
-            self.items = availableTests
-            self.tableView.reloadData()
-        */
         })
     }
-
 }

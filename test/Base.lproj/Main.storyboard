@@ -335,27 +335,40 @@
                             <color key="backgroundColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gfs-JZ-EBG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="gfs-JZ-EBG" customClass="ViewControllerTableViewCell" customModule="test" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfs-JZ-EBG" id="uHe-Co-n4c">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="labelName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysd-d1-ODG">
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelName" destination="Ysd-d1-ODG" id="7Ab-qM-Lar"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="VwL-N9-tDJ" id="nvr-PT-Atf"/>
+                            <outlet property="dataSource" destination="VwL-N9-tDJ" id="JHi-co-qQg"/>
                             <outlet property="delegate" destination="VwL-N9-tDJ" id="dqi-Zp-E1Z"/>
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="tableNames" destination="v7Z-Im-SL4" id="KyC-3K-3CB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="signOut" id="I0d-8f-3UY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr6-mW-R40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="130"/>
+            <point key="canvasLocation" x="1256.8" y="129.98500749625188"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

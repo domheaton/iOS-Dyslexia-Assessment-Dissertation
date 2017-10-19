@@ -14,6 +14,8 @@
 		1164AD851F83EA57006D00DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD841F83EA57006D00DE /* Assets.xcassets */; };
 		1164AD881F83EA57006D00DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */; };
 		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
+		11A0E68E1F991B2A00DCE5F9 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E68D1F991B2A00DCE5F9 /* ViewControllerTableViewCell.swift */; };
+		11A0E6901F991F8B00DCE5F9 /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E68F1F991F8B00DCE5F9 /* testModel.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
 		11E839191F98B98400EAA979 /* TableMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E839181F98B98400EAA979 /* TableMenuController.swift */; };
 		74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF55275C1AC252C770F322E /* Pods_test.framework */; };
@@ -30,6 +32,9 @@
 		1164AD871F83EA57006D00DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1164AD891F83EA57006D00DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117E9BE11F912F2D00BFEF59 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
+		11A0E68D1F991B2A00DCE5F9 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		11A0E68F1F991F8B00DCE5F9 /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
+		11A0E6911F99279800DCE5F9 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		11E839181F98B98400EAA979 /* TableMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMenuController.swift; sourceTree = "<group>"; };
 		238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,12 +82,15 @@
 		1164AD7C1F83EA57006D00DE /* test */ = {
 			isa = PBXGroup;
 			children = (
+				11A0E6911F99279800DCE5F9 /* test.entitlements */,
 				115375BD1F852A7600ABF393 /* GoogleService-Info.plist */,
 				1164AD7D1F83EA57006D00DE /* AppDelegate.swift */,
 				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
 				11BE11A01F8CD46900006802 /* RegisterController.swift */,
-				11E839181F98B98400EAA979 /* TableMenuController.swift */,
 				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
+				11E839181F98B98400EAA979 /* TableMenuController.swift */,
+				11A0E68F1F991F8B00DCE5F9 /* testModel.swift */,
+				11A0E68D1F991B2A00DCE5F9 /* ViewControllerTableViewCell.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
 				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
@@ -136,6 +144,11 @@
 					1164AD791F83EA57006D00DE = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -238,6 +251,8 @@
 			files = (
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				11A0E6901F991F8B00DCE5F9 /* testModel.swift in Sources */,
+				11A0E68E1F991B2A00DCE5F9 /* ViewControllerTableViewCell.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 				11E839191F98B98400EAA979 /* TableMenuController.swift in Sources */,
