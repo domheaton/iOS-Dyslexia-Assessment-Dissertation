@@ -77,4 +77,9 @@ class TableMenuController: UITableViewController {
             }
         })
     }
+    
+    @IBAction func selectTest(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toTestDescription", sender: self)
+    }
+    
 }
