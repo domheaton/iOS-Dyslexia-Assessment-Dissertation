@@ -62,7 +62,7 @@ class RegisterController: UIViewController {
                 
                 Auth.auth().addStateDidChangeListener() { auth, user in
                     if user != nil {
-                        self.performSegue(withIdentifier: "registerToTableMenuController", sender: nil)
+                        self.performSegue(withIdentifier: "registerToMenu", sender: nil)
                     }
                 }
                 
