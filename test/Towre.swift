@@ -13,8 +13,10 @@ import FirebaseDatabase
 
 class Towre: UIViewController {
     
-    var wordsToTest: [String] = ["Hello", "Start", "Stop"]
+    var wordsToTest: [String] = []
     var counter = 0
+    var timer = Timer()
+    var time = 0
     
     private var brain = TowreBrain()
     
@@ -22,8 +24,9 @@ class Towre: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Towre.checkTimeElapsed), userInfo: nil, repeats: true)
+        wordsToTest = brain.setWordsToTest
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
         loadWord()
@@ -44,6 +47,23 @@ class Towre: UIViewController {
         loadWord()
     }
     
+    //Function to increment timer - ends test after 45 Seconds -- Objective-C function call
+    @objc func checkTimeElapsed() {
+        if time < 45 {
+            time += 1
+        }
+        else {
+            //For debugging
+            print("Timer Expired")
+            
+            timer.invalidate()
+            time = 0
+            brain.calculateResult()
+            performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
+        }
+    }
+    
+    //Function to load next word from array - or finish test if list completed
     func loadWord() {
         if counter < wordsToTest.count {
             wordToTest.text = wordsToTest[counter]
