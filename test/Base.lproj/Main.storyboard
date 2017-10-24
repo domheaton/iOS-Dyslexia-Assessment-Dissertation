@@ -95,8 +95,8 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
-                                <rect key="frame" x="315" y="626" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.2.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                                <rect key="frame" x="315" y="626" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -491,9 +491,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZH-et-Aa1">
-                                <rect key="frame" x="16" y="209" width="344" height="341"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZH-et-Aa1">
+                                <rect key="frame" x="16" y="209" width="344" height="393"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">1) Provide the student with the paper copy of the word list to be tested.  2) During the test the student will attempt to pronounce words from the list, matching those displayed on this device.
 
@@ -518,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qog-7f-EYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="1245"/>
+            <point key="canvasLocation" x="1316" y="1244.527736131934"/>
         </scene>
         <!--Towre Page Controller-->
         <scene sceneID="VbS-Ri-dKo">
@@ -643,19 +643,25 @@
                                 <color key="currentPageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR2-j0-j6u">
-                                <rect key="frame" x="15" y="77" width="344" height="455.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="15" y="77" width="344" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Read the following to the student (*Items in brackets like this are instructions to the administrator*)
+                                <mutableString key="text">Read the following to the student 
+(*Items in brackets like this are instructions to the administrator*)
 
 "Now you will read some longer lists of words. The words start out pretty easy, but they get harder as you go along. 
+
 Read as many words as fast as you can until I tell you to stop. 
+
 Begin at the top of the list (*Show the Student*) and read down the list (*draw finger down the list*) before you start on the next list (*point to the top of second column*). 
+
 Read the words in order, but if you come to one you can't read, skip it and go to the next one. 
-Use your finder to keep your place if you want to, and if you skip more than one word, point to the word you are reading next. 
+
+Use your finger to keep your place if you want to, and if you skip more than one word, point to the word you are reading next. 
+
 Do you understand? Ok, you will begin as soon as I say 'Go'. "
 
-When ready, press 'Begin Test' and say 'Go'</string>
+When ready, press 'Begin Test' and say 'Go'</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -673,7 +679,7 @@ When ready, press 'Begin Test' and say 'Go'</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SM2-4K-NaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="1973"/>
+            <point key="canvasLocation" x="1316" y="1972.2638680659672"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
