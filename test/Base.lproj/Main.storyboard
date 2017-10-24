@@ -95,7 +95,7 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="315" y="626" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -354,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAY-vp-GpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-644.52773613193403"/>
+            <point key="canvasLocation" x="2151" y="1245"/>
         </scene>
         <!--Menu-->
         <scene sceneID="lxK-e4-IYv">
@@ -404,7 +404,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="uFu-BZ-ttq" kind="show" id="s8b-xt-HI9"/>
+                                    <segue destination="3lV-hK-1mU" kind="show" id="5EU-zT-Rbq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVB-pD-j0h">
@@ -450,12 +450,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWc-fC-Y4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="130"/>
+            <point key="canvasLocation" x="2151" y="215"/>
         </scene>
         <!--Test Description Controller-->
         <scene sceneID="HSj-jX-s1S">
             <objects>
-                <viewController id="uFu-BZ-ttq" customClass="TestDescriptionController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TowreDescriptionPage1" id="uFu-BZ-ttq" customClass="TestDescriptionController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="42Y-T7-Mth">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,7 +469,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="TOWRE 2" id="7uh-r5-Wxg">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="mzh-X9-1wh">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="mzh-X9-1wh">
                                             <connections>
                                                 <segue destination="jXw-g2-1CQ" kind="show" id="hRU-Pb-Tes"/>
                                             </connections>
@@ -477,27 +477,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCn-uM-pQ3">
-                                <rect key="frame" x="131" y="552" width="113" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Begin Test">
-                                    <color key="titleColor" red="0.99336105009999998" green="1" blue="0.9793683057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="FWN-bv-xTq" kind="show" id="u1V-jZ-8En"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j2-rN-slw">
-                                <rect key="frame" x="15" y="331" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test of Word Reading Efficiency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-eK-BVH">
                                 <rect key="frame" x="16" y="92" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -512,76 +491,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="If pronounced correctly, the administrator should press the 'Correct' button" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uWC-zJ-MIH">
-                                <rect key="frame" x="26" y="323" width="332" height="61"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZH-et-Aa1">
+                                <rect key="frame" x="16" y="209" width="344" height="341"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <mutableString key="text">1) Provide the student with the paper copy of the word list to be tested.  2) During the test the student will attempt to pronounce words from the list, matching those displayed on this device.
+
+3) If pronounced correctly, you should press the 'Correct' button, else press the 'Incorrect' button.
+
+4) 45 seconds after pressing the 'Begin Test' button, the test will end automatically and the test score will be saved.
+
+5) Swipe right for instructions to read to the student or to begin the test</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfk-OM-lJq">
-                                <rect key="frame" x="15" y="281" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="The student should attempt to pronounce the word" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DUY-7X-LnU">
-                                <rect key="frame" x="26" y="273" width="332" height="61"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEj-Zl-Lst">
-                                <rect key="frame" x="15" y="381" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="If incorrectly pronounced, the administrator should press the 'Incorrect' button" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-5U-bVz">
-                                <rect key="frame" x="26" y="373" width="332" height="80"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-25-RH9">
-                                <rect key="frame" x="14" y="253" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="A word will appear on the screen" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AIm-st-C3s">
-                                <rect key="frame" x="25" y="245" width="332" height="36"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Note: Once started, tests cannot be aborted" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8m6-Xe-YSQ">
-                                <rect key="frame" x="16" y="514" width="344" height="30"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-qC-dSz">
+                                <rect key="frame" x="169" y="610" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMY-62-frh">
-                                <rect key="frame" x="17" y="446" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="The test will end 45 seconds after pressing the 'Begin Test' button below" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-Oj-2Oa">
-                                <rect key="frame" x="25" y="438" width="332" height="59"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="pageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="0.27415988869863012" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RUY-Qd-Xod"/>
@@ -589,7 +518,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qog-7f-EYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165.5999999999999" y="129.98500749625188"/>
+            <point key="canvasLocation" x="1316" y="1245"/>
+        </scene>
+        <!--Towre Page Controller-->
+        <scene sceneID="VbS-Ri-dKo">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3lV-hK-1mU" customClass="TowrePageController" customModule="test" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isl-YL-9y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="215"/>
         </scene>
         <!--Towre-->
         <scene sceneID="XxO-d5-Nuj">
@@ -658,11 +595,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFT-kJ-86f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="130"/>
+            <point key="canvasLocation" x="2151" y="1972"/>
+        </scene>
+        <!--Test Description Controller-->
+        <scene sceneID="c8v-pe-8Hj">
+            <objects>
+                <viewController storyboardIdentifier="TowreDescriptionPage2" id="ZqD-xR-gLh" customClass="TestDescriptionController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIL-LI-e4J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Ch-mVb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99336105009999998" green="1" blue="0.9793683057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="TOWRE 2" id="fVy-QQ-BwT">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="5NH-K4-75n">
+                                            <connections>
+                                                <segue destination="jXw-g2-1CQ" kind="show" id="vDR-Jf-fHV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuM-w7-XuA">
+                                <rect key="frame" x="131" y="574" width="113" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Begin Test">
+                                    <color key="titleColor" red="0.99336105009999998" green="1" blue="0.9793683057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="FWN-bv-xTq" kind="show" id="F3Q-f2-bRy"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="eWe-hE-Ffr">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="0.27415988870000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR2-j0-j6u">
+                                <rect key="frame" x="15" y="77" width="344" height="455.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Read the following to the student (*Items in brackets like this are instructions to the administrator*)
+
+"Now you will read some longer lists of words. The words start out pretty easy, but they get harder as you go along. 
+Read as many words as fast as you can until I tell you to stop. 
+Begin at the top of the list (*Show the Student*) and read down the list (*draw finger down the list*) before you start on the next list (*point to the top of second column*). 
+Read the words in order, but if you come to one you can't read, skip it and go to the next one. 
+Use your finder to keep your place if you want to, and if you skip more than one word, point to the word you are reading next. 
+Do you understand? Ok, you will begin as soon as I say 'Go'. "
+
+When ready, press 'Begin Test' and say 'Go'</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="*Note: Once started, tests cannot be aborted" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzX-zC-3re">
+                                <rect key="frame" x="15" y="544" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kXb-JD-WQy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SM2-4K-NaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="1973"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hRU-Pb-Tes"/>
+        <segue reference="vDR-Jf-fHV"/>
         <segue reference="puW-eK-Kot"/>
     </inferredMetricsTieBreakers>
 </document>

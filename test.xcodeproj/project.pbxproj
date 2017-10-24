@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110679271F9F67360002E0C7 /* TowrePageController.swift */; };
 		110AD66A1F9CC7610021E22A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110AD6691F9CC7610021E22A /* Menu.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0E8F9319A0AA262514C70812 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
+		110679271F9F67360002E0C7 /* TowrePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowrePageController.swift; sourceTree = "<group>"; };
 		110AD6691F9CC7610021E22A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDescriptionController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				110AD6691F9CC7610021E22A /* Menu.swift */,
 				1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
+				110679271F9F67360002E0C7 /* TowrePageController.swift */,
 				117173F21F9BA4E9009F42FE /* Towre.swift */,
 				118FB1851F9CB486005F36C1 /* TowreCalculations.swift */,
 				118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */,
@@ -257,6 +260,7 @@
 			files = (
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
 				118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */,
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
