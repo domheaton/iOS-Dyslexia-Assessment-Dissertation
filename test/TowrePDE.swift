@@ -1,8 +1,8 @@
 //
-//  Towre.swift
+//  TowrePDE.swift
 //  test
 //
-//  Created by Dominic Heaton on 21/10/2017.
+//  Created by Dominic Heaton on 24/10/2017.
 //  Copyright © 2017 Dominic Heaton. All rights reserved.
 //
 
@@ -11,22 +11,22 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class Towre: UIViewController {
+class TowrePDE: UIViewController {
     
     var wordsToTest: [String] = []
     var counter = 0
     var timer = Timer()
     var time = 0
     
-    private var brain = TowreBrain()
+    private var brain = TowreBrainPDE()
     
-    @IBOutlet weak var wordToTest: UILabel!
+    @IBOutlet weak var wordToTestPDE: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Towre.checkTimeElapsed), userInfo: nil, repeats: true)
-        wordsToTest = brain.setWordsToTestSWE
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TowrePDE.checkTimeElapsed), userInfo: nil, repeats: true)
+        wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
         loadWord()
@@ -50,7 +50,7 @@ class Towre: UIViewController {
     @IBAction func undoPressed(_ sender: UIButton) {
         if counter >= 2 {
             counter = counter - 2
-            wordToTest.text = wordsToTest[counter]
+            wordToTestPDE.text = wordsToTest[counter]
             brain.setRawScore()
             counter = counter + 1
         }
@@ -75,7 +75,7 @@ class Towre: UIViewController {
     //Function to load next word from array - or finish test if list completed
     func loadWord() {
         if counter < wordsToTest.count {
-            wordToTest.text = wordsToTest[counter]
+            wordToTestPDE.text = wordsToTest[counter]
             counter = counter + 1
         }
         else {
@@ -84,4 +84,5 @@ class Towre: UIViewController {
         }
     }
 }
+
 

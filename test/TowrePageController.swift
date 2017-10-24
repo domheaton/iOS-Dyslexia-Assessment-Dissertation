@@ -38,13 +38,9 @@ class TowrePageController: UIPageViewController, UIPageViewControllerDataSource 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = viewControllerList.index(of: viewController) else {return nil}
-        
         let previousIndex = viewControllerIndex - 1
-        
         guard previousIndex >= 0 else {return nil}
-        
         guard viewControllerList.count > previousIndex else {return nil}
-        
         return viewControllerList[previousIndex]
     }
     
@@ -52,13 +48,9 @@ class TowrePageController: UIPageViewController, UIPageViewControllerDataSource 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = viewControllerList.index(of: viewController) else {return nil}
-        
         let nextIndex = viewControllerIndex + 1
-        
         guard viewControllerList.count != nextIndex else {return nil}
-        
         guard viewControllerList.count > nextIndex else {return nil}
-        
         return viewControllerList[nextIndex]
     }
    
