@@ -495,13 +495,13 @@
                                 <rect key="frame" x="16" y="209" width="344" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1) Provide the student with the paper copy of the word list to be tested.  2) During the test the student will attempt to pronounce words from the list, matching those displayed on this device.
+                                <string key="text">1) Provide the student with the paper copy of the word list to be tested.  2) During the test the student will attempt to pronounce words from the list, matching those displayed on this device.
 
 3) If pronounced correctly, you should press the 'Correct' button, else press the 'Incorrect' button.
 
 4) 45 seconds after pressing the 'Begin Test' button, the test will end automatically and the test score will be saved.
 
-5) Swipe right for instructions to read to the student or to begin the test</mutableString>
+5) Swipe right for instructions to read to the student or to begin the test</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -646,7 +646,7 @@
                                 <rect key="frame" x="15" y="77" width="344" height="455.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Read the following to the student (*Items in brackets like this are instructions to the administrator*)
+                                <string key="text">Read the following to the student (*Items in brackets like this are instructions to the administrator*)
 
 "Now you will read some longer lists of words. The words start out pretty easy, but they get harder as you go along. 
 Read as many words as fast as you can until I tell you to stop. 
@@ -655,12 +655,12 @@ Read the words in order, but if you come to one you can't read, skip it and go t
 Use your finder to keep your place if you want to, and if you skip more than one word, point to the word you are reading next. 
 Do you understand? Ok, you will begin as soon as I say 'Go'. "
 
-When ready, press 'Begin Test' and say 'Go'</mutableString>
+When ready, press 'Begin Test' and say 'Go'</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="*Note: Once started, tests cannot be aborted" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzX-zC-3re">
-                                <rect key="frame" x="15" y="544" width="343" height="34"/>
+                                <rect key="frame" x="16" y="540" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
