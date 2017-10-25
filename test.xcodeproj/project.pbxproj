@@ -22,6 +22,7 @@
 		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
 		118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */; };
 		118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1851F9CB486005F36C1 /* TowreCalculations.swift */; };
+		11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
 		74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF55275C1AC252C770F322E /* Pods_test.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompleted.swift; sourceTree = "<group>"; };
 		118FB1851F9CB486005F36C1 /* TowreCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculations.swift; sourceTree = "<group>"; };
 		11A0E6911F99279800DCE5F9 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
+		11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtestCompleted.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		ACF55275C1AC252C770F322E /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				118FB1851F9CB486005F36C1 /* TowreCalculations.swift */,
 				111CC9FC1F9FA440006F6750 /* TowrePDE.swift */,
 				111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */,
+				11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */,
 				118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
 				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
 				117173F31F9BA4E9009F42FE /* Towre.swift in Sources */,
+				11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,

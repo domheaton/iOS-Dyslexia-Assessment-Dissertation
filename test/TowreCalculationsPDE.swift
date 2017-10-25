@@ -13,53 +13,53 @@ import FirebaseDatabase
 
 struct TowreBrainPDE {
     
-    private var rawScore: Double?
-    private var finalResults: Double?
-    private var numberOfWords: Double?
-    private var currentRawScore: Double?
-    private var previousRawScore: Double?
+    private var rawScorePDE: Double?
+    private var finalResultsPDE: Double?
+    private var numberOfWordsPDE: Double?
+    private var currentRawScorePDE: Double?
+    private var previousRawScorePDE: Double?
     
-    var setWordsToTestPDE: [String] = ["PDE", "TEST", "cat", "red", "me", "to", "no", "we", "he", "the", "and", "yes", "of", "him", "as", "book", "was", "help", "then", "time", "wood", "let", "men", "baby", "new", "stop", "work", "jump", "part", "fast", "fine", "milk", "back", "lost", "find", "paper", "open", "kind", "able", "shoes", "money", "great", "father", "river", "space", "short", "left", "people", "almost", "waves", "child", "strong", "crowd", "better", "inside", "plane", "pretty", "famous", "children", "without", "finally", "strange", "budget", "repress", "contain", "justice", "morning", "resolve", "describe", "garment", "business", "qualify", "potent", "collapse", "elements", "pioneer", "remember", "dangerous", "uniform", "necessary", "problems", "absentee", "advertise", "pleasant", "property", "distress", "information", "recession", "understand", "emphasis", "confident", "intuition", "boisterous", "plausible", "courageous", "alienate", "extinguish", "prairie", "limousine", "valentine", "detective", "recently", "instruction", "transient", "phenomenon", "calculated", "alternative", "collective"]
+    var setWordsToTestPDE: [String] = ["ip", "ga", "ko", "ta", "om", "ig", "ni", "pim", "wum", "lat", "baf", "din", "nup", "fet", "bave", "pate", "herm", "dess", "chur", "knap", "tive", "barp", "stip", "plin", "frip", "poth", "vasp", "meest", "shlee", "guddy", "skree", "felly", "clirt", "sline", "dreff", "prain", "zint", "bloot", "trisk", "kelm", "strone", "lu-naf", "cratty", "trober", "de-pate", "glant", "sploosh", "dre-ker", "rit-lun", "hed-fert", "bre-mick", "nif-pate", "brin-bert", "cla-bom", "drep-nort", "shrat-tec", "plo-fent", "smu-crit", "pel-na-dor", "forn-a-lask", "ferm-a-balt", "cre-nid-moke", "e-mul-ba-tate", "stro-ta-lant-ed", "pri-ling-dor-fent", "chun-fen-dilt"]
     
     
     mutating func setNumberOfWords(_ number: Double) {
-        numberOfWords = number
+        numberOfWordsPDE = number
     }
 
     mutating func zeroScore() {
-        previousRawScore = 0
-        rawScore = 0
+        previousRawScorePDE = 0
+        rawScorePDE = 0
     }
     
     mutating func updateRawScore(_ answer: String) {
         if answer == "correct" {
-            previousRawScore = rawScore!
-            rawScore = rawScore! + 1
+            previousRawScorePDE = rawScorePDE!
+            rawScorePDE = rawScorePDE! + 1
         }
         else if answer == "incorrect" {
-            previousRawScore = rawScore!
-            rawScore = rawScore! + 0
+            previousRawScorePDE = rawScorePDE!
+            rawScorePDE = rawScorePDE! + 0
         }
         
         //For debugging
-        print("Current Prev. Score: ", previousRawScore!)
-        print("Current Raw  Score : ", rawScore!)
+        print("Current Prev. Score: ", previousRawScorePDE!)
+        print("Current Raw  Score : ", rawScorePDE!)
     }
     
     mutating func setRawScore() {
-        rawScore = previousRawScore!
-        previousRawScore = previousRawScore! - 1
+        rawScorePDE = previousRawScorePDE!
+        previousRawScorePDE = previousRawScorePDE! - 1
         
         //For debugging
-        print("Current Prev. Score: ", previousRawScore!)
-        print("Current Raw  Score : ", rawScore!)
+        print("Current Prev. Score: ", previousRawScorePDE!)
+        print("Current Raw  Score : ", rawScorePDE!)
     }
     
     mutating func calculateResult() {
-        finalResults = (rawScore! / numberOfWords!) * 100
+        finalResultsPDE = (rawScorePDE! / numberOfWordsPDE!) * 100
         
         //For debugging
-        print("Final Result: ", finalResults!)
+        print("Final Result: ", finalResultsPDE!)
         
         saveResults()
     }
@@ -71,7 +71,7 @@ struct TowreBrainPDE {
         let userName = Auth.auth().currentUser?.email
         let key = refDatabase.childByAutoId().key
         
-        let userResults = ["username":userName!, "TowreSWE":finalResults!] as [String : Any]
+        let userResults = ["username":userName!, "TowrePDE":finalResultsPDE!] as [String : Any]
         refDatabase.child(key).setValue(userResults)
     }
 

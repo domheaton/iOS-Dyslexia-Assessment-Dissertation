@@ -68,7 +68,7 @@ class Towre: UIViewController {
             timer.invalidate()
             time = 0
             brain.calculateResult()
-            performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
+            performSegue(withIdentifier: "toTowreSubtest", sender: nil)
         }
     }
     
@@ -80,8 +80,9 @@ class Towre: UIViewController {
         }
         else {
             brain.calculateResult()
-            performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
+            performSegue(withIdentifier: "toTowreSubtest", sender: nil)
         }
     }
+
 }
 

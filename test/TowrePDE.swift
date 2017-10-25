@@ -15,7 +15,7 @@ class TowrePDE: UIViewController {
     
     var wordsToTest: [String] = []
     var counter = 0
-    var timer = Timer()
+    var timer2 = Timer()
     var time = 0
     
     private var brain = TowreBrainPDE()
@@ -25,7 +25,7 @@ class TowrePDE: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TowrePDE.checkTimeElapsed), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TowrePDE.checkTimeElapsed), userInfo: nil, repeats: true)
         wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
@@ -65,7 +65,7 @@ class TowrePDE: UIViewController {
             //For debugging
             print("Timer Expired")
             
-            timer.invalidate()
+            timer2.invalidate()
             time = 0
             brain.calculateResult()
             performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
