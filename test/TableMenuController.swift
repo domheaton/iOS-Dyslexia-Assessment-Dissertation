@@ -13,13 +13,13 @@ import FirebaseDatabase
 
 class TableMenuController: UITableViewController {
     
-    let referenceTests = Database.database().reference().child("tests")
+    let referenceTests = Database.database().reference().child("results").child("user")
     
     //The labels used in the table
     @IBOutlet var tableNames: UITableView!
     
     //Reference to the class containing test names
-    var testsList = [testModel]()
+    var testsList = [TestResults]()
     
     //Sets number of rows in table from database list number
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,8 +28,8 @@ class TableMenuController: UITableViewController {
     
     //Assigns data from the database to a cell in the table
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
-        let nameOfTest: testModel
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableCells
+        let nameOfTest: TestResults
         
         nameOfTest = testsList[indexPath.row]
         
@@ -48,17 +48,7 @@ class TableMenuController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func signOut(_ sender: UIButton) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        self.performSegue(withIdentifier: "signOut", sender: nil)
-    }
-    
+
     //function to read data from the database and fill table
     func loadTests() {
         referenceTests.observe(DataEventType.value, with: {(snapshot) in
@@ -67,9 +57,8 @@ class TableMenuController: UITableViewController {
                 
                 for tests in snapshot.children.allObjects as![DataSnapshot]{
                     let nameObject = tests.value as? [String: AnyObject]
-                    let testName = nameObject?["name"]
-                    
-                    let test = testModel(name: testName as! String?)
+                    let testName = nameObject?["username"]
+                    let test = TestResults(name: testName as! String?)
                     
                     self.testsList.append(test)
                 }
@@ -77,9 +66,4 @@ class TableMenuController: UITableViewController {
             }
         })
     }
-    
-    @IBAction func selectTest(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toTestDescription", sender: self)
-    }
-    
 }

@@ -48,7 +48,13 @@ class ViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: "toMenu", sender: nil)
+                //check for admin login credentials - otherwise present normal Menu
+                if self.userName! == "admin@test.com" && self.passWord! == "admin123" {
+                    self.performSegue(withIdentifier: "toAdmin", sender: nil)
+                }
+                else {
+                    self.performSegue(withIdentifier: "toMenu", sender: nil)
+                }
             }
             else if user == nil {
                 let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)

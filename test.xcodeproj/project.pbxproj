@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110679271F9F67360002E0C7 /* TowrePageController.swift */; };
 		110AD66A1F9CC7610021E22A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110AD6691F9CC7610021E22A /* Menu.swift */; };
+		111499981FA0D4E2003EBA9E /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111499971FA0D4E1003EBA9E /* AdminMenu.swift */; };
+		1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111499991FA0D70B003EBA9E /* TableMenuController.swift */; };
+		1114999C1FA0D7F6003EBA9E /* TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114999B1FA0D7F6003EBA9E /* TestResults.swift */; };
+		1114999E1FA0D851003EBA9E /* TableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114999D1FA0D851003EBA9E /* TableCells.swift */; };
 		111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FC1F9FA440006F6750 /* TowrePDE.swift */; };
 		111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
@@ -31,6 +35,10 @@
 		0E8F9319A0AA262514C70812 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		110679271F9F67360002E0C7 /* TowrePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowrePageController.swift; sourceTree = "<group>"; };
 		110AD6691F9CC7610021E22A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		111499971FA0D4E1003EBA9E /* AdminMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenu.swift; sourceTree = "<group>"; };
+		111499991FA0D70B003EBA9E /* TableMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableMenuController.swift; sourceTree = "<group>"; };
+		1114999B1FA0D7F6003EBA9E /* TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResults.swift; sourceTree = "<group>"; };
+		1114999D1FA0D851003EBA9E /* TableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCells.swift; sourceTree = "<group>"; };
 		111CC9FC1F9FA440006F6750 /* TowrePDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowrePDE.swift; sourceTree = "<group>"; };
 		111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculationsPDE.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -101,9 +109,13 @@
 				11BE11A01F8CD46900006802 /* RegisterController.swift */,
 				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
 				110AD6691F9CC7610021E22A /* Menu.swift */,
-				1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */,
+				111499971FA0D4E1003EBA9E /* AdminMenu.swift */,
+				111499991FA0D70B003EBA9E /* TableMenuController.swift */,
+				1114999D1FA0D851003EBA9E /* TableCells.swift */,
+				1114999B1FA0D7F6003EBA9E /* TestResults.swift */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
 				110679271F9F67360002E0C7 /* TowrePageController.swift */,
+				1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */,
 				117173F21F9BA4E9009F42FE /* Towre.swift */,
 				118FB1851F9CB486005F36C1 /* TowreCalculations.swift */,
 				111CC9FC1F9FA440006F6750 /* TowrePDE.swift */,
@@ -269,16 +281,20 @@
 			files = (
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */,
 				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
 				111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */,
+				1114999E1FA0D851003EBA9E /* TableCells.swift in Sources */,
 				118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */,
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
+				111499981FA0D4E2003EBA9E /* AdminMenu.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
 				117173F31F9BA4E9009F42FE /* Towre.swift in Sources */,
 				11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
+				1114999C1FA0D7F6003EBA9E /* TestResults.swift in Sources */,
 				118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
