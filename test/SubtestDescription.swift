@@ -1,8 +1,8 @@
 //
-//  SubtestCompleted.swift
+//  SubtestDescription.swift
 //  test
 //
-//  Created by Dominic Heaton on 25/10/2017.
+//  Created by Dominic Heaton on 26/10/2017.
 //  Copyright © 2017 Dominic Heaton. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class SubtestCompleted: UIViewController {
+class SubtestDescription: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +28,5 @@ class SubtestCompleted: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

@@ -22,8 +22,15 @@ class Towre: UIViewController {
     
     @IBOutlet weak var wordToTest: UILabel!
     
+    //Functions to hide navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Towre.checkTimeElapsed), userInfo: nil, repeats: true)
         wordsToTest = brain.setWordsToTestSWE

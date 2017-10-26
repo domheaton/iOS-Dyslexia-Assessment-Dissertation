@@ -15,6 +15,9 @@ class AdminMenu: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //override the back button in the navigation controller
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOutAdmin(sender:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,7 +25,7 @@ class AdminMenu: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signOutAdmin(_ sender: UIButton) {
+    @objc func signOutAdmin(sender: AnyObject) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
