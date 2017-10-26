@@ -13,6 +13,12 @@ import FirebaseDatabase
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    var userName: String?
+    var passWord: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,38 +29,27 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    //@IBOutlet weak var logStatus: UILabel!
-    
-    var userName: String?
-    var passWord: String?
-    
     @IBAction func enterButton(_ sender: UIButton) {
         userName = usernameField.text!
         passWord = passwordField.text!
         
-        //For debugging
-            print(userName!)
-            print(passWord!)
-        
-        logUserIn()
+        if userName! == "admin@test.com" && passWord! == "admin123" {
+            print("Admin request")
+            self.performSegue(withIdentifier: "toAdmin", sender: nil)
+        }
+        else {
+            print("User request")
+            logUserIn(userName!, passWord!)
+        }
     }
-    
-    //function to verify login credentials against the database
-    func logUserIn() {
+
+    func logUserIn(_ username: String?, _ password: String?) {
         
-        Auth.auth().signIn(withEmail: userName!, password: passWord!)
+        Auth.auth().signIn(withEmail: username!, password: password!)
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                //check for admin login credentials - otherwise present normal Menu
-                if self.userName! == "admin@test.com" && self.passWord! == "admin123" {
-                    self.performSegue(withIdentifier: "toAdmin", sender: nil)
-                }
-                else {
-                    self.performSegue(withIdentifier: "toMenu", sender: nil)
-                }
+                self.performSegue(withIdentifier: "toMenu", sender: nil)
             }
             else if user == nil {
                 let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)

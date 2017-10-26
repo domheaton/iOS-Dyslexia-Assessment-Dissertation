@@ -199,7 +199,7 @@ To show the results, press the button below:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXH-Ee-XBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="-689.5052473763119"/>
+            <point key="canvasLocation" x="862" y="-643"/>
         </scene>
         <!--Table Menu Controller-->
         <scene sceneID="yjX-fF-wpH">
@@ -271,7 +271,7 @@ To show the results, press the button below:
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-Bm-BbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677.5999999999999" y="-690.40479760119945"/>
+            <point key="canvasLocation" x="1702" y="-644"/>
         </scene>
         <!--Password Controller-->
         <scene sceneID="riQ-35-jqf">
@@ -1059,7 +1059,7 @@ When ready, press 'Begin Test' and say 'Go'</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9hR-Qr-jnT"/>
+        <segue reference="7y8-p8-QQ7"/>
         <segue reference="iXO-Rn-4UB"/>
         <segue reference="4tV-F9-JOM"/>
     </inferredMetricsTieBreakers>
