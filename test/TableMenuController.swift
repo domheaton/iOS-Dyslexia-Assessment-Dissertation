@@ -13,27 +13,27 @@ import FirebaseDatabase
 
 class TableMenuController: UITableViewController {
     
-    let referenceTests = Database.database().reference().child("results").child("user")
+    let referenceResults = Database.database().reference().child("results").child("user")
     
     //The labels used in the table
     @IBOutlet var tableNames: UITableView!
     
     //Reference to the class containing test names
-    var testsList = [TestResults]()
+    var resultsList = [TestResults]()
     
     //Sets number of rows in table from database list number
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testsList.count
+        return resultsList.count
     }
     
     //Assigns data from the database to a cell in the table
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableCells
-        let nameOfTest: TestResults
+        let username: TestResults
         
-        nameOfTest = testsList[indexPath.row]
+        username = resultsList[indexPath.row]
         
-        cell.labelName.text = nameOfTest.name
+        cell.labelName.text = username.name
         
         return cell
     }
@@ -51,16 +51,16 @@ class TableMenuController: UITableViewController {
 
     //function to read data from the database and fill table
     func loadTests() {
-        referenceTests.observe(DataEventType.value, with: {(snapshot) in
+        referenceResults.observe(DataEventType.value, with: {(snapshot) in
             if snapshot.childrenCount>0 {
-                self.testsList.removeAll()
+                self.resultsList.removeAll()
                 
                 for tests in snapshot.children.allObjects as![DataSnapshot]{
                     let nameObject = tests.value as? [String: AnyObject]
-                    let testName = nameObject?["username"]
-                    let test = TestResults(name: testName as! String?)
+                    let userName = nameObject?["username"]
+                    let name = TestResults(name: userName as! String?)
                     
-                    self.testsList.append(test)
+                    self.resultsList.append(name)
                 }
                 self.tableNames.reloadData()
             }

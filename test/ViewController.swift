@@ -34,27 +34,28 @@ class ViewController: UIViewController {
         passWord = passwordField.text!
         
         if userName! == "admin@test.com" && passWord! == "admin123" {
-            print("Admin request")
+            Auth.auth().signIn(withEmail: "admin@test.com", password: "admin123")
             self.performSegue(withIdentifier: "toAdmin", sender: nil)
         }
         else {
-            print("User request")
             logUserIn(userName!, passWord!)
         }
     }
 
+    //function to check username and password against database
     func logUserIn(_ username: String?, _ password: String?) {
-        
-        Auth.auth().signIn(withEmail: username!, password: password!)
-        
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
-                self.performSegue(withIdentifier: "toMenu", sender: nil)
+        Auth.auth().signIn(withEmail: username!, password: password!) { user, error in
+            if error == nil {
+                Auth.auth().addStateDidChangeListener() { auth, user in
+                    if user != nil {
+                        self.performSegue(withIdentifier: "toMenu", sender: nil)
+                    }
+                }
             }
-            else if user == nil {
+            else {
                 let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-                
+
                 self.present(alertController, animated: true, completion: nil)
             }
         }
