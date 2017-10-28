@@ -9,9 +9,13 @@
 class TestResults {
     
     var name: String?
+    var testName: String?
+    var testScore: Double?
     
-    init(name: String?){
+    init(name: String?, testName: String?, testScore: Double?){
         self.name = name
+        self.testName = testName
+        self.testScore = testScore
     }
     
 }

@@ -12,6 +12,7 @@ class TableCells: UITableViewCell {
     
     //The label used in the cell's of the table
     @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelTest: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

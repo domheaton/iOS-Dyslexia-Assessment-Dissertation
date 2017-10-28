@@ -13,7 +13,9 @@ import FirebaseDatabase
 
 class IndividualScore: UIViewController {
     
-    let referenceDatabase = Database.database().reference().child("results").child("user")
+    var getName = String()
+    var getTest = String()
+    var getScore = Double()
     
     @IBOutlet weak var nameOfStudentLabel: UILabel!
     @IBOutlet weak var nameOfTestLabel: UILabel!
@@ -31,18 +33,9 @@ class IndividualScore: UIViewController {
     }
 
     func getDetails() {
-        referenceDatabase.observe(DataEventType.value, with: {(snapshot) in
-                for tests in snapshot.children.allObjects as![DataSnapshot]{
-                    let nameObject = tests.value as? [String: AnyObject]
-                    let name = nameObject?["username"] as! String?
-                    let test = nameObject?["test"] as! String?
-                    let result = nameObject?["score"] as! Double?
-                    
-                    self.nameOfStudentLabel.text = name!
-                    self.nameOfTestLabel.text = test!
-                    self.testScoreLabel.text = String(result!)
-                }
-        })
+        self.nameOfStudentLabel.text = getName
+        self.nameOfTestLabel.text = getTest
+        self.testScoreLabel.text = String(getScore)
     }
 
 }

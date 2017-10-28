@@ -14,7 +14,7 @@ import FirebaseDatabase
 class TableMenuController: UITableViewController {
     
     let referenceResults = Database.database().reference().child("results").child("user")
-    
+
     //The labels used in the table
     @IBOutlet var tableNames: UITableView!
     
@@ -29,11 +29,12 @@ class TableMenuController: UITableViewController {
     //Assigns data from the database to a cell in the table
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableCells
-        let username: TestResults
+        let detailsToDisplay: TestResults
         
-        username = resultsList[indexPath.row]
+        detailsToDisplay = resultsList[indexPath.row]
         
-        cell.labelName.text = username.name
+        cell.labelName.text = detailsToDisplay.name
+        cell.labelTest.text = detailsToDisplay.testName
         
         return cell
     }
@@ -46,7 +47,6 @@ class TableMenuController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     //function to read data from the database and fill table
@@ -55,15 +55,32 @@ class TableMenuController: UITableViewController {
             if snapshot.childrenCount>0 {
                 self.resultsList.removeAll()
                 
-                for tests in snapshot.children.allObjects as![DataSnapshot]{
-                    let nameObject = tests.value as? [String: AnyObject]
+                for details in snapshot.children.allObjects as![DataSnapshot]{
+                    let nameObject = details.value as? [String: AnyObject]
                     let userName = nameObject?["username"]
-                    let name = TestResults(name: userName as! String?)
-                    
-                    self.resultsList.append(name)
+                    let testName = nameObject?["test"]
+                    let testScore = nameObject?["score"]
+                   
+                    //value to be printed in tableViewController Cells
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testScore: testScore as! Double?)
+                    self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
             }
         })
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "IndividualScore") as! IndividualScore
+
+        //pass data to IndividualScore VC depending on which cell was pressed
+        let detailsToPass: TestResults
+        detailsToPass = resultsList[indexPath.row]
+        nextVC.getName = detailsToPass.name!
+        nextVC.getTest = detailsToPass.testName!
+        nextVC.getScore = detailsToPass.testScore!
+
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
