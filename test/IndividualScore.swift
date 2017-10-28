@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import Charts
 
 class IndividualScore: UIViewController {
     
@@ -17,6 +18,7 @@ class IndividualScore: UIViewController {
     var getTest = String()
     var getScore = Double()
     
+    @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
     @IBOutlet weak var nameOfTestLabel: UILabel!
     @IBOutlet weak var testScoreLabel: UILabel!
@@ -25,6 +27,9 @@ class IndividualScore: UIViewController {
         super.viewDidLoad()
         
         getDetails()
+        
+        barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +41,12 @@ class IndividualScore: UIViewController {
         self.nameOfStudentLabel.text = getName
         self.nameOfTestLabel.text = getTest
         self.testScoreLabel.text = String(getScore)
+    }
+    
+    func setChart(label: String, value: Double) {
+
+        
+        
     }
 
 }
