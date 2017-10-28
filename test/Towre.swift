@@ -87,6 +87,7 @@ class Towre: UIViewController {
         }
         else {
             brain.calculateResult()
+            timer.invalidate()
             performSegue(withIdentifier: "toTowreSubtest", sender: nil)
         }
     }

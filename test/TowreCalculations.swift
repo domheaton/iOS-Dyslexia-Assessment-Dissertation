@@ -70,7 +70,7 @@ struct TowreBrain {
         let userName = Auth.auth().currentUser?.email
         let key = refDatabase.childByAutoId().key
         
-        let userResults = ["username":userName!, "TowreSWE":finalResults!] as [String : Any]
+        let userResults = ["username":userName!, "test":"TowreSWE", "score":finalResults!] as [String : Any]
         refDatabase.child(key).setValue(userResults)
     }
 

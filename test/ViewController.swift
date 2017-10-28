@@ -63,7 +63,8 @@ class ViewController: UIViewController {
                 }
             }
             else {
-                let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.alert)
+                //.alert gives center screen error -- .actionSheet is near bottom of screen
+                let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.actionSheet)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
 
                 self.present(alertController, animated: true, completion: nil)
