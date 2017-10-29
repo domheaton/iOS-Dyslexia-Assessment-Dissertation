@@ -18,7 +18,9 @@ class IndividualScore: UIViewController {
     var getTest = String()
     var getScore = Double()
     
-    @IBOutlet weak var barChartView: BarChartView!
+    var numbers = [1,2,3,5,10]
+    
+    @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
     @IBOutlet weak var nameOfTestLabel: UILabel!
     @IBOutlet weak var testScoreLabel: UILabel!
@@ -28,13 +30,12 @@ class IndividualScore: UIViewController {
         
         getDetails()
         
-        barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
-        
+//        barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
+        updateGraph()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func getDetails() {
@@ -43,10 +44,23 @@ class IndividualScore: UIViewController {
         self.testScoreLabel.text = String(getScore)
     }
     
-    func setChart(label: String, value: Double) {
-
+    func updateGraph() {
+        var lineChartEntry = [ChartDataEntry]()
         
+        for i in 0..<numbers.count {
+            let value = ChartDataEntry(x: Double(i), y: Double(numbers[i]))
+            
+            lineChartEntry.append(value)
+        }
         
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "number")
+        
+        line1.colors = [NSUIColor.blue]
+        let data = LineChartData()
+        data.addDataSet(line1)
+        lineChartView.data = data
+        lineChartView.chartDescription?.text = "My Chart"
     }
+    
 
 }
