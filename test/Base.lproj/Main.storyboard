@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.7.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -283,7 +283,7 @@ To show the results, press the button below:
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwU-R1-1Lv" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwU-R1-1Lv" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="248" width="343" height="399"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="0.24678938356164384" colorSpace="custom" customColorSpace="sRGB"/>
@@ -294,7 +294,7 @@ To show the results, press the button below:
                     </view>
                     <navigationItem key="navigationItem" title="Test Score" id="MKr-p3-YhT"/>
                     <connections>
-                        <outlet property="lineChartView" destination="GwU-R1-1Lv" id="k65-ib-Vru"/>
+                        <outlet property="barChartView" destination="GwU-R1-1Lv" id="xG3-Ud-ZAt"/>
                         <outlet property="nameOfStudentLabel" destination="3Tz-Td-evU" id="26f-Y2-RDb"/>
                         <outlet property="nameOfTestLabel" destination="27h-Z2-npN" id="cOX-e7-Z0n"/>
                         <outlet property="testScoreLabel" destination="VAv-y3-vMd" id="Bjb-Kh-JfW"/>
@@ -1023,7 +1023,7 @@ When ready, press 'Begin Test' and say 'Go'</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="puW-eK-Kot"/>
+        <segue reference="kv8-x0-OgO"/>
         <segue reference="dmi-6v-bNo"/>
     </inferredMetricsTieBreakers>
 </document>

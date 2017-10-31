@@ -17,10 +17,8 @@ class IndividualScore: UIViewController {
     var getName = String()
     var getTest = String()
     var getScore = Double()
-    
-    var numbers = [1,2,3,5,10]
-    
-    @IBOutlet weak var lineChartView: LineChartView!
+
+    @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
     @IBOutlet weak var nameOfTestLabel: UILabel!
     @IBOutlet weak var testScoreLabel: UILabel!
@@ -28,9 +26,10 @@ class IndividualScore: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Graph", style: UIBarButtonItemStyle.plain, target: self, action: #selector(saveGraph))
         getDetails()
         
-//        barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
+        barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
         updateGraph()
     }
     
@@ -44,23 +43,33 @@ class IndividualScore: UIViewController {
         self.testScoreLabel.text = String(getScore)
     }
     
-    func updateGraph() {
-        var lineChartEntry = [ChartDataEntry]()
-        
-        for i in 0..<numbers.count {
-            let value = ChartDataEntry(x: Double(i), y: Double(numbers[i]))
-            
-            lineChartEntry.append(value)
-        }
-        
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "number")
-        
-        line1.colors = [NSUIColor.blue]
-        let data = LineChartData()
-        data.addDataSet(line1)
-        lineChartView.data = data
-        lineChartView.chartDescription?.text = "My Chart"
+    @objc func saveGraph() {
+        let image = barChartView.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     }
     
-
+    func updateGraph() {
+        var dataEntries: [BarChartDataEntry] = []
+        let visitorCounts = getScore
+        
+        let dataEntry = BarChartDataEntry(x: Double(1), y: Double(visitorCounts))
+        dataEntries.append(dataEntry)
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: getTest)
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        barChartView.chartDescription?.text = getName
+        chartDataSet.colors = [UIColor(red: 74/255, green: 205/255, blue: 168/255, alpha: 1)]
+        barChartView.xAxis.labelPosition = .bottom
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
+        barChartView.leftAxis.addLimitLine(limitline)
+        barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.leftAxis.axisMaximum = 100.0
+        barChartView.rightAxis.enabled = false
+        
+        barChartView.data = chartData
+    }
+    
 }
