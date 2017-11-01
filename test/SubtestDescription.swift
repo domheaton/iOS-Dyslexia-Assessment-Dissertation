@@ -13,17 +13,8 @@ import FirebaseDatabase
 
 class SubtestDescription: UIViewController {
     
-    var sweKey = String()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //For debugging
-        print("sweKey to be sent to TowrePDE: " + sweKey)
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let passToTowreCalculationsPDE = storyboard.instantiateViewController(withIdentifier: "TowrePDE") as! TowrePDE
-        passToTowreCalculationsPDE.receivedKey = sweKey
     }
     
     //Functions to hide navigation bar

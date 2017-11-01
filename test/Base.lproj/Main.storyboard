@@ -453,7 +453,7 @@ To show the results, press the button below:
         <!--Test Completed-->
         <scene sceneID="4F6-tK-yqH">
             <objects>
-                <viewController id="jAB-mp-CnP" customClass="TestCompleted" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestCompleted" id="jAB-mp-CnP" customClass="TestCompleted" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6uW-e5-Wyy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1040,6 +1040,6 @@ When ready, press 'Begin Test' and say 'Go'</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kv8-x0-OgO"/>
-        <segue reference="dmi-6v-bNo"/>
+        <segue reference="9hR-Qr-jnT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,11 +30,7 @@ class TowrePDE: UIViewController {
         wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
-        
-        //For debugging
-        print("Key received by TowrePDE: " + receivedKey)
-        
-        brain.setKey(receivedKey)
+
         loadWord()
     }
     
