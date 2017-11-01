@@ -70,8 +70,15 @@ struct TowreBrain {
         let userName = Auth.auth().currentUser?.email
         let key = refDatabase.childByAutoId().key
         
-        let userResults = ["username":userName!, "test":"TowreSWE", "score":finalResults!] as [String : Any]
+        let userResults = ["username":userName!, "TowreSWE":finalResults!] as [String : Any]
         refDatabase.child(key).setValue(userResults)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let passToTowreCalculationsPDE = storyboard.instantiateViewController(withIdentifier: "SubtestDescription") as! SubtestDescription
+        passToTowreCalculationsPDE.sweKey = key as String
+        
+        //For debugging
+        print("Key forwarded from TowreSWE: " + key)
     }
 
 }

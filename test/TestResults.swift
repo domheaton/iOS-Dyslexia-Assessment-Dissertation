@@ -10,12 +10,17 @@ class TestResults {
     
     var name: String?
     var testName: String?
-    var testScore: Double?
+//    var testScore: Double?
     
-    init(name: String?, testName: String?, testScore: Double?){
+    var testTowreSWE: Double?
+    var testTowrePDE: Double?
+    
+    init(name: String?, testName: String?/*, testScore: Double?*/, testTowreSWE: Double?, testTowrePDE: Double?){
         self.name = name
         self.testName = testName
-        self.testScore = testScore
+//        self.testScore = testScore
+        self.testTowreSWE = testTowreSWE
+        self.testTowrePDE = testTowrePDE
     }
     
 }

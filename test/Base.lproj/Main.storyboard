@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -255,6 +255,13 @@ To show the results, press the button below:
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameOfTest2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHQ-iC-ue4">
+                                <rect key="frame" x="16" y="247" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="testScore" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAv-y3-vMd">
                                 <rect key="frame" x="16" y="219" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -284,10 +291,17 @@ To show the results, press the button below:
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwU-R1-1Lv" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="248" width="343" height="399"/>
+                                <rect key="frame" x="16" y="276" width="343" height="371"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="0.24678938356164384" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="testScore2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnP-No-xMi">
+                                <rect key="frame" x="16" y="248" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PgW-hb-7fV"/>
@@ -297,7 +311,9 @@ To show the results, press the button below:
                         <outlet property="barChartView" destination="GwU-R1-1Lv" id="xG3-Ud-ZAt"/>
                         <outlet property="nameOfStudentLabel" destination="3Tz-Td-evU" id="26f-Y2-RDb"/>
                         <outlet property="nameOfTestLabel" destination="27h-Z2-npN" id="cOX-e7-Z0n"/>
+                        <outlet property="nameOfTestLabel2" destination="oHQ-iC-ue4" id="x3w-Hd-MYG"/>
                         <outlet property="testScoreLabel" destination="VAv-y3-vMd" id="Bjb-Kh-JfW"/>
+                        <outlet property="testScoreLabel2" destination="BnP-No-xMi" id="hfX-jh-a15"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxW-t0-tNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -791,7 +807,7 @@ When ready, press 'Begin Test' and say 'Go'</string>
         <!--Subtest Description-->
         <scene sceneID="A1g-Gf-ngi">
             <objects>
-                <viewController storyboardIdentifier="TowreDescriptionPage3" id="7Ym-9d-GGR" customClass="SubtestDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubtestDescription" id="7Ym-9d-GGR" customClass="SubtestDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKb-LW-7Bz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -856,7 +872,7 @@ When ready, press 'Begin Test' and say 'Go'</string>
         <!--TowrePDE-->
         <scene sceneID="lZ0-d3-RY0">
             <objects>
-                <viewController id="HLC-w2-gRF" customClass="TowrePDE" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TowrePDE" id="HLC-w2-gRF" customClass="TowrePDE" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oVY-gt-n38">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

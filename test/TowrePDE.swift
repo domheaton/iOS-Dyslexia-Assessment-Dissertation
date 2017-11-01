@@ -17,6 +17,7 @@ class TowrePDE: UIViewController {
     var counter = 0
     var timer2 = Timer()
     var time = 0
+    var receivedKey = String()
     
     private var brain = TowreBrainPDE()
     
@@ -29,6 +30,11 @@ class TowrePDE: UIViewController {
         wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
+        
+        //For debugging
+        print("Key received by TowrePDE: " + receivedKey)
+        
+        brain.setKey(receivedKey)
         loadWord()
     }
     
@@ -90,6 +96,7 @@ class TowrePDE: UIViewController {
             performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
         }
     }
+
 }
 
 

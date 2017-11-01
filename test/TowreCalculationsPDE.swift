@@ -18,6 +18,7 @@ struct TowreBrainPDE {
     private var numberOfWordsPDE: Double?
     private var currentRawScorePDE: Double?
     private var previousRawScorePDE: Double?
+    private var key: String?
     
     var setWordsToTestPDE: [String] = ["ip", "ga", "ko", "ta", "om", "ig", "ni", "pim", "wum", "lat", "baf", "din", "nup", "fet", "bave", "pate", "herm", "dess", "chur", "knap", "tive", "barp", "stip", "plin", "frip", "poth", "vasp", "meest", "shlee", "guddy", "skree", "felly", "clirt", "sline", "dreff", "prain", "zint", "bloot", "trisk", "kelm", "strone", "lu-naf", "cratty", "trober", "de-pate", "glant", "sploosh", "dre-ker", "rit-lun", "hed-fert", "bre-mick", "nif-pate", "brin-bert", "cla-bom", "drep-nort", "shrat-tec", "plo-fent", "smu-crit", "pel-na-dor", "forn-a-lask", "ferm-a-balt", "cre-nid-moke", "e-mul-ba-tate", "stro-ta-lant-ed", "pri-ling-dor-fent", "chun-fen-dilt"]
     
@@ -64,15 +65,20 @@ struct TowreBrainPDE {
         saveResults()
     }
     
+    mutating func setKey(_ receivedKey: String) {
+        key = receivedKey
+    }
+    
     func saveResults() {
+        //For debugging
+        print("Key set in TowreCalculationsPDE: " + key!)
+        
         var refDatabase: DatabaseReference!
         refDatabase = Database.database().reference().child("results").child("user")
         
-        let userName = Auth.auth().currentUser?.email
-        let key = refDatabase.childByAutoId().key
-        
-        let userResults = ["username":userName!, "test":"TowrePDE", "score":finalResultsPDE!] as [String : Any]
-        refDatabase.child(key).setValue(userResults)
+//        let userName = Auth.auth().currentUser?.email
+        let userResults = [/*"username":userName!, */"TowrePDE":finalResultsPDE!] as [String : Any]
+        refDatabase.child(key!).setValue(userResults)
     }
 
 }

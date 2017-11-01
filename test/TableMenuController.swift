@@ -59,10 +59,11 @@ class TableMenuController: UITableViewController {
                     let nameObject = details.value as? [String: AnyObject]
                     let userName = nameObject?["username"]
                     let testName = nameObject?["test"]
-                    let testScore = nameObject?["score"]
+                    let testTowreSWE = nameObject?["TowreSWE"]
+                    let testTowrePDE = nameObject?["TowrePDE"]
                    
                     //value to be printed in tableViewController Cells
-                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testScore: testScore as! Double?)
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?)
                     self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
@@ -78,8 +79,8 @@ class TableMenuController: UITableViewController {
         let detailsToPass: TestResults
         detailsToPass = resultsList[indexPath.row]
         nextVC.getName = detailsToPass.name!
-        nextVC.getTest = detailsToPass.testName!
-        nextVC.getScore = detailsToPass.testScore!
+        nextVC.getTowreSWE = detailsToPass.testTowreSWE!
+        nextVC.getTowrePDE = detailsToPass.testTowrePDE!
 
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
