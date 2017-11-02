@@ -23,7 +23,7 @@ class Menu: UIViewController {
         //override the back button in the navigation controller
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOut(sender:)))
         
-        saveResults()
+//        saveResults()
     }
     
     func saveResults() {
@@ -42,6 +42,8 @@ class Menu: UIViewController {
     }
     
     @objc func signOut(sender: AnyObject) {
+        saveResults()
+        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
