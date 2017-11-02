@@ -61,9 +61,11 @@ class TableMenuController: UITableViewController {
                     let testName = nameObject?["test"]
                     let testTowreSWE = nameObject?["TowreSWE"]
                     let testTowrePDE = nameObject?["TowrePDE"]
+                    let testDigitSpan = nameObject?["Digit Span"]
+                    let testRevDigitSpan = nameObject?["Reverse Digit Span"]
                    
                     //value to be printed in tableViewController Cells
-                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?)
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testDigitSpan: testDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?)
                     self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
@@ -79,8 +81,18 @@ class TableMenuController: UITableViewController {
         let detailsToPass: TestResults
         detailsToPass = resultsList[indexPath.row]
         nextVC.getName = detailsToPass.name!
-        nextVC.getTowreSWE = detailsToPass.testTowreSWE!
-        nextVC.getTowrePDE = detailsToPass.testTowrePDE!
+        if detailsToPass.testTowreSWE != nil {
+            nextVC.getTowreSWE = detailsToPass.testTowreSWE!
+        }
+        if detailsToPass.testTowrePDE != nil {
+            nextVC.getTowrePDE = detailsToPass.testTowrePDE!
+        }
+        if detailsToPass.testDigitSpan != nil{
+          nextVC.getDigitSpan = detailsToPass.testDigitSpan!
+        }
+        if detailsToPass.testRevDigitSpan != nil{
+            nextVC.getRevDigitSpan = detailsToPass.testRevDigitSpan!
+        }
 
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

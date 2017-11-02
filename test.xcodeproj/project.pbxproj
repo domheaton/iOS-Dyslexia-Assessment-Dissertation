@@ -16,6 +16,7 @@
 		111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FC1F9FA440006F6750 /* TowrePDE.swift */; };
 		111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */; };
 		112788111FA494A1006ECA04 /* IndividualScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112788101FA494A1006ECA04 /* IndividualScore.swift */; };
+		1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */; };
 		1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7D1F83EA57006D00DE /* AppDelegate.swift */; };
@@ -30,6 +31,12 @@
 		119619601FA243BC0083305F /* SubtestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196195F1FA243BC0083305F /* SubtestDescription.swift */; };
 		11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
+		11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583321FABB11D00FB64FF /* DigitPageController.swift */; };
+		11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583341FABB12D00FB64FF /* DigitDescription.swift */; };
+		11F583371FABB13A00FB64FF /* DigitSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583361FABB13A00FB64FF /* DigitSpan.swift */; };
+		11F583391FABB15800FB64FF /* DigitSubtestComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583381FABB15800FB64FF /* DigitSubtestComplete.swift */; };
+		11F5833B1FABB16A00FB64FF /* DigitSubtestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5833A1FABB16A00FB64FF /* DigitSubtestDescription.swift */; };
+		11F5833D1FABB17700FB64FF /* RevDigitSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5833C1FABB17700FB64FF /* RevDigitSpan.swift */; };
 		74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF55275C1AC252C770F322E /* Pods_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +51,7 @@
 		111CC9FC1F9FA440006F6750 /* TowrePDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowrePDE.swift; sourceTree = "<group>"; };
 		111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculationsPDE.swift; sourceTree = "<group>"; };
 		112788101FA494A1006ECA04 /* IndividualScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualScore.swift; sourceTree = "<group>"; };
+		1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitCompleted.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDescriptionController.swift; sourceTree = "<group>"; };
 		1164AD7A1F83EA57006D00DE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +69,12 @@
 		11A0E6911F99279800DCE5F9 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 		11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtestCompleted.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		11F583321FABB11D00FB64FF /* DigitPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitPageController.swift; sourceTree = "<group>"; };
+		11F583341FABB12D00FB64FF /* DigitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDescription.swift; sourceTree = "<group>"; };
+		11F583361FABB13A00FB64FF /* DigitSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpan.swift; sourceTree = "<group>"; };
+		11F583381FABB15800FB64FF /* DigitSubtestComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSubtestComplete.swift; sourceTree = "<group>"; };
+		11F5833A1FABB16A00FB64FF /* DigitSubtestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSubtestDescription.swift; sourceTree = "<group>"; };
+		11F5833C1FABB17700FB64FF /* RevDigitSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevDigitSpan.swift; sourceTree = "<group>"; };
 		238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		ACF55275C1AC252C770F322E /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,18 +121,23 @@
 			isa = PBXGroup;
 			children = (
 				11A0E6911F99279800DCE5F9 /* test.entitlements */,
-				115375BD1F852A7600ABF393 /* GoogleService-Info.plist */,
 				1164AD7D1F83EA57006D00DE /* AppDelegate.swift */,
-				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
-				11BE11A01F8CD46900006802 /* RegisterController.swift */,
-				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
-				110AD6691F9CC7610021E22A /* Menu.swift */,
-				111499971FA0D4E1003EBA9E /* AdminMenu.swift */,
-				111499991FA0D70B003EBA9E /* TableMenuController.swift */,
-				1114999D1FA0D851003EBA9E /* TableCells.swift */,
-				1114999B1FA0D7F6003EBA9E /* TestResults.swift */,
-				112788101FA494A1006ECA04 /* IndividualScore.swift */,
+				1164AD891F83EA57006D00DE /* Info.plist */,
+				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
+				115375BD1F852A7600ABF393 /* GoogleService-Info.plist */,
 				1164AD811F83EA57006D00DE /* Main.storyboard */,
+				11F583311FABB09200FB64FF /* WelcomePages */,
+				11F583301FABB08100FB64FF /* AdminPages */,
+				11F5832F1FABB03C00FB64FF /* Towre */,
+				11F583401FABB98600FB64FF /* DigitSpan */,
+				1164AD841F83EA57006D00DE /* Assets.xcassets */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		11F5832F1FABB03C00FB64FF /* Towre */ = {
+			isa = PBXGroup;
+			children = (
 				110679271F9F67360002E0C7 /* TowrePageController.swift */,
 				1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */,
 				117173F21F9BA4E9009F42FE /* Towre.swift */,
@@ -128,11 +147,45 @@
 				111CC9FC1F9FA440006F6750 /* TowrePDE.swift */,
 				111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */,
 				118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */,
-				1164AD841F83EA57006D00DE /* Assets.xcassets */,
-				1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */,
-				1164AD891F83EA57006D00DE /* Info.plist */,
 			);
-			path = test;
+			path = Towre;
+			sourceTree = "<group>";
+		};
+		11F583301FABB08100FB64FF /* AdminPages */ = {
+			isa = PBXGroup;
+			children = (
+				111499971FA0D4E1003EBA9E /* AdminMenu.swift */,
+				111499991FA0D70B003EBA9E /* TableMenuController.swift */,
+				1114999D1FA0D851003EBA9E /* TableCells.swift */,
+				1114999B1FA0D7F6003EBA9E /* TestResults.swift */,
+				112788101FA494A1006ECA04 /* IndividualScore.swift */,
+			);
+			path = AdminPages;
+			sourceTree = "<group>";
+		};
+		11F583311FABB09200FB64FF /* WelcomePages */ = {
+			isa = PBXGroup;
+			children = (
+				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
+				11BE11A01F8CD46900006802 /* RegisterController.swift */,
+				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
+				110AD6691F9CC7610021E22A /* Menu.swift */,
+			);
+			path = WelcomePages;
+			sourceTree = "<group>";
+		};
+		11F583401FABB98600FB64FF /* DigitSpan */ = {
+			isa = PBXGroup;
+			children = (
+				11F583321FABB11D00FB64FF /* DigitPageController.swift */,
+				11F583341FABB12D00FB64FF /* DigitDescription.swift */,
+				11F583361FABB13A00FB64FF /* DigitSpan.swift */,
+				11F583381FABB15800FB64FF /* DigitSubtestComplete.swift */,
+				11F5833A1FABB16A00FB64FF /* DigitSubtestDescription.swift */,
+				11F5833C1FABB17700FB64FF /* RevDigitSpan.swift */,
+				1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */,
+			);
+			path = DigitSpan;
 			sourceTree = "<group>";
 		};
 		578EC2AFF6CD1DBA52E83C0E /* Pods */ = {
@@ -290,21 +343,28 @@
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				112788111FA494A1006ECA04 /* IndividualScore.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
+				11F5833D1FABB17700FB64FF /* RevDigitSpan.swift in Sources */,
 				1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */,
 				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
+				11F583371FABB13A00FB64FF /* DigitSpan.swift in Sources */,
+				1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */,
 				111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */,
+				11F5833B1FABB16A00FB64FF /* DigitSubtestDescription.swift in Sources */,
 				1114999E1FA0D851003EBA9E /* TableCells.swift in Sources */,
 				118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */,
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
 				111499981FA0D4E2003EBA9E /* AdminMenu.swift in Sources */,
+				11F583391FABB15800FB64FF /* DigitSubtestComplete.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
 				117173F31F9BA4E9009F42FE /* Towre.swift in Sources */,
 				11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */,
+				11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 				119619601FA243BC0083305F /* SubtestDescription.swift in Sources */,
 				1114999C1FA0D7F6003EBA9E /* TestResults.swift in Sources */,
+				11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */,
 				118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

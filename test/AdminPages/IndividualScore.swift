@@ -17,13 +17,11 @@ class IndividualScore: UIViewController {
     var getName = String()
     var getTowreSWE = Double()
     var getTowrePDE = Double()
+    var getDigitSpan = Double()
+    var getRevDigitSpan = Double()
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
-    @IBOutlet weak var nameOfTestLabel: UILabel!
-    @IBOutlet weak var nameOfTestLabel2: UILabel!
-    @IBOutlet weak var testScoreLabel: UILabel!
-    @IBOutlet weak var testScoreLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +39,6 @@ class IndividualScore: UIViewController {
 
     func getDetails() {
         self.nameOfStudentLabel.text = getName
-        self.nameOfTestLabel.text = "TowreSWE"
-        self.testScoreLabel.text = String(getTowreSWE)
-        self.nameOfTestLabel2.text = "TowrePDE"
-        self.testScoreLabel2.text = String(getTowrePDE)
     }
     
     @objc func saveGraph() {
@@ -60,8 +54,22 @@ class IndividualScore: UIViewController {
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
-        let testArray: [String]! = ["TowreSWE", "TowrePDE"]
-        let testScoresToDisplay: [Double]! = [getTowreSWE, getTowrePDE]
+        var testArray: [String]!
+        var testScoresToDisplay: [Double]!
+        
+        //select only the scores that are available
+        if getTowreSWE == 0 || getTowrePDE == 0 {
+            testArray = ["Digit Span", "Rev. Digit Span"]
+            testScoresToDisplay = [getDigitSpan, getRevDigitSpan]
+        }
+        else if getDigitSpan == 0 || getRevDigitSpan == 0 {
+            testArray = ["TowreSWE", "TowrePDE"]
+            testScoresToDisplay = [getTowreSWE, getTowrePDE]
+        }
+        else {
+            testArray = ["TowreSWE", "TowrePDE", "Digit Span", "Rev. Digit Span"]
+            testScoresToDisplay = [getTowreSWE, getTowrePDE, getDigitSpan, getRevDigitSpan]
+        }
         
         for i in 0..<testArray.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: testScoresToDisplay[i])
@@ -78,8 +86,13 @@ class IndividualScore: UIViewController {
         
         let limitline = ChartLimitLine(limit: 70.0, label: "Target")
         barChartView.leftAxis.addLimitLine(limitline)
+        barChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
+        barChartView.legend.font = UIFont(name: "HelveticaNeue", size: 10.0)!
+        barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
+        chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 100.0
+        barChartView.leftAxis.axisMaximum = 105.0
+        barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)
 //        barChartView.xAxis.wordWrapEnabled = true
