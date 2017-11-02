@@ -13,8 +13,18 @@ import FirebaseDatabase
 
 class SubtestDescription: UIViewController {
     
+    var finalResultsSWE = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+        //For debugging
+        print("SubtestDescription: ", finalResultsSWE)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var nextVC = segue.destination as! TowrePDE
+        nextVC.finalResultsSWE = finalResultsSWE
     }
     
     //Functions to hide navigation bar

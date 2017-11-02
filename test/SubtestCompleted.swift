@@ -13,9 +13,19 @@ import FirebaseDatabase
 
 class SubtestCompleted: UIViewController {
     
+    var finalResultsSWE = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //For debugging
+        print("SubtestCompleted: ", finalResultsSWE)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var nextVC = segue.destination as! SubtestDescription
+        nextVC.finalResultsSWE = finalResultsSWE
     }
     
     //Functions to hide navigation bar

@@ -18,6 +18,7 @@ class TowrePDE: UIViewController {
     var timer2 = Timer()
     var time = 0
     var receivedKey = String()
+    var finalResultsSWE = Double()
     
     private var brain = TowreBrainPDE()
     
@@ -30,6 +31,10 @@ class TowrePDE: UIViewController {
         wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
+        brain.setFinalResultsSWE(finalResultsSWE)
+        
+        //For debugging
+        print("TowrePDE: ", finalResultsSWE)
 
         loadWord()
     }

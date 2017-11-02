@@ -31,12 +31,16 @@ class Towre: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Towre.checkTimeElapsed), userInfo: nil, repeats: true)
         wordsToTest = brain.setWordsToTestSWE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
         loadWord()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            var nextVC = segue.destination as! SubtestCompleted
+            nextVC.finalResultsSWE = brain.getFinalResults()
     }
     
     override func didReceiveMemoryWarning() {
