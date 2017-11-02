@@ -24,7 +24,7 @@ class SubtestCompleted: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var nextVC = segue.destination as! SubtestDescription
+        let nextVC = segue.destination as! SubtestDescription
         nextVC.finalResultsSWE = finalResultsSWE
     }
     

@@ -23,7 +23,7 @@ class SubtestDescription: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var nextVC = segue.destination as! TowrePDE
+        let nextVC = segue.destination as! TowrePDE
         nextVC.finalResultsSWE = finalResultsSWE
     }
     

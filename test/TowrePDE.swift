@@ -24,6 +24,12 @@ class TowrePDE: UIViewController {
     
     @IBOutlet weak var wordToTestPDE: UILabel!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! TestCompleted
+        nextVC.finalResultsSWE = brain.getFinalResultsSWE()
+        nextVC.finalResultsPDE = brain.getFinalResultsPDE()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

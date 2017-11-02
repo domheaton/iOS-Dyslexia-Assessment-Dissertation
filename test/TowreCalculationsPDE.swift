@@ -64,18 +64,15 @@ struct TowreBrainPDE {
         
         //For debugging
         print("Final Result: ", finalResultsPDE!)
-        
-        saveResults()
+
+    }
+
+    func getFinalResultsSWE() -> Double {
+        return finalResultsSWE!
     }
     
-    func saveResults() {
-        var refDatabase: DatabaseReference!
-        refDatabase = Database.database().reference().child("results").child("user")
-
-        let userName = Auth.auth().currentUser?.email
-        let key = refDatabase.childByAutoId().key
-        let userResults = ["username":userName!, "TowreSWE":finalResultsSWE!, "TowrePDE":finalResultsPDE!] as [String : Any]
-        refDatabase.child(key).setValue(userResults)
+    func getFinalResultsPDE() -> Double {
+        return finalResultsPDE!
     }
 
 }

@@ -14,11 +14,26 @@ import FirebaseDatabase
 
 class Menu: UIViewController {
     
+    var finalResultsSWE = Double()
+    var finalResultsPDE = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //override the back button in the navigation controller
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOut(sender:)))
+        
+        saveResults()
+    }
+    
+    func saveResults() {
+        var refDatabase: DatabaseReference!
+        refDatabase = Database.database().reference().child("results").child("user")
+
+        let userName = Auth.auth().currentUser?.email
+        let key = refDatabase.childByAutoId().key
+        let userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE] as [String : Any]
+        refDatabase.child(key).setValue(userResults)
     }
     
     override func didReceiveMemoryWarning() {

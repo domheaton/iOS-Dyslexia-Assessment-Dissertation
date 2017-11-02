@@ -39,7 +39,7 @@ class Towre: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            var nextVC = segue.destination as! SubtestCompleted
+        let nextVC = segue.destination as! SubtestCompleted
             nextVC.finalResultsSWE = brain.getFinalResults()
     }
     

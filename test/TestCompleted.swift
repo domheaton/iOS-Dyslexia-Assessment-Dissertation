@@ -13,6 +13,15 @@ import FirebaseDatabase
 
 class TestCompleted: UIViewController {
     
+    var finalResultsSWE = Double()
+    var finalResultsPDE = Double()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! Menu
+        nextVC.finalResultsSWE = finalResultsSWE
+        nextVC.finalResultsPDE = finalResultsPDE
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

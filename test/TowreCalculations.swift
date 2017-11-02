@@ -59,23 +59,10 @@ struct TowreBrain {
         
         //For debugging
         print("Final Result: ", finalResults!)
-        
-//        saveResults()
     }
     
     func getFinalResults() -> Double {
         return finalResults!
     }
-
-//    func saveResults() {
-//        var refDatabase: DatabaseReference!
-//        refDatabase = Database.database().reference().child("results").child("user")
-//
-//        let userName = Auth.auth().currentUser?.email
-//        let key = refDatabase.childByAutoId().key
-//
-//        let userResults = ["username":userName!, "TowreSWE":finalResults!] as [String : Any]
-//        refDatabase.child(key).setValue(userResults)
-//    }
 
 }
