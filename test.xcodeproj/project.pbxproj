@@ -16,6 +16,8 @@
 		111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FC1F9FA440006F6750 /* TowrePDE.swift */; };
 		111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */; };
 		112788111FA494A1006ECA04 /* IndividualScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112788101FA494A1006ECA04 /* IndividualScore.swift */; };
+		1133C6741FACC3EF006F89B5 /* DigitSpanCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133C6731FACC3EF006F89B5 /* DigitSpanCalculations.swift */; };
+		1133C6761FACD343006F89B5 /* RevDigitSpanCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133C6751FACD343006F89B5 /* RevDigitSpanCalculations.swift */; };
 		1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */; };
@@ -51,6 +53,8 @@
 		111CC9FC1F9FA440006F6750 /* TowrePDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowrePDE.swift; sourceTree = "<group>"; };
 		111CC9FE1F9FAAAC006F6750 /* TowreCalculationsPDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculationsPDE.swift; sourceTree = "<group>"; };
 		112788101FA494A1006ECA04 /* IndividualScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualScore.swift; sourceTree = "<group>"; };
+		1133C6731FACC3EF006F89B5 /* DigitSpanCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanCalculations.swift; sourceTree = "<group>"; };
+		1133C6751FACD343006F89B5 /* RevDigitSpanCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevDigitSpanCalculations.swift; sourceTree = "<group>"; };
 		1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitCompleted.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDescriptionController.swift; sourceTree = "<group>"; };
@@ -180,9 +184,11 @@
 				11F583321FABB11D00FB64FF /* DigitPageController.swift */,
 				11F583341FABB12D00FB64FF /* DigitDescription.swift */,
 				11F583361FABB13A00FB64FF /* DigitSpan.swift */,
+				1133C6731FACC3EF006F89B5 /* DigitSpanCalculations.swift */,
 				11F583381FABB15800FB64FF /* DigitSubtestComplete.swift */,
 				11F5833A1FABB16A00FB64FF /* DigitSubtestDescription.swift */,
 				11F5833C1FABB17700FB64FF /* RevDigitSpan.swift */,
+				1133C6751FACD343006F89B5 /* RevDigitSpanCalculations.swift */,
 				1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */,
 			);
 			path = DigitSpan;
@@ -354,6 +360,7 @@
 				118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */,
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
 				111499981FA0D4E2003EBA9E /* AdminMenu.swift in Sources */,
+				1133C6741FACC3EF006F89B5 /* DigitSpanCalculations.swift in Sources */,
 				11F583391FABB15800FB64FF /* DigitSubtestComplete.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
 				117173F31F9BA4E9009F42FE /* Towre.swift in Sources */,
@@ -366,6 +373,7 @@
 				1114999C1FA0D7F6003EBA9E /* TestResults.swift in Sources */,
 				11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */,
 				118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */,
+				1133C6761FACD343006F89B5 /* RevDigitSpanCalculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
