@@ -43,7 +43,9 @@ class Menu: UIViewController {
         refDatabase = Database.database().reference().child("results").child("user")
 
         let userName = Auth.auth().currentUser?.email
-        let key = refDatabase.childByAutoId().key
+        let uid = Auth.auth().currentUser?.uid
+//        let key = refDatabase.childByAutoId().key
+        let key = refDatabase.child(uid!).key
         
         var userResults: [String : Any]
         
@@ -68,7 +70,8 @@ class Menu: UIViewController {
         else {
             userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
         }
-        refDatabase.child(key).setValue(userResults)
+//        refDatabase.child(key).setValue(userResults)
+        refDatabase.child(key).updateChildValues(userResults)
     }
     
     override func didReceiveMemoryWarning() {

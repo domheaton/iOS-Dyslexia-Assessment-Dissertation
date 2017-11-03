@@ -20,7 +20,7 @@ struct TowreBrainPDE {
     private var previousRawScorePDE: Double?
     private var finalResultsSWE: Double?
     
-    var setWordsToTestPDE: [String] = ["ip", "ga", "ko", "ta", "om", "ig", "ni", "pim", "wum", "lat", "baf", "din", "nup", "fet", "bave", "pate", "herm", "dess", "chur", "knap", "tive", "barp", "stip", "plin", "frip", "poth", "vasp", "meest", "shlee", "guddy", "skree", "felly", "clirt", "sline", "dreff", "prain", "zint", "bloot", "trisk", "kelm", "strone", "lu-naf", "cratty", "trober", "de-pate", "glant", "sploosh", "dre-ker", "rit-lun", "hed-fert", "bre-mick", "nif-pate", "brin-bert", "cla-bom", "drep-nort", "shrat-tec", "plo-fent", "smu-crit", "pel-na-dor", "forn-a-lask", "ferm-a-balt", "cre-nid-moke", "e-mul-ba-tate", "stro-ta-lant-ed", "pri-ling-dor-fent", "chun-fen-dilt"]
+    var setWordsToTestPDE: [String] = ["ip", "ga", "ko"/*, "ta", "om", "ig", "ni", "pim", "wum", "lat", "baf", "din", "nup", "fet", "bave", "pate", "herm", "dess", "chur", "knap", "tive", "barp", "stip", "plin", "frip", "poth", "vasp", "meest", "shlee", "guddy", "skree", "felly", "clirt", "sline", "dreff", "prain", "zint", "bloot", "trisk", "kelm", "strone", "lu-naf", "cratty", "trober", "de-pate", "glant", "sploosh", "dre-ker", "rit-lun", "hed-fert", "bre-mick", "nif-pate", "brin-bert", "cla-bom", "drep-nort", "shrat-tec", "plo-fent", "smu-crit", "pel-na-dor", "forn-a-lask", "ferm-a-balt", "cre-nid-moke", "e-mul-ba-tate", "stro-ta-lant-ed", "pri-ling-dor-fent", "chun-fen-dilt"*/]
     
     mutating func setFinalResultsSWE(_ number: Double) {
         finalResultsSWE = number
