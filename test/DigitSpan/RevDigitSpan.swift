@@ -37,7 +37,7 @@ class RevDigitSpan: UIViewController {
         patternsToTest = brain.setPatternsToTestRevDigit
         patternsToReturn = brain.setPatternsToReturnRevDigit
         brain.zeroScore()
-        loadPattern()
+        loadFirstPattern()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,16 +79,21 @@ class RevDigitSpan: UIViewController {
         }
     }
     
+    func loadFirstPattern() {
+        patternToTestRev.text = patternsToTest[counter][subcounter]
+        patternToReturnRev.text = patternsToTest[counter][subcounter]
+    }
+    
     func loadPattern() {
-        if counter < patternsToTest.count {
-            patternToTestRev.text = patternsToTest[counter][subcounter]
-            patternToReturnRev.text = patternsToReturn[counter][subcounter]
-            incrementSubcounter()
-        }
-        else {
+        if patternsToTest[counter][subcounter] == "9   4   6   1   7   3   8   5" {
             brain.setNumberOfSets(Double(counter))
             brain.calculateResult()
             performSegue(withIdentifier: "digitToTestCompleted", sender: nil)
+        }
+        else {
+            incrementSubcounter()
+            patternToTestRev.text = patternsToTest[counter][subcounter]
+            patternToReturnRev.text = patternsToReturn[counter][subcounter]
         }
     }
     
@@ -100,14 +105,14 @@ class RevDigitSpan: UIViewController {
     
     @IBAction func incorrectPressed(_ sender: UIButton) {
         brain.updateRawScore("incorrect")
-        if howManyWrong == 1 {
+        howManyWrong = howManyWrong + 1
+        if subcounter == 1 && howManyWrong == 2 {
             brain.setNumberOfSets(Double(counter))
             brain.calculateResult()
             performSegue(withIdentifier: "digitToTestCompleted", sender: nil)
         }
         else {
             loadPattern()
-            howManyWrong = howManyWrong + 1
         }
     }
     

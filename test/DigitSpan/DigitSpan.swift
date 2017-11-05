@@ -17,6 +17,7 @@ class DigitSpan: UIViewController {
     var counter = 0
     var subcounter = 0
     var howManyWrong = 0
+    var finalSetOfPatterns = false
     
     @IBOutlet weak var patternToTest: UILabel!
     @IBOutlet weak var patternToReturn: UILabel!
@@ -34,7 +35,7 @@ class DigitSpan: UIViewController {
         
         patternsToTest = brain.setPatternsToTestDigit
         brain.zeroScore()
-        loadPattern()
+        loadFirstPattern()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,18 +76,30 @@ class DigitSpan: UIViewController {
         }
     }
     
-    func loadPattern() {
-
-        if counter < patternsToTest.count {
+    func loadFirstPattern() {
             patternToTest.text = patternsToTest[counter][subcounter]
             patternToReturn.text = patternsToTest[counter][subcounter]
-            incrementSubcounter()
         }
-        else {
+    
+    func loadPattern() {
+        if patternsToTest[counter][subcounter] == "3   7   1   6   2   5   9   4   8" {
             brain.setNumberOfSets(Double(counter))
             brain.calculateResult()
             performSegue(withIdentifier: "toDigitSubtest", sender: nil)
         }
+        else {
+            //For debugging
+            print("PattersToTest: ", patternsToTest.count)
+            
+            incrementSubcounter()
+            patternToTest.text = patternsToTest[counter][subcounter]
+            patternToReturn.text = patternsToTest[counter][subcounter]
+        }
+//        else {
+//            brain.setNumberOfSets(Double(counter))
+//            brain.calculateResult()
+//            performSegue(withIdentifier: "toDigitSubtest", sender: nil)
+//        }
     }
     
     @IBAction func correctPressed(_ sender: UIButton) {
@@ -97,16 +110,15 @@ class DigitSpan: UIViewController {
     
     @IBAction func incorrectPressed(_ sender: UIButton) {
         brain.updateRawScore("incorrect")
-        if howManyWrong == 1 {
+        howManyWrong = howManyWrong + 1
+        if subcounter == 1 && howManyWrong == 2 {
             brain.setNumberOfSets(Double(counter))
             brain.calculateResult()
             performSegue(withIdentifier: "toDigitSubtest", sender: nil)
         }
         else {
             loadPattern()
-            howManyWrong = howManyWrong + 1
         }
-        
     }
     
     @IBAction func undoPressed(_ sender: UIButton) {
@@ -121,4 +133,3 @@ class DigitSpan: UIViewController {
     }
     
 }
-

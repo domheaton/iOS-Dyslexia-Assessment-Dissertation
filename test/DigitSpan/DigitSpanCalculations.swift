@@ -19,6 +19,8 @@ struct DigitSpanCalculations {
     private var currentRawScore: Double?
     private var previousRawScore: Double?
     
+    var totalNumberPatternsDigit = 16.0 //Number of patterns used in Digit Span Test
+    
     var setPatternsToTestDigit: [[String]] = [ ["4   3","1   6"],["7   9   2","8   4   7"],["5   9   4   1","7   2   5   3"],["9   3   8   7   2","7   5   3   9   6"],["1   5   2   6   4   9","2   1   6   7   4   8"],["3   7   4   5   2   6   1","4   9   2   5   3   1   6"],["8   2   9   7   3   5   4   6","6   9   1   7   4   2   5   3"],["2   4   6   9   3   7   1   8   5","3   7   1   6   2   5   9   4   8"] ]
     
     mutating func setNumberOfSets(_ number: Double) {
@@ -58,7 +60,7 @@ struct DigitSpanCalculations {
         if numberOfSets! == 0 {
             finalResults = 0
         } else {
-            finalResults = (rawScore! / (numberOfSets! * 2)) * 100
+            finalResults = (rawScore! / totalNumberPatternsDigit) * 100
         }
         
         //For debugging
