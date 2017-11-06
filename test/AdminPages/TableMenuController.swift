@@ -61,11 +61,13 @@ class TableMenuController: UITableViewController {
                     let testName = nameObject?["test"]
                     let testTowreSWE = nameObject?["TowreSWE"]
                     let testTowrePDE = nameObject?["TowrePDE"]
-                    let testDigitSpan = nameObject?["Digit Span"]
+                    let testForwardDigitSpan = nameObject?["Forward Digit Span"]
                     let testRevDigitSpan = nameObject?["Reverse Digit Span"]
+                    let testTowre2 = nameObject?["Towre-2"]
+                    let testDigitSpan = nameObject?["Digit Span"]
                    
                     //value to be printed in tableViewController Cells
-                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testDigitSpan: testDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?)
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testTowre2: testTowre2 as! Double?, testForwardDigitSpan: testForwardDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?, testDigitSpan: testDigitSpan as! Double?)
                     self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
@@ -87,11 +89,17 @@ class TableMenuController: UITableViewController {
         if detailsToPass.testTowrePDE != nil {
             nextVC.getTowrePDE = detailsToPass.testTowrePDE!
         }
-        if detailsToPass.testDigitSpan != nil{
-          nextVC.getDigitSpan = detailsToPass.testDigitSpan!
+        if detailsToPass.testForwardDigitSpan != nil {
+          nextVC.getForwardDigitSpan = detailsToPass.testForwardDigitSpan!
         }
-        if detailsToPass.testRevDigitSpan != nil{
+        if detailsToPass.testRevDigitSpan != nil {
             nextVC.getRevDigitSpan = detailsToPass.testRevDigitSpan!
+        }
+        if detailsToPass.testTowre2 != nil {
+            nextVC.getTowre2 = detailsToPass.testTowre2!
+        }
+        if detailsToPass.testDigitSpan != nil {
+            nextVC.getDigitSpan = detailsToPass.testDigitSpan!
         }
 
         self.navigationController?.pushViewController(nextVC, animated: true)

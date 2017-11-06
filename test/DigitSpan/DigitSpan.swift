@@ -41,6 +41,7 @@ class DigitSpan: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! DigitSubtestComplete
         nextVC.finalResultsDigit = brain.getFinalResultsDigit()
+        nextVC.finalRawDigit = brain.getFinalRawDigit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,18 +89,10 @@ class DigitSpan: UIViewController {
             performSegue(withIdentifier: "toDigitSubtest", sender: nil)
         }
         else {
-            //For debugging
-            print("PattersToTest: ", patternsToTest.count)
-            
             incrementSubcounter()
             patternToTest.text = patternsToTest[counter][subcounter]
             patternToReturn.text = patternsToTest[counter][subcounter]
         }
-//        else {
-//            brain.setNumberOfSets(Double(counter))
-//            brain.calculateResult()
-//            performSegue(withIdentifier: "toDigitSubtest", sender: nil)
-//        }
     }
     
     @IBAction func correctPressed(_ sender: UIButton) {

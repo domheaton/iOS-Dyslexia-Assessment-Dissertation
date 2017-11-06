@@ -12,13 +12,19 @@ import FirebaseAuth
 import FirebaseDatabase
 import Charts
 
-class IndividualScore: UIViewController {
+class IndividualScore: UIViewController, ChartViewDelegate {
     
     var getName = String()
     var getTowreSWE = Double()
     var getTowrePDE = Double()
-    var getDigitSpan = Double()
+    var getTowre2 = Double()
+    var getForwardDigitSpan = Double()
     var getRevDigitSpan = Double()
+    var getDigitSpan = Double()
+    
+    var testArray: [String]!
+    var testScoresToDisplay: [Double]!
+    var selectedBarFromChart: String?
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
@@ -26,7 +32,11 @@ class IndividualScore: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        barChartView.delegate = self
+
+        navigationItem.title = "Test Results"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Graph", style: UIBarButtonItemStyle.plain, target: self, action: #selector(saveGraph))
+        
         getDetails()
         
         barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
@@ -51,24 +61,23 @@ class IndividualScore: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    
+    
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
-        var testArray: [String]!
-        var testScoresToDisplay: [Double]!
-        
         //select only the scores that are available
-        if getTowreSWE == 0 || getTowrePDE == 0 {
-            testArray = ["Digit Span", "Rev. Digit Span"]
-            testScoresToDisplay = [getDigitSpan, getRevDigitSpan]
+        if getTowre2 == 0 {
+            testArray = ["Digit Span"]
+            testScoresToDisplay = [getDigitSpan]
         }
-        else if getDigitSpan == 0 || getRevDigitSpan == 0 {
-            testArray = ["TowreSWE", "TowrePDE"]
-            testScoresToDisplay = [getTowreSWE, getTowrePDE]
+        else if getDigitSpan == 0 {
+            testArray = ["Towre-2"]
+            testScoresToDisplay = [getTowre2]
         }
         else {
-            testArray = ["TowreSWE", "TowrePDE", "Digit Span", "Rev. Digit Span"]
-            testScoresToDisplay = [getTowreSWE, getTowrePDE, getDigitSpan, getRevDigitSpan]
+            testArray = ["Towre-2", "Digit Span"]
+            testScoresToDisplay = [getTowre2, getDigitSpan]
         }
         
         for i in 0..<testArray.count {
@@ -84,22 +93,46 @@ class IndividualScore: UIViewController {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
         
-        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
+        let limitline = ChartLimitLine(limit: 100.0, label: "Target")
         barChartView.leftAxis.addLimitLine(limitline)
         barChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.legend.font = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 105.0
+        barChartView.leftAxis.axisMaximum = 160.0
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)
-//        barChartView.xAxis.wordWrapEnabled = true
+        barChartView.doubleTapToZoomEnabled = false
         
         barChartView.xAxis.granularity = 1
-        
         barChartView.data = chartData
+    }
+    
+    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        
+        //For debugging
+        print(testArray[Int(entry.x)])
+        
+        selectedBarFromChart = testArray[Int(entry.x)]
+        
+        performSegue(withIdentifier: "toIndepthScores", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! IndepthScores
+        nextVC.getName = getName
+        if selectedBarFromChart == "Towre-2" {
+            nextVC.getTest = selectedBarFromChart!
+            nextVC.getTowreSWE = getTowreSWE
+            nextVC.getTowrePDE = getTowrePDE
+        }
+        else if selectedBarFromChart == "Digit Span" {
+            nextVC.getTest = selectedBarFromChart!
+            nextVC.getForwardDigitSpan = getForwardDigitSpan
+            nextVC.getRevDigitSpan = getRevDigitSpan
+        }
     }
     
 }

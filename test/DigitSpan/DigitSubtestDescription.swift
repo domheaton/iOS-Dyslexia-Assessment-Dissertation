@@ -14,6 +14,7 @@ import FirebaseDatabase
 class DigitSubtestDescription: UIViewController {
     
     var finalResultsDigit = Double()
+    var finalRawDigit = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class DigitSubtestDescription: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! RevDigitSpan
         nextVC.finalResultsDigit = finalResultsDigit
+        nextVC.finalRawDigit = finalRawDigit
     }
     
     //Functions to hide navigation bar

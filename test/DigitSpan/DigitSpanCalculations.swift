@@ -71,5 +71,9 @@ struct DigitSpanCalculations {
         return finalResults!
     }
     
+    func getFinalRawDigit() -> Double {
+        return rawScore!
+    }
+    
 }
 

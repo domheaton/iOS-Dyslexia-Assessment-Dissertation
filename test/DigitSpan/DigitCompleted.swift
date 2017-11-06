@@ -15,11 +15,13 @@ class DigitCompleted: UIViewController {
     
     var finalResultsDigit = Double()
     var finalResultsRevDigit = Double()
+    var finalResultDigitSpan = Double()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! Menu
         nextVC.finalResultsDigit = finalResultsDigit
         nextVC.finalResultsRevDigit = finalResultsRevDigit
+        nextVC.finalResultsDigitSpan = finalResultDigitSpan
     }
     
     override func viewDidLoad() {

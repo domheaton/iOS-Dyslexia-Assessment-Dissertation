@@ -18,6 +18,9 @@ struct RevDigitSpanCalculations {
     private var numberOfSets: Double?
     private var currentRawScore: Double?
     private var previousRawScore: Double?
+    private var finalRawDigit: Double?
+    private var combinedRawScore: Double?
+    private var combinedScaledScore: Double?
     
     var totalNumberPatternsRevDigit = 14.0 //Number of patterns used in Rev. Digit Span Test
     
@@ -64,12 +67,76 @@ struct RevDigitSpanCalculations {
             finalResults = (rawScore! / totalNumberPatternsRevDigit) * 100
         }
         
+        scaleScores()
+        
         //For debugging
         print("Final Result: ", finalResults!)
     }
     
+    mutating func getFinalRawDigit(_ number: Double) {
+        finalRawDigit = number
+    }
+    
     func getFinalResultsRevDigit() -> Double {
         return finalResults!
+    }
+    
+    mutating func scaleScores() {
+        combinedRawScore = rawScore! + finalRawDigit!
+        print("Rev. Dig: ", rawScore!)
+        print("Digit   : ", finalRawDigit!)
+        print("Combined: ", combinedRawScore!)
+        
+        switch combinedRawScore! {
+        case 4.0:
+            combinedScaledScore = 54.0
+        case 5.0:
+            combinedScaledScore = 59.0
+        case 6.0:
+            combinedScaledScore = 64.0
+        case 7.0:
+            combinedScaledScore = 69.0
+        case 8.0:
+            combinedScaledScore = 74.0
+        case 9.0:
+            combinedScaledScore = 79.0
+        case 10.0:
+            combinedScaledScore = 85.0
+        case 11.0:
+            combinedScaledScore = 90.0
+        case 12.0:
+            combinedScaledScore = 95.0
+        case 13.0:
+            combinedScaledScore = 100.0
+        case 14.0:
+            combinedScaledScore = 105.0
+        case 15.0:
+            combinedScaledScore = 110.0
+        case 16.0:
+            combinedScaledScore = 115.0
+        case 17.0:
+            combinedScaledScore = 121.0
+        case 18.0:
+            combinedScaledScore = 126.0
+        case 19.0:
+            combinedScaledScore = 131.0
+        case 20.0:
+            combinedScaledScore = 136.0
+        case 21.0:
+            combinedScaledScore = 141.0
+        case 22.0:
+            combinedScaledScore = 146.0
+        case 23.0:
+            combinedScaledScore = 152.0
+        case 24.0:
+            combinedScaledScore = 157.0
+        default:
+            combinedScaledScore = 0.0
+        }
+    }
+    
+    func getCombinedFinalResult() -> Double {
+        return combinedScaledScore!
     }
     
 }

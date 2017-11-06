@@ -14,6 +14,8 @@ import FirebaseDatabase
 class RevDigitSpan: UIViewController {
     
     var finalResultsDigit = Double()
+    var finalRawDigit = Double()
+    
     var patternsToTest: [[String]] = []
     var patternsToReturn: [[String]] = []
     var counter = 0
@@ -34,6 +36,7 @@ class RevDigitSpan: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        brain.getFinalRawDigit(finalRawDigit)
         patternsToTest = brain.setPatternsToTestRevDigit
         patternsToReturn = brain.setPatternsToReturnRevDigit
         brain.zeroScore()
@@ -44,6 +47,7 @@ class RevDigitSpan: UIViewController {
         let nextVC = segue.destination as! DigitCompleted
         nextVC.finalResultsDigit = finalResultsDigit
         nextVC.finalResultsRevDigit = brain.getFinalResultsRevDigit()
+        nextVC.finalResultDigitSpan = brain.getCombinedFinalResult()
     }
     
     override func didReceiveMemoryWarning() {

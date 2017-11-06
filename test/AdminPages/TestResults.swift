@@ -13,16 +13,20 @@ class TestResults {
     
     var testTowreSWE: Double?
     var testTowrePDE: Double?
-    var testDigitSpan: Double?
+    var testTowre2: Double?
+    var testForwardDigitSpan: Double?
     var testRevDigitSpan: Double?
+    var testDigitSpan: Double?
     
-    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testDigitSpan: Double?, testRevDigitSpan: Double?){
+    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testTowre2: Double?, testForwardDigitSpan: Double?, testRevDigitSpan: Double?, testDigitSpan: Double?){
         self.name = name
         self.testName = testName
         self.testTowreSWE = testTowreSWE
         self.testTowrePDE = testTowrePDE
-        self.testDigitSpan = testDigitSpan
+        self.testTowre2 = testTowre2
+        self.testForwardDigitSpan = testForwardDigitSpan
         self.testRevDigitSpan = testRevDigitSpan
+        self.testDigitSpan = testDigitSpan
     }
     
 }

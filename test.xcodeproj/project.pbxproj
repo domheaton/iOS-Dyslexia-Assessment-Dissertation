@@ -28,6 +28,7 @@
 		1164AD881F83EA57006D00DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164AD861F83EA57006D00DE /* LaunchScreen.storyboard */; };
 		117173F31F9BA4E9009F42FE /* Towre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117173F21F9BA4E9009F42FE /* Towre.swift */; };
 		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
+		11859C041FB0D3F9004A1080 /* IndepthScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859C031FB0D3F9004A1080 /* IndepthScores.swift */; };
 		118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */; };
 		118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1851F9CB486005F36C1 /* TowreCalculations.swift */; };
 		119619601FA243BC0083305F /* SubtestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196195F1FA243BC0083305F /* SubtestDescription.swift */; };
@@ -67,6 +68,7 @@
 		1164AD891F83EA57006D00DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117173F21F9BA4E9009F42FE /* Towre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Towre.swift; sourceTree = "<group>"; };
 		117E9BE11F912F2D00BFEF59 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
+		11859C031FB0D3F9004A1080 /* IndepthScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndepthScores.swift; sourceTree = "<group>"; };
 		118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompleted.swift; sourceTree = "<group>"; };
 		118FB1851F9CB486005F36C1 /* TowreCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculations.swift; sourceTree = "<group>"; };
 		1196195F1FA243BC0083305F /* SubtestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtestDescription.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1114999D1FA0D851003EBA9E /* TableCells.swift */,
 				1114999B1FA0D7F6003EBA9E /* TestResults.swift */,
 				112788101FA494A1006ECA04 /* IndividualScore.swift */,
+				11859C031FB0D3F9004A1080 /* IndepthScores.swift */,
 			);
 			path = AdminPages;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */,
 				11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */,
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
+				11859C041FB0D3F9004A1080 /* IndepthScores.swift in Sources */,
 				111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 				119619601FA243BC0083305F /* SubtestDescription.swift in Sources */,
