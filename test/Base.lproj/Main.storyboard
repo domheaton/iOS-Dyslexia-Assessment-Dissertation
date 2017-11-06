@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v2.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v2.6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -624,7 +624,7 @@ To continue, press the button below.
                                 <rect key="frame" x="16" y="210" width="344" height="392"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1) Digit Span is made up of two subtests with separate numerical patterns.
+                                <string key="text">1) Digit Span is made up of two subtests with separate numerical patterns.
 
 2) The administrator should read out the number pattern shown on the screen next to the label 'Q' at a rate of one number-per-second in an even monotone without any variation in pitch of voice.  3) The student will attempt to repeat the pattern either; identically for subtest 1, or in reverse for subtest 2.
 
@@ -632,7 +632,7 @@ To continue, press the button below.
 
 5) The subtests will automatically end following too many incorrect results, or on completion of the list of patterns.
 
-6) Swipe right for instructions to read to the student or to begin the test</mutableString>
+6) Swipe right for instructions to read to the student or to begin the test</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -806,7 +806,7 @@ To continue, press the button below.
                                 <rect key="frame" x="16" y="213" width="344" height="398"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1) TOWRE 2 is made up of two subtests with separate word lists.
+                                <string key="text">1) TOWRE 2 is made up of two subtests with separate word lists.
 
 2) Provide the student with the paper copy of the word list to be tested.  3) During the test the student will attempt to pronounce words from the list, matching those displayed on this device.
 
@@ -814,7 +814,7 @@ To continue, press the button below.
 
 5) 45 seconds after pressing the 'Begin Test' button, the test will end automatically and the test score will be saved.
 
-6) Swipe right for instructions to read to the student or to begin the test</mutableString>
+6) Swipe right for instructions to read to the student or to begin the test</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -972,7 +972,7 @@ To continue, press the button below.
                                 <rect key="frame" x="16" y="64" width="342" height="468"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Read the following to the student 
+                                <string key="text">Read the following to the student 
 (*Items in brackets like this are instructions to the administrator*)
 
 "Now you will read some longer lists of words. The words start out pretty easy, but they get harder as you go along. 
@@ -987,7 +987,7 @@ Use your finger to keep your place if you want to, and if you skip more than one
 
 Do you understand? Ok, you will begin as soon as I say 'Go'. "
 
-When ready, press 'Begin Test' and say 'Go'</mutableString>
+When ready, press 'Begin Test' and say 'Go'</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1318,12 +1318,12 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                 <rect key="frame" x="16" y="80" width="343" height="507"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Read the following to the student:
+                                <string key="text">Read the following to the student:
 
 "Now listen carefully as I say some more numbers.. When I finish reading them out, you say them back to me again but this time I want you to say them backwards.
 
 For example, if I read out the numbers; 2  6,  you should say;  6   2." 
-When ready, press 'Begin Test' and read the first pattern to the student.</mutableString>
+When ready, press 'Begin Test' and read the first pattern to the student.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
