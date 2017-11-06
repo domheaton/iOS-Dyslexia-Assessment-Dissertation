@@ -17,6 +17,7 @@ class Menu: UIViewController {
     var finalResultsPDE = Double()
     var finalResultsDigit = Double()
     var finalResultsRevDigit = Double()
+    var finalResultsTowre = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,14 @@ class Menu: UIViewController {
         print("PDE  :", finalResultsPDE)
         print("Digit:", finalResultsDigit)
         print("Rev D:", finalResultsRevDigit)
+        print("Towre:", finalResultsTowre)
         
         //override the back button in the navigation controller
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOut(sender:)))
         
-        let testScoresToSave: [Double]! = [finalResultsSWE, finalResultsPDE, finalResultsDigit, finalResultsRevDigit]
+        let testScoresToSave: [Double]! = [finalResultsSWE, finalResultsPDE, finalResultsDigit, finalResultsRevDigit, finalResultsTowre]
         
-        if testScoresToSave[0] != 0 || testScoresToSave[1] != 0 || testScoresToSave[2] != 0 || testScoresToSave[3] != 0 {
+        if testScoresToSave[0] != 0 || testScoresToSave[1] != 0 || testScoresToSave[2] != 0 || testScoresToSave[3] != 0 || testScoresToSave[4] != 0 {
             saveResults()
         }
 
@@ -52,7 +54,7 @@ class Menu: UIViewController {
             userResults = ["username":userName!, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
         }
         else if finalResultsDigit == 0 && finalResultsRevDigit == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE] as [String : Any]
+            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre] as [String : Any]
         }
         else if finalResultsSWE == 0 {
             userResults = ["username":userName!, "TowrePDE":finalResultsPDE, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
@@ -61,13 +63,13 @@ class Menu: UIViewController {
             userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
         }
         else if finalResultsDigit == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
+            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
         }
         else if finalResultsRevDigit == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Digit Span":finalResultsDigit] as [String : Any]
+            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit] as [String : Any]
         }
         else {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
+            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
         }
         refDatabase.child(key).updateChildValues(userResults)
     }

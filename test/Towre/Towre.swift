@@ -41,6 +41,7 @@ class Towre: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! SubtestCompleted
             nextVC.finalResultsSWE = brain.getFinalResults()
+            nextVC.scaledResultSWE = brain.getScaledScoreSWE()
     }
     
     override func didReceiveMemoryWarning() {

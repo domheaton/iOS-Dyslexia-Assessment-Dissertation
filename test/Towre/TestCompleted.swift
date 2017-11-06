@@ -15,11 +15,13 @@ class TestCompleted: UIViewController {
     
     var finalResultsSWE = Double()
     var finalResultsPDE = Double()
+    var finalResultsTowre = Double()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! Menu
         nextVC.finalResultsSWE = finalResultsSWE
         nextVC.finalResultsPDE = finalResultsPDE
+        nextVC.finalResultsTowre = finalResultsTowre
     }
     
     override func viewDidLoad() {

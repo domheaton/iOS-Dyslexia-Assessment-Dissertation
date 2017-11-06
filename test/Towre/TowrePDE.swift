@@ -17,8 +17,9 @@ class TowrePDE: UIViewController {
     var counter = 0
     var timer2 = Timer()
     var time = 0
-    var receivedKey = String()
+    
     var finalResultsSWE = Double()
+    var scaledResultSWE = Double()
     
     private var brain = TowreBrainPDE()
     
@@ -28,6 +29,7 @@ class TowrePDE: UIViewController {
         let nextVC = segue.destination as! TestCompleted
         nextVC.finalResultsSWE = brain.getFinalResultsSWE()
         nextVC.finalResultsPDE = brain.getFinalResultsPDE()
+        nextVC.finalResultsTowre = brain.getFinalScaledTowre()
     }
     
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class TowrePDE: UIViewController {
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
         brain.setFinalResultsSWE(finalResultsSWE)
+        brain.setScaledScoreSWE(scaledResultSWE)
         
         //For debugging
         print("TowrePDE: ", finalResultsSWE)
