@@ -48,8 +48,10 @@ struct DigitSpanCalculations {
     }
     
     mutating func setRawScore() {
-        rawScore = previousRawScore!
-        previousRawScore = previousRawScore! - 1
+        if rawScore! > 0 {
+            rawScore = previousRawScore!
+            previousRawScore = previousRawScore! - 1
+        }
         
         //For debugging
         print("Current Prev. Score: ", previousRawScore!)

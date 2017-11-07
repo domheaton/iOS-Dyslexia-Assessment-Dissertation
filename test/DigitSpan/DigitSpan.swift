@@ -104,7 +104,7 @@ class DigitSpan: UIViewController {
     @IBAction func incorrectPressed(_ sender: UIButton) {
         brain.updateRawScore("incorrect")
         howManyWrong = howManyWrong + 1
-        if subcounter == 1 && howManyWrong == 2 {
+        if subcounter == 1 && howManyWrong >= 2 {
             brain.setNumberOfSets(Double(counter))
             brain.calculateResult()
             performSegue(withIdentifier: "toDigitSubtest", sender: nil)
@@ -116,13 +116,22 @@ class DigitSpan: UIViewController {
     
     @IBAction func undoPressed(_ sender: UIButton) {
         if counter > 0 {
-            decrementSubcounter()
-            decrementSubcounter()
-            patternToTest.text = patternsToTest[counter][subcounter]
-            patternToReturn.text = patternsToTest[counter][subcounter]
-            brain.setRawScore()
-            incrementSubcounter()
+            if subcounter == 0 {
+                subcounter = 1
+                counter = counter - 1
+            }
+            else if subcounter == 1 {
+                subcounter = 0
+            }
         }
+        else if counter == 0 {
+            if subcounter == 1 {
+                subcounter = 0
+            }
+        }
+        patternToTest.text = patternsToTest[counter][subcounter]
+        patternToReturn.text = patternsToTest[counter][subcounter]
+        brain.setRawScore()
     }
     
 }
