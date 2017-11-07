@@ -70,11 +70,13 @@ struct TowreBrainPDE {
     }
     
     mutating func calculateResult() {
-        finalResultsPDE = (rawScorePDE! / numberOfWordsPDE!) * 100
+//        finalResultsPDE = (rawScorePDE! / numberOfWordsPDE!) * 100
+        scaleScores()
+        finalResultsPDE = scaledScorePDE
+        
+        totalWordReadingEfficiency()
         
         //For debugging
-        scaleScores()
-        totalWordReadingEfficiency()
         print("Final Result: ", finalResultsPDE!)
         print("Scaled Scores: ", scaledScorePDE!)
         print("Total WRE: ", finalScoreTowre!)

@@ -56,10 +56,12 @@ struct TowreBrain {
     }
 
     mutating func calculateResult() {
-        finalResults = (rawScore! / numberOfWords!) * 100
+//        finalResults = (rawScore! / numberOfWords!) * 100
+
+        scaleScores()
+        finalResults = scaledScore!
         
         //For debugging
-        scaleScores()
         print("Final Result: ", finalResults!)
         print("Scaled Score: ", scaledScore!)
     }

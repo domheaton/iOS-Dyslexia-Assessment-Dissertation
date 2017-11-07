@@ -25,6 +25,8 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     var testArray: [String]!
     var testScoresToDisplay: [Double]!
     var selectedBarFromChart: String?
+    var towrePercentage: Double?
+    var digitSpanPercentage: Double?
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
@@ -66,18 +68,21 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
+        towrePercentage = (getTowre2 / 147.0) * 100.0
+        digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
+        
         //select only the scores that are available
         if getTowre2 == 0 {
             testArray = ["Digit Span"]
-            testScoresToDisplay = [getDigitSpan]
+            testScoresToDisplay = [digitSpanPercentage!]
         }
         else if getDigitSpan == 0 {
             testArray = ["Towre-2"]
-            testScoresToDisplay = [getTowre2]
+            testScoresToDisplay = [towrePercentage!]
         }
         else {
             testArray = ["Towre-2", "Digit Span"]
-            testScoresToDisplay = [getTowre2, getDigitSpan]
+            testScoresToDisplay = [towrePercentage!, digitSpanPercentage!]
         }
         
         for i in 0..<testArray.count {
@@ -93,14 +98,14 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
         
-        let limitline = ChartLimitLine(limit: 100.0, label: "Target")
+        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
         barChartView.leftAxis.addLimitLine(limitline)
         barChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.legend.font = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 160.0
+        barChartView.leftAxis.axisMaximum = 105.0
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)
@@ -132,6 +137,7 @@ class IndividualScore: UIViewController, ChartViewDelegate {
             nextVC.getTest = selectedBarFromChart!
             nextVC.getForwardDigitSpan = getForwardDigitSpan
             nextVC.getRevDigitSpan = getRevDigitSpan
+            nextVC.getDigitSpan = getDigitSpan
         }
     }
     
