@@ -43,13 +43,7 @@ class ViewController: UIViewController {
         userName = usernameField.text!
         passWord = passwordField.text!
         
-        if userName! == "admin@test.com" && passWord! == "admin123" {
-            Auth.auth().signIn(withEmail: "admin@test.com", password: "admin123")
-            self.performSegue(withIdentifier: "toAdmin", sender: nil)
-        }
-        else {
-            logUserIn(userName!, passWord!)
-        }
+        logUserIn(userName!, passWord!)
     }
 
     //function to check username and password against database
@@ -58,7 +52,11 @@ class ViewController: UIViewController {
             if error == nil {
                 Auth.auth().addStateDidChangeListener() { auth, user in
                     if user != nil {
-                        self.performSegue(withIdentifier: "toMenu", sender: nil)
+                        if Auth.auth().currentUser?.email == "admin@test.com" {
+                            self.performSegue(withIdentifier: "toAdmin", sender: nil)
+                        } else {
+                            self.performSegue(withIdentifier: "toMenu", sender: nil)
+                        }
                     }
                 }
             }
