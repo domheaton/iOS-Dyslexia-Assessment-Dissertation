@@ -83,6 +83,7 @@ struct RevDigitSpanCalculations {
         return finalResults!
     }
     
+    //scaling scores for age range 10-0 to 10-11 (years-months)
     mutating func scaleScores() {
         combinedRawScore = rawScore! + finalRawDigit!
         print("Rev. Dig: ", rawScore!)

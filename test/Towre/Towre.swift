@@ -22,10 +22,12 @@ class Towre: UIViewController {
     
     @IBOutlet weak var wordToTest: UILabel!
     
-    //Functions to hide navigation bar
+    //Function to hide back button from navigation bar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.title = "Subtest 1: Sight Word Efficiency"
     }
     
     override func viewDidLoad() {

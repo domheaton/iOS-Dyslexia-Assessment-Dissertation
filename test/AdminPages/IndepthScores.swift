@@ -126,8 +126,18 @@ class IndepthScores: UIViewController {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
         
-        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
-        barChartView.leftAxis.addLimitLine(limitline)
+        if getTest == "Towre-2" {
+            let scaledLimitline = (100.0 / 145.0) * 100.0
+            let limitline = ChartLimitLine(limit: scaledLimitline, label: "Average")
+            barChartView.leftAxis.addLimitLine(limitline)
+            let scaledLowerLimitline = (86.0 / 145.0) * 100.0
+            let limitlineLower = ChartLimitLine(limit: scaledLowerLimitline, label: "Below Average")
+            barChartView.leftAxis.addLimitLine(limitlineLower)
+            let scaledUpperLimitline = (116.0 / 145.0) * 100.0
+            let limitlineUpper = ChartLimitLine(limit: scaledUpperLimitline, label: "Above Average")
+            barChartView.leftAxis.addLimitLine(limitlineUpper)
+        }
+        
         barChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.legend.font = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!

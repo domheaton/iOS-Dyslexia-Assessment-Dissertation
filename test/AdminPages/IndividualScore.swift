@@ -63,8 +63,6 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    
-    
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
@@ -98,8 +96,8 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
         
-        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
-        barChartView.leftAxis.addLimitLine(limitline)
+//        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
+//        barChartView.leftAxis.addLimitLine(limitline)
         barChartView.xAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.legend.font = UIFont(name: "HelveticaNeue", size: 10.0)!
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!

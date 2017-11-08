@@ -29,16 +29,13 @@ class DigitCompleted: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    //Functions to hide navigation bar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.title = "Test Complete"
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

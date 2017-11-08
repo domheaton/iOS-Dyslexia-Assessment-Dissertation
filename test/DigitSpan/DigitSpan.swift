@@ -24,10 +24,11 @@ class DigitSpan: UIViewController {
     
     private var brain = DigitSpanCalculations()
     
-    //Functions to hide navigation bar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.title = "Subtest 1: Forward Digit Span"
     }
     
     override func viewDidLoad() {
