@@ -86,7 +86,7 @@ class RevDigitSpan: UIViewController {
     
     func loadFirstPattern() {
         patternToTestRev.text = patternsToTest[counter][subcounter]
-        patternToReturnRev.text = patternsToTest[counter][subcounter]
+        patternToReturnRev.text = patternsToReturn[counter][subcounter]
     }
     
     func loadPattern() {
@@ -137,7 +137,7 @@ class RevDigitSpan: UIViewController {
             }
         }
         patternToTestRev.text = patternsToTest[counter][subcounter]
-        patternToReturnRev.text = patternsToTest[counter][subcounter]
+        patternToReturnRev.text = patternsToReturn[counter][subcounter]
         brain.setRawScore()
     }
     

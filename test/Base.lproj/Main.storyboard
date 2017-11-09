@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v2.7.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v2.7.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1502,6 +1502,6 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kv8-x0-OgO"/>
-        <segue reference="9he-E3-Wl9"/>
+        <segue reference="dmi-6v-bNo"/>
     </inferredMetricsTieBreakers>
 </document>
