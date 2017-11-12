@@ -37,6 +37,21 @@
 		11B544701FB78EDA00C611F5 /* DashDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5446F1FB78EDA00C611F5 /* DashDescription.swift */; };
 		11B544721FB78F7100C611F5 /* DashCopyBest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544711FB78F7100C611F5 /* DashCopyBest.swift */; };
 		11B544741FB7901500C611F5 /* DashCopyBestAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544731FB7901500C611F5 /* DashCopyBestAnswers.swift */; };
+		11B544771FB85E2A00C611F5 /* DashSubtestComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544761FB85E2A00C611F5 /* DashSubtestComplete.swift */; };
+		11B544791FB85EC100C611F5 /* DashCopyFastDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544781FB85EC100C611F5 /* DashCopyFastDescription.swift */; };
+		11B5447B1FB8605000C611F5 /* DashCopyFast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5447A1FB8605000C611F5 /* DashCopyFast.swift */; };
+		11B5447D1FB8610100C611F5 /* DashCopyFastAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5447C1FB8610100C611F5 /* DashCopyFastAnswers.swift */; };
+		11B5447F1FB8642400C611F5 /* DashAlphabetDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5447E1FB8642400C611F5 /* DashAlphabetDescription.swift */; };
+		11B544811FB8652700C611F5 /* DashAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544801FB8652700C611F5 /* DashAlphabet.swift */; };
+		11B544831FB8656E00C611F5 /* DashAlphabetAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544821FB8656E00C611F5 /* DashAlphabetAnswers.swift */; };
+		11B544851FB867A900C611F5 /* DashFree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544841FB867A900C611F5 /* DashFree.swift */; };
+		11B544871FB8682800C611F5 /* DashFreeAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544861FB8682800C611F5 /* DashFreeAnswers.swift */; };
+		11B544891FB8688D00C611F5 /* DashCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544881FB8688D00C611F5 /* DashCompleted.swift */; };
+		11B5448B1FB86DEA00C611F5 /* DashSubtestFastComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5448A1FB86DEA00C611F5 /* DashSubtestFastComplete.swift */; };
+		11B5448D1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5448C1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift */; };
+		11B5448F1FB8712400C611F5 /* BPVSPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5448E1FB8712400C611F5 /* BPVSPageController.swift */; };
+		11B544911FB8718A00C611F5 /* BPVSDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544901FB8718A00C611F5 /* BPVSDescription.swift */; };
+		11B544941FB8764B00C611F5 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544931FB8764B00C611F5 /* About.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
 		11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583321FABB11D00FB64FF /* DigitPageController.swift */; };
 		11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583341FABB12D00FB64FF /* DigitDescription.swift */; };
@@ -82,6 +97,21 @@
 		11B5446F1FB78EDA00C611F5 /* DashDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashDescription.swift; sourceTree = "<group>"; };
 		11B544711FB78F7100C611F5 /* DashCopyBest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCopyBest.swift; sourceTree = "<group>"; };
 		11B544731FB7901500C611F5 /* DashCopyBestAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCopyBestAnswers.swift; sourceTree = "<group>"; };
+		11B544761FB85E2A00C611F5 /* DashSubtestComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashSubtestComplete.swift; sourceTree = "<group>"; };
+		11B544781FB85EC100C611F5 /* DashCopyFastDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCopyFastDescription.swift; sourceTree = "<group>"; };
+		11B5447A1FB8605000C611F5 /* DashCopyFast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCopyFast.swift; sourceTree = "<group>"; };
+		11B5447C1FB8610100C611F5 /* DashCopyFastAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCopyFastAnswers.swift; sourceTree = "<group>"; };
+		11B5447E1FB8642400C611F5 /* DashAlphabetDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashAlphabetDescription.swift; sourceTree = "<group>"; };
+		11B544801FB8652700C611F5 /* DashAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashAlphabet.swift; sourceTree = "<group>"; };
+		11B544821FB8656E00C611F5 /* DashAlphabetAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashAlphabetAnswers.swift; sourceTree = "<group>"; };
+		11B544841FB867A900C611F5 /* DashFree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashFree.swift; sourceTree = "<group>"; };
+		11B544861FB8682800C611F5 /* DashFreeAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashFreeAnswers.swift; sourceTree = "<group>"; };
+		11B544881FB8688D00C611F5 /* DashCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCompleted.swift; sourceTree = "<group>"; };
+		11B5448A1FB86DEA00C611F5 /* DashSubtestFastComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashSubtestFastComplete.swift; sourceTree = "<group>"; };
+		11B5448C1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashSubtestAlphabetComplete.swift; sourceTree = "<group>"; };
+		11B5448E1FB8712400C611F5 /* BPVSPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSPageController.swift; sourceTree = "<group>"; };
+		11B544901FB8718A00C611F5 /* BPVSDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSDescription.swift; sourceTree = "<group>"; };
+		11B544931FB8764B00C611F5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		11F583321FABB11D00FB64FF /* DigitPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitPageController.swift; sourceTree = "<group>"; };
 		11F583341FABB12D00FB64FF /* DigitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDescription.swift; sourceTree = "<group>"; };
@@ -143,6 +173,7 @@
 				11F583311FABB09200FB64FF /* WelcomePages */,
 				11F583301FABB08100FB64FF /* AdminPages */,
 				11F5832F1FABB03C00FB64FF /* Towre */,
+				11B544921FB8761C00C611F5 /* BPVS */,
 				11B544751FB7A99200C611F5 /* DASH */,
 				11F583401FABB98600FB64FF /* DigitSpan */,
 				1164AD841F83EA57006D00DE /* Assets.xcassets */,
@@ -157,8 +188,29 @@
 				11B5446F1FB78EDA00C611F5 /* DashDescription.swift */,
 				11B544711FB78F7100C611F5 /* DashCopyBest.swift */,
 				11B544731FB7901500C611F5 /* DashCopyBestAnswers.swift */,
+				11B544761FB85E2A00C611F5 /* DashSubtestComplete.swift */,
+				11B544781FB85EC100C611F5 /* DashCopyFastDescription.swift */,
+				11B5447A1FB8605000C611F5 /* DashCopyFast.swift */,
+				11B5447C1FB8610100C611F5 /* DashCopyFastAnswers.swift */,
+				11B5448A1FB86DEA00C611F5 /* DashSubtestFastComplete.swift */,
+				11B5447E1FB8642400C611F5 /* DashAlphabetDescription.swift */,
+				11B544801FB8652700C611F5 /* DashAlphabet.swift */,
+				11B544821FB8656E00C611F5 /* DashAlphabetAnswers.swift */,
+				11B5448C1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift */,
+				11B544841FB867A900C611F5 /* DashFree.swift */,
+				11B544861FB8682800C611F5 /* DashFreeAnswers.swift */,
+				11B544881FB8688D00C611F5 /* DashCompleted.swift */,
 			);
 			path = DASH;
+			sourceTree = "<group>";
+		};
+		11B544921FB8761C00C611F5 /* BPVS */ = {
+			isa = PBXGroup;
+			children = (
+				11B5448E1FB8712400C611F5 /* BPVSPageController.swift */,
+				11B544901FB8718A00C611F5 /* BPVSDescription.swift */,
+			);
+			path = BPVS;
 			sourceTree = "<group>";
 		};
 		11F5832F1FABB03C00FB64FF /* Towre */ = {
@@ -196,6 +248,7 @@
 				1164AD7F1F83EA57006D00DE /* ViewController.swift */,
 				11BE11A01F8CD46900006802 /* RegisterController.swift */,
 				117E9BE11F912F2D00BFEF59 /* PasswordController.swift */,
+				11B544931FB8764B00C611F5 /* About.swift */,
 				110AD6691F9CC7610021E22A /* Menu.swift */,
 			);
 			path = WelcomePages;
@@ -370,20 +423,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B544741FB7901500C611F5 /* DashCopyBestAnswers.swift in Sources */,
+				11B544941FB8764B00C611F5 /* About.swift in Sources */,
+				11B5448B1FB86DEA00C611F5 /* DashSubtestFastComplete.swift in Sources */,
 				11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */,
 				112788111FA494A1006ECA04 /* IndividualScore.swift in Sources */,
+				11B5447D1FB8610100C611F5 /* DashCopyFastAnswers.swift in Sources */,
+				11B544771FB85E2A00C611F5 /* DashSubtestComplete.swift in Sources */,
+				11B5448D1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
 				11F5833D1FABB17700FB64FF /* RevDigitSpan.swift in Sources */,
+				11B544811FB8652700C611F5 /* DashAlphabet.swift in Sources */,
+				11B544831FB8656E00C611F5 /* DashAlphabetAnswers.swift in Sources */,
+				11B5447B1FB8605000C611F5 /* DashCopyFast.swift in Sources */,
 				1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */,
+				11B5447F1FB8642400C611F5 /* DashAlphabetDescription.swift in Sources */,
 				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
 				11F583371FABB13A00FB64FF /* DigitSpan.swift in Sources */,
 				1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */,
+				11B5448F1FB8712400C611F5 /* BPVSPageController.swift in Sources */,
 				111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */,
 				11F5833B1FABB16A00FB64FF /* DigitSubtestDescription.swift in Sources */,
 				1114999E1FA0D851003EBA9E /* TableCells.swift in Sources */,
 				118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */,
 				1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */,
 				111499981FA0D4E2003EBA9E /* AdminMenu.swift in Sources */,
+				11B544871FB8682800C611F5 /* DashFreeAnswers.swift in Sources */,
+				11B544891FB8688D00C611F5 /* DashCompleted.swift in Sources */,
 				1133C6741FACC3EF006F89B5 /* DigitSpanCalculations.swift in Sources */,
 				11F583391FABB15800FB64FF /* DigitSubtestComplete.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
@@ -394,10 +459,13 @@
 				117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */,
 				11B544721FB78F7100C611F5 /* DashCopyBest.swift in Sources */,
 				11859C041FB0D3F9004A1080 /* IndepthScores.swift in Sources */,
+				11B544791FB85EC100C611F5 /* DashCopyFastDescription.swift in Sources */,
 				111CC9FF1F9FAAAC006F6750 /* TowreCalculationsPDE.swift in Sources */,
 				1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */,
 				119619601FA243BC0083305F /* SubtestDescription.swift in Sources */,
 				1114999C1FA0D7F6003EBA9E /* TestResults.swift in Sources */,
+				11B544911FB8718A00C611F5 /* BPVSDescription.swift in Sources */,
+				11B544851FB867A900C611F5 /* DashFree.swift in Sources */,
 				11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */,
 				118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */,
 				11B5446E1FB78E9700C611F5 /* DashPageController.swift in Sources */,

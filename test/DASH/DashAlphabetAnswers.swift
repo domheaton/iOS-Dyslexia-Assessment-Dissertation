@@ -1,8 +1,8 @@
 //
-//  DashCopyBestAnswers.swift
+//  DashAlphabetAnswers.swift
 //  test
 //
-//  Created by Dominic Heaton on 11/11/2017.
+//  Created by Dominic Heaton on 12/11/2017.
 //  Copyright © 2017 Dominic Heaton. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class DashCopyBestAnswers: UIViewController {
+class DashAlphabetAnswers: UIViewController {
     
     //    private var brain = DigitSpanCalculations()
     @IBOutlet weak var value1Label: UILabel!
@@ -25,7 +25,7 @@ class DashCopyBestAnswers: UIViewController {
         super.viewWillAppear(true)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationItem.title = "Subtest 1: Copy Best"
+        self.navigationItem.title = "Subtest 3: Alphabet Copy"
     }
     
     override func viewDidLoad() {
@@ -49,6 +49,7 @@ class DashCopyBestAnswers: UIViewController {
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toDashCopyBestComplete", sender: nil)
+        performSegue(withIdentifier: "toDashAlphabetComplete", sender: nil)
     }
 }
+
