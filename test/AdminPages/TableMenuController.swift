@@ -65,9 +65,14 @@ class TableMenuController: UITableViewController {
                     let testRevDigitSpan = nameObject?["Reverse Digit Span"]
                     let testTowre2 = nameObject?["Towre-2"]
                     let testDigitSpan = nameObject?["Digit Span"]
+                    let testDashBest = nameObject?["Dash CopyBest"]
+                    let testDashFast = nameObject?["Dash CopyFast"]
+                    let testDashAlpha = nameObject?["Dash CopyAlpha"]
+                    let testDashFree = nameObject?["Dash Free"]
+                    let testDashFinal = nameObject?["Dash Final"]
                    
                     //value to be printed in tableViewController Cells
-                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testTowre2: testTowre2 as! Double?, testForwardDigitSpan: testForwardDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?, testDigitSpan: testDigitSpan as! Double?)
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testTowre2: testTowre2 as! Double?, testForwardDigitSpan: testForwardDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?, testDigitSpan: testDigitSpan as! Double?, testDashBest: testDashBest as! Double?, testDashFast: testDashFast as! Double?, testDashAlpha: testDashAlpha as! Double?, testDashFree: testDashFree as! Double?, testDashFinal: testDashFinal as! Double?)
                     self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
@@ -100,6 +105,13 @@ class TableMenuController: UITableViewController {
         }
         if detailsToPass.testDigitSpan != nil {
             nextVC.getDigitSpan = detailsToPass.testDigitSpan!
+        }
+        if detailsToPass.testDashFinal != nil {
+            nextVC.getDashFinal = detailsToPass.testDashFinal!
+            nextVC.getDashBest = detailsToPass.testDashBest!
+            nextVC.getDashFast = detailsToPass.testDashFast!
+            nextVC.getDashAlpha = detailsToPass.testDashAlpha!
+            nextVC.getDashFree = detailsToPass.testDashFree!
         }
 
         self.navigationController?.pushViewController(nextVC, animated: true)

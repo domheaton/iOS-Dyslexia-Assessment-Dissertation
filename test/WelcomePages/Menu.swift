@@ -21,6 +21,12 @@ class Menu: UIViewController {
     var finalResultsRevDigit = Double()
     var finalResultsDigitSpan = Double()
     
+    var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
+    var copyAlphabetTotalWritten = Double()
+    var freeWritingTotalWritten = Double()
+    var finalResultDash = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,13 +37,18 @@ class Menu: UIViewController {
         print("For D:", finalResultsDigit)
         print("Rev D:", finalResultsRevDigit)
         print("Span :", finalResultsDigitSpan)
+        print("CopyB:", copyBestWordsWritten)
+        print("CopyF:", copyFastWordsWritten)
+        print("CopyA:", copyAlphabetTotalWritten)
+        print("FreeW:", freeWritingTotalWritten)
+        print("DASH :", finalResultDash)
         
         //override the back button in the navigation controller
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOut(sender:)))
         
-        let testScoresToSave: [Double]! = [finalResultsSWE, finalResultsPDE, finalResultsDigit, finalResultsRevDigit, finalResultsTowre, finalResultsDigitSpan]
+        let testScoresToSave: [Double]! = [finalResultsSWE, finalResultsPDE, finalResultsDigit, finalResultsRevDigit, finalResultsTowre, finalResultsDigitSpan, copyBestWordsWritten, copyFastWordsWritten, copyAlphabetTotalWritten, freeWritingTotalWritten, finalResultDash]
         
-        if testScoresToSave[0] != 0 || testScoresToSave[1] != 0 || testScoresToSave[2] != 0 || testScoresToSave[3] != 0 || testScoresToSave[4] != 0 || testScoresToSave[5] != 0 {
+        if testScoresToSave[0] != 0 || testScoresToSave[1] != 0 || testScoresToSave[2] != 0 || testScoresToSave[3] != 0 || testScoresToSave[4] != 0 || testScoresToSave[5] != 0 || testScoresToSave[6] != 0 || testScoresToSave[7] != 0 || testScoresToSave[8] != 0 || testScoresToSave[9] != 0 || testScoresToSave[10] != 0 {
             saveResults()
         }
 
@@ -53,26 +64,17 @@ class Menu: UIViewController {
         
         var userResults: [String : Any]
         
-        if finalResultsSWE == 0 && finalResultsPDE == 0 {
+        if finalResultsTowre == 0 && finalResultDash == 0 {
             userResults = ["username":userName!, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan] as [String : Any]
         }
-        else if finalResultsDigit == 0 && finalResultsRevDigit == 0 {
+        else if finalResultsDigitSpan == 0 && finalResultDash == 0 {
             userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre] as [String : Any]
         }
-        else if finalResultsSWE == 0 {
-            userResults = ["username":userName!, "TowrePDE":finalResultsPDE, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan] as [String : Any]
-        }
-        else if finalResultsPDE == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan] as [String : Any]
-        }
-        else if finalResultsDigit == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Reverse Digit Span":finalResultsRevDigit] as [String : Any]
-        }
-        else if finalResultsRevDigit == 0 {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit] as [String : Any]
+        else if finalResultsDigitSpan == 0 && finalResultsTowre == 0 {
+            userResults = ["username":userName!, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash] as [String : Any]
         }
         else {
-            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan] as [String : Any]
+            userResults = ["username":userName!, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash] as [String : Any]
         }
         refDatabase.child(key).updateChildValues(userResults)
     }

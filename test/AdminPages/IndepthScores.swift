@@ -22,6 +22,11 @@ class IndepthScores: UIViewController {
     var getForwardDigitSpan = Double()
     var getRevDigitSpan = Double()
     var getDigitSpan = Double()
+    var getDashBest = Double()
+    var getDashFast = Double()
+    var getDashAlpha = Double()
+    var getDashFree = Double()
+    var getDashFinal = Double()
     
     var testArray: [String]!
     var testScoresToDisplay: [Double]!
@@ -86,6 +91,14 @@ class IndepthScores: UIViewController {
             self.subtest1Score.text = String(Float(digitSpanPercentage!))
             self.subtest2Score.text = digitSpanPercentile!
         }
+        else if getTest == "DASH" {
+            
+            //CURRENTLY PLACEHOLDER LABELS -- REPLACE WHEN STATS ADDED
+            self.subtest1Label.text = "Average Words/Minute:"
+            self.subtest2Label.text = ""
+            self.subtest1Score.text = String(getDashFinal)
+            self.subtest2Score.text = ""
+        }
     }
     
     @objc func saveGraph() {
@@ -98,19 +111,20 @@ class IndepthScores: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    
-    
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
-        //select only the scores that are available
-        if getTowreSWE == 0 || getTowrePDE == 0 {
+        if getTest == "Towre-2" {
+            testArray = ["TowreSWE", "TowrePDE"]
+            testScoresToDisplay = [towrePercentageSWE!, towrePercentagePDE!]
+        }
+        else if getTest == "Digit Span" {
             testArray = ["Forward Digit Span", "Reverse Digit Span"]
             testScoresToDisplay = [getForwardDigitSpan, getRevDigitSpan]
         }
-        else if getForwardDigitSpan == 0 || getRevDigitSpan == 0 {
-            testArray = ["TowreSWE", "TowrePDE"]
-            testScoresToDisplay = [towrePercentageSWE!, towrePercentagePDE!]
+        else if getTest == "DASH" {
+            testArray = ["Copy Best", "Copy Fast", "Alphabet", "Free"]
+            testScoresToDisplay = [getDashBest, getDashFast, getDashAlpha, getDashFree]
         }
         
         for i in 0..<testArray.count {
@@ -124,7 +138,7 @@ class IndepthScores: UIViewController {
         
         chartDataSet.colors = [UIColor(red: 74/255, green: 205/255, blue: 168/255, alpha: 1)]
         barChartView.xAxis.labelPosition = .bottom
-        barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
+        barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.5)
         
         if getTest == "Towre-2" {
             let scaledLimitline = (100.0 / 145.0) * 100.0

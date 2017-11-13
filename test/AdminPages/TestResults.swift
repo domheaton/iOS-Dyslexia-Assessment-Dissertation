@@ -17,8 +17,13 @@ class TestResults {
     var testForwardDigitSpan: Double?
     var testRevDigitSpan: Double?
     var testDigitSpan: Double?
+    var testDashBest: Double?
+    var testDashFast: Double?
+    var testDashAlpha: Double?
+    var testDashFree: Double?
+    var testDashFinal: Double?
     
-    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testTowre2: Double?, testForwardDigitSpan: Double?, testRevDigitSpan: Double?, testDigitSpan: Double?){
+    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testTowre2: Double?, testForwardDigitSpan: Double?, testRevDigitSpan: Double?, testDigitSpan: Double?, testDashBest: Double?, testDashFast: Double?, testDashAlpha: Double?, testDashFree: Double?, testDashFinal: Double?) {
         self.name = name
         self.testName = testName
         self.testTowreSWE = testTowreSWE
@@ -27,6 +32,11 @@ class TestResults {
         self.testForwardDigitSpan = testForwardDigitSpan
         self.testRevDigitSpan = testRevDigitSpan
         self.testDigitSpan = testDigitSpan
+        self.testDashBest = testDashBest
+        self.testDashFast = testDashFast
+        self.testDashAlpha = testDashAlpha
+        self.testDashFree = testDashFree
+        self.testDashFinal = testDashFinal
     }
     
 }

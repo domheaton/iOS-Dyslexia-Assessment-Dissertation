@@ -21,12 +21,18 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     var getForwardDigitSpan = Double()
     var getRevDigitSpan = Double()
     var getDigitSpan = Double()
+    var getDashBest = Double()
+    var getDashFast = Double()
+    var getDashAlpha = Double()
+    var getDashFree = Double()
+    var getDashFinal = Double()
     
     var testArray: [String]!
     var testScoresToDisplay: [Double]!
     var selectedBarFromChart: String?
     var towrePercentage: Double?
     var digitSpanPercentage: Double?
+    var dashPercentage: Double?
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
@@ -68,19 +74,37 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         
         towrePercentage = (getTowre2 / 147.0) * 100.0
         digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
+        //THIS IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
+        dashPercentage = (((getDashFinal * 4)/400.0) * 100.0)
         
         //select only the scores that are available
-        if getTowre2 == 0 {
+        if getTowre2 == 0 && getDigitSpan == 0 {
+            testArray = ["DASH"]
+            testScoresToDisplay = [dashPercentage!]
+        }
+        else if getTowre2 == 0 && getDashFinal == 0 {
             testArray = ["Digit Span"]
             testScoresToDisplay = [digitSpanPercentage!]
         }
-        else if getDigitSpan == 0 {
+        else if getDashFinal == 0 && getDigitSpan == 0 {
             testArray = ["Towre-2"]
             testScoresToDisplay = [towrePercentage!]
         }
-        else {
+        else if getTowre2 == 0 {
+            testArray = ["DASH", "Digit Span"]
+            testScoresToDisplay = [dashPercentage!, digitSpanPercentage!]
+        }
+        else if getDigitSpan == 0 {
+            testArray = ["Towre-2", "DASH"]
+            testScoresToDisplay = [towrePercentage!, dashPercentage!]
+        }
+        else if getDashFinal == 0 {
             testArray = ["Towre-2", "Digit Span"]
             testScoresToDisplay = [towrePercentage!, digitSpanPercentage!]
+        }
+        else {
+            testArray = ["Towre-2", "DASH", "Digit Span"]
+            testScoresToDisplay = [towrePercentage!, dashPercentage!, digitSpanPercentage!]
         }
         
         for i in 0..<testArray.count {
@@ -94,7 +118,7 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         
         chartDataSet.colors = [UIColor(red: 74/255, green: 205/255, blue: 168/255, alpha: 1)]
         barChartView.xAxis.labelPosition = .bottom
-        barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0)
+        barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.5)
         
 //        let limitline = ChartLimitLine(limit: 70.0, label: "Target")
 //        barChartView.leftAxis.addLimitLine(limitline)
@@ -136,6 +160,14 @@ class IndividualScore: UIViewController, ChartViewDelegate {
             nextVC.getForwardDigitSpan = getForwardDigitSpan
             nextVC.getRevDigitSpan = getRevDigitSpan
             nextVC.getDigitSpan = getDigitSpan
+        }
+        else if selectedBarFromChart == "DASH" {
+            nextVC.getTest = selectedBarFromChart!
+            nextVC.getDashBest = getDashBest
+            nextVC.getDashFast = getDashFast
+            nextVC.getDashAlpha = getDashAlpha
+            nextVC.getDashFree = getDashFree
+            nextVC.getDashFinal = getDashFinal
         }
     }
     
