@@ -13,12 +13,19 @@ import FirebaseDatabase
 
 class DashCopyFastAnswers: UIViewController {
     
-    //    private var brain = DigitSpanCalculations()
+    var copyBestWordsWritten = Double()
+    
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         value1Label.text = Int(sender.value).description
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! DashSubtestFastComplete
+        nextVC.copyBestWordsWritten = copyBestWordsWritten
+        nextVC.copyFastWordsWritten = Double(value1Label.text!)!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,12 +42,6 @@ class DashCopyFastAnswers: UIViewController {
         stepper.autorepeat = true
         stepper.maximumValue = 100
         stepper.stepValue = 1
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let nextVC = segue.destination as! DigitSubtestComplete
-        //        nextVC.finalResultsDigit = brain.getFinalResultsDigit()
-        //        nextVC.finalRawDigit = brain.getFinalRawDigit()
     }
     
     override func didReceiveMemoryWarning() {

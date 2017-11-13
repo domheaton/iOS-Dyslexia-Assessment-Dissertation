@@ -1,8 +1,8 @@
 //
-//  DashCopyFastDescription.swift
+//  DashFreeDescription.swift
 //  test
 //
-//  Created by Dominic Heaton on 12/11/2017.
+//  Created by Dominic Heaton on 13/11/2017.
 //  Copyright © 2017 Dominic Heaton. All rights reserved.
 //
 
@@ -11,9 +11,11 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class DashCopyFastDescription: UIViewController {
+class DashFreeDescription: UIViewController {
     
     var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
+    var copyAlphabetTotalWritten = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,10 @@ class DashCopyFastDescription: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! DashCopyFast
+        let nextVC = segue.destination as! DashFree
         nextVC.copyBestWordsWritten = copyBestWordsWritten
+        nextVC.copyFastWordsWritten = copyFastWordsWritten
+        nextVC.copyAlphabetTotalWritten = copyAlphabetTotalWritten
     }
     
     override func viewWillAppear(_ animated: Bool) {

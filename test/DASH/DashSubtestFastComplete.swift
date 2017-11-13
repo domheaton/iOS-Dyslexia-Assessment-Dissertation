@@ -13,8 +13,8 @@ import FirebaseDatabase
 
 class DashSubtestFastComplete: UIViewController {
     
-    //    var finalResultsDigit = Double()
-    //    var finalRawDigit = Double()
+    var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,9 @@ class DashSubtestFastComplete: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let nextVC = segue.destination as! DigitSubtestDescription
-        //        nextVC.finalResultsDigit = finalResultsDigit
-        //        nextVC.finalRawDigit = finalRawDigit
+        let nextVC = segue.destination as! DashAlphabetDescription
+        nextVC.copyBestWordsWritten = copyBestWordsWritten
+        nextVC.copyFastWordsWritten = copyFastWordsWritten
     }
     
     override func viewWillAppear(_ animated: Bool) {

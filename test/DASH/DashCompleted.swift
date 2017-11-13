@@ -13,20 +13,34 @@ import FirebaseDatabase
 
 class DashCompleted: UIViewController {
     
-//    var finalResultsDigit = Double()
-//    var finalResultsRevDigit = Double()
-//    var finalResultDigitSpan = Double()
+    var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
+    var copyAlphabetTotalWritten = Double()
+    var freeWritingTotalWritten = Double()
+    
+    private var brain = DashCalculations()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let nextVC = segue.destination as! Menu
-//        nextVC.finalResultsDigit = finalResultsDigit
-//        nextVC.finalResultsRevDigit = finalResultsRevDigit
-//        nextVC.finalResultsDigitSpan = finalResultDigitSpan
+        let nextVC = segue.destination as! Menu
+        nextVC.copyBestWordsWritten = brain.getScaledCopyBest()
+        nextVC.copyFastWordsWritten = brain.getScaledCopyFast()
+        nextVC.copyAlphabetTotalWritten = brain.getScaledCopyAlphabet()
+        nextVC.freeWritingTotalWritten = brain.getScaledFreeWriting()
+        nextVC.finalResultDash = brain.getFinalResultDash()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        brain.setInputsFromSubtests(copyBestWordsWritten, copyFastWordsWritten, copyAlphabetTotalWritten, freeWritingTotalWritten)
+        
+        brain.scaleResults()
+        
+        //For debugging
+        print("Copy Best Result     : ", brain.getScaledCopyBest())
+        print("Copy Fast Result     : ", brain.getScaledCopyFast())
+        print("Alphabet Copy Result : ", brain.getScaledCopyAlphabet())
+        print("Free Writing Result  : ", brain.getScaledFreeWriting())
     }
     
     override func viewWillAppear(_ animated: Bool) {

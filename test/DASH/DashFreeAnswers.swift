@@ -13,7 +13,10 @@ import FirebaseDatabase
 
 class DashFreeAnswers: UIViewController {
     
-    //    private var brain = DigitSpanCalculations()
+    var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
+    var copyAlphabetTotalWritten = Double()
+    
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -38,9 +41,11 @@ class DashFreeAnswers: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let nextVC = segue.destination as! DigitSubtestComplete
-        //        nextVC.finalResultsDigit = brain.getFinalResultsDigit()
-        //        nextVC.finalRawDigit = brain.getFinalRawDigit()
+        let nextVC = segue.destination as! DashCompleted
+        nextVC.copyBestWordsWritten = copyBestWordsWritten
+        nextVC.copyFastWordsWritten = copyFastWordsWritten
+        nextVC.copyAlphabetTotalWritten = copyAlphabetTotalWritten
+        nextVC.freeWritingTotalWritten = Double(value1Label.text!)!
     }
     
     override func didReceiveMemoryWarning() {

@@ -38,9 +38,8 @@ class DashCopyBestAnswers: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let nextVC = segue.destination as! DigitSubtestComplete
-        //        nextVC.finalResultsDigit = brain.getFinalResultsDigit()
-        //        nextVC.finalRawDigit = brain.getFinalRawDigit()
+        let nextVC = segue.destination as! DashSubtestComplete
+        nextVC.copyBestWordsWritten = Double(value1Label.text!)!
     }
     
     override func didReceiveMemoryWarning() {

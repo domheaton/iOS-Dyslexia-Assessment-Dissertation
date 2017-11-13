@@ -13,6 +13,8 @@ import FirebaseDatabase
 
 class DashCopyFast: UIViewController {
     
+    var copyBestWordsWritten = Double()
+    
     var timer2 = Timer()
     var timeSeconds = 0.0
     var timeMinutes = 0
@@ -24,6 +26,11 @@ class DashCopyFast: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationItem.title = "Subtest 2: Copy Fast"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! DashCopyFastAnswers
+        nextVC.copyBestWordsWritten = copyBestWordsWritten
     }
     
     override func viewDidLoad() {

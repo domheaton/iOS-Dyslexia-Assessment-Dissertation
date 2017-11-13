@@ -19,6 +19,8 @@
 		1133C6741FACC3EF006F89B5 /* DigitSpanCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133C6731FACC3EF006F89B5 /* DigitSpanCalculations.swift */; };
 		1133C6761FACD343006F89B5 /* RevDigitSpanCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133C6751FACD343006F89B5 /* RevDigitSpanCalculations.swift */; };
 		1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */; };
+		114EDCA71FB9D87400F08F52 /* DashFreeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114EDCA61FB9D87400F08F52 /* DashFreeDescription.swift */; };
+		114EDCA91FB9E06500F08F52 /* DashCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114EDCA81FB9E06500F08F52 /* DashCalculations.swift */; };
 		115375BE1F852A7600ABF393 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115375BD1F852A7600ABF393 /* GoogleService-Info.plist */; };
 		1155D2811F9BA1D4006A5B8D /* TestDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */; };
 		1164AD7E1F83EA57006D00DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164AD7D1F83EA57006D00DE /* AppDelegate.swift */; };
@@ -76,6 +78,8 @@
 		1133C6731FACC3EF006F89B5 /* DigitSpanCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanCalculations.swift; sourceTree = "<group>"; };
 		1133C6751FACD343006F89B5 /* RevDigitSpanCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevDigitSpanCalculations.swift; sourceTree = "<group>"; };
 		1145DC661FABBBBD007B22D2 /* DigitCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitCompleted.swift; sourceTree = "<group>"; };
+		114EDCA61FB9D87400F08F52 /* DashFreeDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashFreeDescription.swift; sourceTree = "<group>"; };
+		114EDCA81FB9E06500F08F52 /* DashCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCalculations.swift; sourceTree = "<group>"; };
 		115375BD1F852A7600ABF393 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDescriptionController.swift; sourceTree = "<group>"; };
 		1164AD7A1F83EA57006D00DE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,9 +201,11 @@
 				11B544801FB8652700C611F5 /* DashAlphabet.swift */,
 				11B544821FB8656E00C611F5 /* DashAlphabetAnswers.swift */,
 				11B5448C1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift */,
+				114EDCA61FB9D87400F08F52 /* DashFreeDescription.swift */,
 				11B544841FB867A900C611F5 /* DashFree.swift */,
 				11B544861FB8682800C611F5 /* DashFreeAnswers.swift */,
 				11B544881FB8688D00C611F5 /* DashCompleted.swift */,
+				114EDCA81FB9E06500F08F52 /* DashCalculations.swift */,
 			);
 			path = DASH;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				11B544811FB8652700C611F5 /* DashAlphabet.swift in Sources */,
 				11B544831FB8656E00C611F5 /* DashAlphabetAnswers.swift in Sources */,
 				11B5447B1FB8605000C611F5 /* DashCopyFast.swift in Sources */,
+				114EDCA91FB9E06500F08F52 /* DashCalculations.swift in Sources */,
 				1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */,
 				11B5447F1FB8642400C611F5 /* DashAlphabetDescription.swift in Sources */,
 				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
@@ -452,6 +459,7 @@
 				1133C6741FACC3EF006F89B5 /* DigitSpanCalculations.swift in Sources */,
 				11F583391FABB15800FB64FF /* DigitSubtestComplete.swift in Sources */,
 				110AD66A1F9CC7610021E22A /* Menu.swift in Sources */,
+				114EDCA71FB9D87400F08F52 /* DashFreeDescription.swift in Sources */,
 				117173F31F9BA4E9009F42FE /* Towre.swift in Sources */,
 				11A3926D1FA0BE1A00F1EE08 /* SubtestCompleted.swift in Sources */,
 				11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */,

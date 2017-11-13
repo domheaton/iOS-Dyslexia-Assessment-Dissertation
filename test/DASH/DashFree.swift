@@ -13,6 +13,10 @@ import FirebaseDatabase
 
 class DashFree: UIViewController {
     
+    var copyBestWordsWritten = Double()
+    var copyFastWordsWritten = Double()
+    var copyAlphabetTotalWritten = Double()
+    
     var timer4 = Timer()
     var timeSeconds = 0.0
     var timeMinutes = 0
@@ -24,6 +28,13 @@ class DashFree: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationItem.title = "Subtest 4: Free Writing"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! DashFreeAnswers
+        nextVC.copyBestWordsWritten = copyBestWordsWritten
+        nextVC.copyFastWordsWritten = copyFastWordsWritten
+        nextVC.copyAlphabetTotalWritten = copyAlphabetTotalWritten
     }
     
     override func viewDidLoad() {

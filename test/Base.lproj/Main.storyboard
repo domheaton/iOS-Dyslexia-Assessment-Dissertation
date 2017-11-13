@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v2.9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1665,10 +1665,21 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                 <color key="pageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="0.27415988870000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.28978598119999999" green="0.80313593149999996" blue="0.65830796960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Copy Best info ..." textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVu-c3-act">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVu-c3-act">
                                 <rect key="frame" x="16" y="84" width="342" height="448"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">The first subtest "Copy Best" will run for two minutes.
+
+The student should copy the following phrase in their best handwriting as many times as possible before the timer expires:
+
+"The quick brown fox jumps over the lazy dog"
+
+The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
+
+After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
+
+NOTE: This subtest runs for 2 minutes only.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1744,23 +1755,23 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-8E-Fih">
-                                <rect key="frame" x="261" y="115" width="94" height="29"/>
+                                <rect key="frame" x="260" y="319" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="2C4-fA-RXX" eventType="valueChanged" id="9cA-tR-Kc1"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ValueA1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-bv-vyc">
-                                <rect key="frame" x="16" y="113" width="100" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words Written:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-bv-vyc">
+                                <rect key="frame" x="16" y="317" width="168" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2X-2O-d4N">
-                                <rect key="frame" x="176" y="113" width="81" height="33"/>
+                                <rect key="frame" x="193" y="317" width="60" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1778,6 +1789,20 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                     <action selector="submitPressed:" destination="2C4-fA-RXX" eventType="touchUpInside" id="2Po-2V-436"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop the student writing now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-jV-9bg">
+                                <rect key="frame" x="16" y="120" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Fill in the field below to show how many complete words have been written by the student within the time limit." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-1e-Wd6">
+                                <rect key="frame" x="16" y="186" width="343" height="108"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VjS-Vk-pOQ"/>
@@ -1845,10 +1870,21 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Copy Fast info ..." textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-Ur-SSA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-Ur-SSA">
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">The second subtest "Copy Fast" will run for two minutes.
+
+The student should copy the following phrase as fast as possible and as many times as possible before the timer expires:
+
+"The quick brown fox jumps over the lazy dog"
+
+The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
+
+After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
+
+NOTE: This subtest runs for 2 minutes only.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1931,23 +1967,23 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Or2-Mt-Opj">
-                                <rect key="frame" x="261" y="115" width="94" height="29"/>
+                                <rect key="frame" x="261" y="319" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="zus-94-dBl" eventType="valueChanged" id="IYl-Ox-PxV"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ValueB1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-9i-E6A">
-                                <rect key="frame" x="16" y="113" width="101" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words Written:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-9i-E6A">
+                                <rect key="frame" x="16" y="317" width="173" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6N-oT-Kaa">
-                                <rect key="frame" x="176" y="113" width="81" height="33"/>
+                                <rect key="frame" x="176" y="317" width="81" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1965,6 +2001,20 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                     <action selector="submitPressed:" destination="zus-94-dBl" eventType="touchUpInside" id="DsW-LG-5nK"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Fill in the field below to show how many complete words have been written by the student within the time limit." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-v6-NdZ">
+                                <rect key="frame" x="16" y="186" width="343" height="104"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop the student writing now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-Hl-S7Y">
+                                <rect key="frame" x="16" y="120" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FI5-BG-lf0"/>
@@ -1977,7 +2027,7 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8iH-of-vJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9799" y="1754"/>
+            <point key="canvasLocation" x="9797.6000000000004" y="1753.6731634182911"/>
         </scene>
         <!--Dash Subtest Fast Complete-->
         <scene sceneID="moW-fV-aaC">
@@ -2024,18 +2074,27 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
             </objects>
             <point key="canvasLocation" x="10622" y="1754"/>
         </scene>
-        <!--Dash Copy Fast Description-->
+        <!--Dash Alphabet Description-->
         <scene sceneID="jrf-aO-dzu">
             <objects>
-                <viewController storyboardIdentifier="DashSubtestDescription2" id="JgI-1y-IAd" customClass="DashCopyFastDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashSubtestDescription2" id="JgI-1y-IAd" customClass="DashAlphabetDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddS-SN-yOe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Alphabet info ..." textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWh-cZ-O78">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWh-cZ-O78">
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">The third subtest "Alphabet Copy" will run for two minutes.
+
+The student should write/copy out the alphabet as fast as possible and as many times as possible before the timer expires.
+
+The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
+
+After the timer expires a page will appear allowing the administrator to input the number of complete letters the student has managed to form within the time limit before the next subtest is explained.
+
+NOTE: This subtest runs for 2 minutes only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2118,23 +2177,23 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-yY-Ga1">
-                                <rect key="frame" x="261" y="115" width="94" height="29"/>
+                                <rect key="frame" x="261" y="319" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="JZc-gd-uQj" eventType="valueChanged" id="xJN-rj-EzT"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ValueC1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asw-gk-Hzj">
-                                <rect key="frame" x="16" y="113" width="103" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Letters Written:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asw-gk-Hzj">
+                                <rect key="frame" x="16" y="317" width="173" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-hL-9cR">
-                                <rect key="frame" x="176" y="113" width="81" height="33"/>
+                                <rect key="frame" x="176" y="317" width="81" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2152,6 +2211,20 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                     <action selector="submitPressed:" destination="JZc-gd-uQj" eventType="touchUpInside" id="aAq-ZL-gLd"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Fill in the field below to show how many complete words have been written by the student within the time limit." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-vb-GJO">
+                                <rect key="frame" x="16" y="186" width="343" height="109"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop the student writing now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbs-oO-vwf">
+                                <rect key="frame" x="16" y="120" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Z3A-RG-NnX"/>
@@ -2164,7 +2237,7 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiu-Me-DqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6662" y="2517"/>
+            <point key="canvasLocation" x="6661.6000000000004" y="2516.4917541229388"/>
         </scene>
         <!--Dash Subtest Alphabet Complete-->
         <scene sceneID="WMP-NR-FBb">
@@ -2211,18 +2284,27 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
             </objects>
             <point key="canvasLocation" x="7412" y="2516"/>
         </scene>
-        <!--Dash Copy Fast Description-->
+        <!--Dash Free Description-->
         <scene sceneID="nds-uk-5Pr">
             <objects>
-                <viewController storyboardIdentifier="DashSubtestDescription3" id="XS3-DC-DTg" customClass="DashCopyFastDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashSubtestDescription3" id="XS3-DC-DTg" customClass="DashFreeDescription" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qbO-zY-owo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Free Writing info ..." textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-SY-CD9">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-SY-CD9">
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">The final subtest "Free Writing" will run for ten minutes.
+
+The student should write continuously until the timer expires. The topic of choice is up to the student and unimportant – an example topic could be the student's last holiday.
+
+The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
+
+After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit. 
+
+NOTE: This subtest runs for 10 minutes.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2258,23 +2340,16 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="udg-7J-kvc">
-                                <rect key="frame" x="261" y="115" width="94" height="29"/>
+                                <rect key="frame" x="261" y="319" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="fma-aT-iMN" eventType="valueChanged" id="itF-0o-hhy"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ValueD1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-zF-Wzm">
-                                <rect key="frame" x="16" y="113" width="103" height="33"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbD-ik-FRT">
-                                <rect key="frame" x="176" y="113" width="81" height="33"/>
+                                <rect key="frame" x="176" y="317" width="81" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2292,6 +2367,27 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                     <action selector="submitPressed:" destination="fma-aT-iMN" eventType="touchUpInside" id="BRd-dQ-TUQ"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Fill in the field below to show how many complete words have been written by the student within the time limit." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ud0-vX-Rqm">
+                                <rect key="frame" x="16" y="186" width="343" height="111"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop the student writing now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwK-j3-kCJ">
+                                <rect key="frame" x="16" y="120" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words Written:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-zF-Wzm">
+                                <rect key="frame" x="16" y="317" width="173" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="biR-Nr-62h"/>
@@ -2304,7 +2400,7 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sd-9q-UXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9798" y="2516"/>
+            <point key="canvasLocation" x="9797.6000000000004" y="2515.5922038980511"/>
         </scene>
         <!--Dash Completed-->
         <scene sceneID="DSY-qM-hBK">
