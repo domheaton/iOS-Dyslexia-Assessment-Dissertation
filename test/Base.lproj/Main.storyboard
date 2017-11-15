@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPK-oM-ShW">
-                                <rect key="frame" x="16" y="250" width="343" height="118"/>
+                                <rect key="frame" x="16" y="250" width="343" height="125"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <string key="text">By digitising the testing process and running all the statisical analysis in the background, results from assessments become available faster and with much less administrative work required.</string>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC0-se-2jx">
-                                <rect key="frame" x="16" y="405" width="343" height="133"/>
+                                <rect key="frame" x="16" y="420" width="343" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <string key="text">Dominic Heaton, University of Southampton as part of my third year dissertation project for the award of a degree in MEng Electronic Engineering with Mobile and Secure Systems.</string>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1669,7 +1669,7 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                 <rect key="frame" x="16" y="84" width="342" height="448"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The first subtest "Copy Best" will run for two minutes.
+                                <string key="text">The first subtest "Copy Best" will run for two minutes.
 
 The student should copy the following phrase in their best handwriting as many times as possible before the timer expires:
 
@@ -1679,7 +1679,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
 
-NOTE: This subtest runs for 2 minutes only.</mutableString>
+NOTE: This subtest runs for 2 minutes only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1874,7 +1874,7 @@ NOTE: This subtest runs for 2 minutes only.</mutableString>
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The second subtest "Copy Fast" will run for two minutes.
+                                <string key="text">The second subtest "Copy Fast" will run for two minutes.
 
 The student should copy the following phrase as fast as possible and as many times as possible before the timer expires:
 
@@ -1884,7 +1884,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
 
-NOTE: This subtest runs for 2 minutes only.</mutableString>
+NOTE: This subtest runs for 2 minutes only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2296,7 +2296,7 @@ NOTE: This subtest runs for 2 minutes only.</string>
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The final subtest "Free Writing" will run for ten minutes.
+                                <string key="text">The final subtest "Free Writing" will run for ten minutes.
 
 The student should write continuously until the timer expires. The topic of choice is up to the student and unimportant – an example topic could be the student's last holiday.
 
@@ -2304,7 +2304,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit. 
 
-NOTE: This subtest runs for 10 minutes.</mutableString>
+NOTE: This subtest runs for 10 minutes.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
