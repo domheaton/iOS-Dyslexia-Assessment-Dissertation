@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import LocalAuthentication
 
 class ViewController: UIViewController {
     
@@ -77,5 +78,4 @@ class ViewController: UIViewController {
     @IBAction func forgotPassword(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toForgotPassword", sender: nil)
     }
-    
 }
