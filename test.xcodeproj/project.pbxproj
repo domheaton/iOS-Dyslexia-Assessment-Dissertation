@@ -55,6 +55,8 @@
 		11B5448F1FB8712400C611F5 /* BPVSPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5448E1FB8712400C611F5 /* BPVSPageController.swift */; };
 		11B544911FB8718A00C611F5 /* BPVSDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544901FB8718A00C611F5 /* BPVSDescription.swift */; };
 		11B544941FB8764B00C611F5 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B544931FB8764B00C611F5 /* About.swift */; };
+		11B6C2E71FBF5CF900D751B6 /* BPVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6C2E61FBF5CF900D751B6 /* BPVS.swift */; };
+		11B6C2E91FBF5F7500D751B6 /* BPVSCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6C2E81FBF5F7500D751B6 /* BPVSCalculations.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
 		11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583321FABB11D00FB64FF /* DigitPageController.swift */; };
 		11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583341FABB12D00FB64FF /* DigitDescription.swift */; };
@@ -118,6 +120,8 @@
 		11B5448E1FB8712400C611F5 /* BPVSPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSPageController.swift; sourceTree = "<group>"; };
 		11B544901FB8718A00C611F5 /* BPVSDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSDescription.swift; sourceTree = "<group>"; };
 		11B544931FB8764B00C611F5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		11B6C2E61FBF5CF900D751B6 /* BPVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVS.swift; sourceTree = "<group>"; };
+		11B6C2E81FBF5F7500D751B6 /* BPVSCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSCalculations.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		11F583321FABB11D00FB64FF /* DigitPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitPageController.swift; sourceTree = "<group>"; };
 		11F583341FABB12D00FB64FF /* DigitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDescription.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			children = (
 				11B5448E1FB8712400C611F5 /* BPVSPageController.swift */,
 				11B544901FB8718A00C611F5 /* BPVSDescription.swift */,
+				11B6C2E61FBF5CF900D751B6 /* BPVS.swift */,
+				11B6C2E81FBF5F7500D751B6 /* BPVSCalculations.swift */,
 			);
 			path = BPVS;
 			sourceTree = "<group>";
@@ -442,9 +448,11 @@
 				11B5448D1FB86E2400C611F5 /* DashSubtestAlphabetComplete.swift in Sources */,
 				1164AD801F83EA57006D00DE /* ViewController.swift in Sources */,
 				11F5833D1FABB17700FB64FF /* RevDigitSpan.swift in Sources */,
+				11B6C2E91FBF5F7500D751B6 /* BPVSCalculations.swift in Sources */,
 				11B544811FB8652700C611F5 /* DashAlphabet.swift in Sources */,
 				11B544831FB8656E00C611F5 /* DashAlphabetAnswers.swift in Sources */,
 				11B5447B1FB8605000C611F5 /* DashCopyFast.swift in Sources */,
+				11B6C2E71FBF5CF900D751B6 /* BPVS.swift in Sources */,
 				114EDCA91FB9E06500F08F52 /* DashCalculations.swift in Sources */,
 				1114999A1FA0D70B003EBA9E /* TableMenuController.swift in Sources */,
 				11B5447F1FB8642400C611F5 /* DashAlphabetDescription.swift in Sources */,
