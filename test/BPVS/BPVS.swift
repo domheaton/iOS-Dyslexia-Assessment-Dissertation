@@ -21,6 +21,7 @@ class BPVS: UIViewController {
     var errorsInSet = 0 //errors made within the set
     var numberWordInSet = 1 //words in set numbered from 1 to 12
     var setInUse = 7 //starts in the set for age 9-11
+    var findingBaselSet: Bool?
     
     private var brain = BPVSCalculations()
     
@@ -42,6 +43,7 @@ class BPVS: UIViewController {
         wordsToTestAnswer = brain.setWordsToTestAnswer
         
         loadInitialWord()
+        findingBaselSet = true
         
         //Set name of image to be displayed on screen
         
@@ -115,36 +117,63 @@ class BPVS: UIViewController {
     func loadWord() {
         //NEED TO ADD A CHECK TO MAKE SURE NOT TOO MANY INCORRECT ANSWERS
         
+        print("Errors in Set: ", errorsInSet)
+        
         if currentWord! < 156 {
             currentWord! += 1
+            
+//            wordToTest.text! = wordsToTest[currentWord!]
+//            wordToTestAnswer = wordsToTestAnswer[currentWord!]
+            
+            if numberWordInSet < 12 {
+                numberWordInSet += 1
+            }
+            else {
+                if findingBaselSet == true && numberWordInSet == 12 {
+                    if errorsInSet > 0 {
+                        //Go to start of previous set
+                        currentWord = currentWord! - 24
+                        numberWordInSet = 1
+                        setInUse -= 1
+                        errorsInSet = 0
+                        
+                        print("Set decreased to: ", setInUse)
+                    }
+                    else if errorsInSet == 0 {
+                        brain.setBaselSet(setInUse)
+                        currentWord = currentWord! + 1
+                        setInUse += 1
+                        numberWordInSet = 1
+                        errorsInSet = 0
+                        print("Set increased to: ", setInUse)
+                    }
+                }
+                else if findingBaselSet == false && numberWordInSet == 12 {
+                    if errorsInSet > 7 {
+                        brain.setCeilingSet(setInUse)
+                        endTest()
+                    }
+                    else {
+                        //SHOULD BE NEXT SET WE'VE NOT USED YET
+                        print("Set incremented to find Ceiling")
+                        setInUse += 1
+                        currentWord = currentWord! + 1
+                        numberWordInSet = 1
+                    }
+                }
+            }
+            wordToTest.text! = wordsToTest[currentWord!]
+            wordToTestAnswer = wordsToTestAnswer[currentWord!]
         }
         else {
-            print("ALL ITEMS ADMINISTERED")
-        }
-        
-        wordToTest.text! = wordsToTest[currentWord!]
-        wordToTestAnswer = wordsToTestAnswer[currentWord!]
-        
-        if numberWordInSet < 12 {
-            numberWordInSet += 1
-        }
-        else {
-            setInUse += 1
-            numberWordInSet = 1
+            endTest()
         }
     }
     
-//    //Function to load next word from array - or finish test if list completed
-//    func loadWord() {
-//        if counter < wordsToTest.count {
-//            wordToTest.text = wordsToTest[counter]
-//            counter = counter + 1
-//        }
-//        else {
+    func endTest() {
+        print("ALL ITEMS ADMINISTERED")
 //            brain.calculateResult()
-//            timer.invalidate()
-//            performSegue(withIdentifier: "toTowreSubtest", sender: nil)
-//        }
-//    }
+        performSegue(withIdentifier: "toBPVScompleted", sender: nil)
+    }
     
 }
