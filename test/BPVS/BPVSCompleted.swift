@@ -13,19 +13,23 @@ import FirebaseDatabase
 
 class BPVSCompleted: UIViewController {
     
-//    var finalResultsDigit = Double()
-//    var finalResultsRevDigit = Double()
-//    var finalResultDigitSpan = Double()
+    var finalResultBPVS = Double()
+    var finalErrorsBPVS = Double()
+    var finalSetBPVS = Double()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let nextVC = segue.destination as! Menu
-//        nextVC.finalResultsDigit = finalResultsDigit
-//        nextVC.finalResultsRevDigit = finalResultsRevDigit
-//        nextVC.finalResultsDigitSpan = finalResultDigitSpan
+        let nextVC = segue.destination as! Menu
+        nextVC.finalResultBPVS = finalResultBPVS
+        nextVC.finalErrorsBPVS = finalErrorsBPVS
+        nextVC.finalSetBPVS = finalSetBPVS
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("BPVSCompleted -- RawScore: ", finalResultBPVS)
+        print("BPVSCompleted -- Errors  : ", finalErrorsBPVS)
+        print("BPVSCompleted -- Set No. : ", finalSetBPVS)
     }
     
     override func viewWillAppear(_ animated: Bool) {

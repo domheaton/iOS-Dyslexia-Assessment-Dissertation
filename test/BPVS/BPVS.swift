@@ -20,8 +20,13 @@ class BPVS: UIViewController {
     var wordToTestAnswer: Int?
     var errorsInSet = 0 //errors made within the set
     var numberWordInSet = 1 //words in set numbered from 1 to 12
-    var setInUse = 7 //starts in the set for age 9-11
+    var sets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] //Available sets
+    var setSelector = 6 //Used to select set 7 to begin with
+    var setInUse: Int?
+    var previousSetInUse: Int?
     var findingBaselSet: Bool?
+    var setsDeleted = 0
+    var finalResultBPVS: Int?
     
     private var brain = BPVSCalculations()
     
@@ -39,6 +44,12 @@ class BPVS: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setInUse = sets.remove(at: setSelector) //Load set 7 as default for age 10-11
+        setsDeleted += 1
+        
+        //For debugging
+        print("Initial Set Loaded: ", setInUse!)
+        
         wordsToTest = brain.setWordsToTest
         wordsToTestAnswer = brain.setWordsToTestAnswer
         
@@ -51,9 +62,10 @@ class BPVS: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let nextVC = segue.destination as! SubtestCompleted
-//        nextVC.finalResultsSWE = brain.getFinalResults()
-//        nextVC.scaledResultSWE = brain.getScaledScoreSWE()
+        let nextVC = segue.destination as! BPVSCompleted
+        nextVC.finalResultBPVS = Double(finalResultBPVS!)
+        nextVC.finalErrorsBPVS = Double(brain.getNumberOfErrorsMade())
+        nextVC.finalSetBPVS = Double(setInUse!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,64 +127,89 @@ class BPVS: UIViewController {
     }
     
     func loadWord() {
-        //NEED TO ADD A CHECK TO MAKE SURE NOT TOO MANY INCORRECT ANSWERS
+        previousSetInUse = setInUse!
         
-        print("Errors in Set: ", errorsInSet)
-        
-        if currentWord! < 156 {
-            currentWord! += 1
-            
-//            wordToTest.text! = wordsToTest[currentWord!]
-//            wordToTestAnswer = wordsToTestAnswer[currentWord!]
-            
-            if numberWordInSet < 12 {
+        if findingBaselSet == true {
+            if numberWordInSet == 12 {
+                if errorsInSet > 1 {
+                    setSelector -= 1
+                    setInUse = sets.remove(at: (setSelector))
+                    setsDeleted += 1
+                    
+                    //For debugging
+                    print("Sets: ", sets)
+                    print("Errors in set: ", errorsInSet)
+                    print("Finding Basel - Set decremented to: ", setInUse!)
+                    
+                    errorsInSet = 0
+                    numberWordInSet = 1
+                }
+                else if errorsInSet < 2 {
+                    brain.setBaselSet(setInUse!)
+                    findingBaselSet = false
+                    errorsInSet = 0
+                    setInUse = sets[setSelector]
+                    setsDeleted += 1
+                    
+                    //For debugging
+                    print("Now testing Set: ", setInUse!)
+                    
+                    numberWordInSet = 1
+                }
+            }
+            else if numberWordInSet < 13 {
                 numberWordInSet += 1
             }
-            else {
-                if findingBaselSet == true && numberWordInSet == 12 {
-                    if errorsInSet > 0 {
-                        //Go to start of previous set
-                        currentWord = currentWord! - 24
-                        numberWordInSet = 1
-                        setInUse -= 1
-                        errorsInSet = 0
-                        
-                        print("Set decreased to: ", setInUse)
-                    }
-                    else if errorsInSet == 0 {
-                        brain.setBaselSet(setInUse)
-                        currentWord = currentWord! + 1
-                        setInUse += 1
-                        numberWordInSet = 1
-                        errorsInSet = 0
-                        print("Set increased to: ", setInUse)
-                    }
-                }
-                else if findingBaselSet == false && numberWordInSet == 12 {
-                    if errorsInSet > 7 {
-                        brain.setCeilingSet(setInUse)
-                        endTest()
-                    }
-                    else {
-                        //SHOULD BE NEXT SET WE'VE NOT USED YET
-                        print("Set incremented to find Ceiling")
-                        setInUse += 1
-                        currentWord = currentWord! + 1
-                        numberWordInSet = 1
-                    }
-                }
-            }
-            wordToTest.text! = wordsToTest[currentWord!]
-            wordToTestAnswer = wordsToTestAnswer[currentWord!]
         }
         else {
-            endTest()
+            if numberWordInSet == 12 {
+                if errorsInSet < 8 {
+                    setSelector += 1
+                    setInUse = sets[setSelector]
+                    setsDeleted += 1
+                    
+                    //For debugging
+                    print("Set incremented: ", setInUse!)
+                    
+                    numberWordInSet = 1
+                    errorsInSet = 0
+                }
+                else {
+                    brain.setCeilingSet(setInUse!)
+                    endTest()
+                }
+            }
+            else if numberWordInSet < 13 {
+                numberWordInSet += 1
+            }
         }
+
+        if previousSetInUse! > setInUse! { //set has decreased
+            currentWord = currentWord! - 23
+            
+        }
+        else if previousSetInUse == setInUse {//set unchanged
+            if numberWordInSet < 13 {
+                currentWord! += 1
+            }
+        }
+        else if previousSetInUse! < setInUse! {
+            currentWord = currentWord! + 1 + ((setInUse! - previousSetInUse!)-1)*12
+        }
+        
+        //For debugging
+        print("numberWordInSet: ", numberWordInSet)
+
+        wordToTest.text! = wordsToTest[currentWord!]
+        wordToTestAnswer = wordsToTestAnswer[currentWord!]
     }
     
     func endTest() {
-        print("ALL ITEMS ADMINISTERED")
-//            brain.calculateResult()
+        //For debugging
+        print("Test Finished")
+        
+        brain.setCeilingWordNumber(currentWord!)
+        finalResultBPVS = brain.calculateResult()
         performSegue(withIdentifier: "toBPVScompleted", sender: nil)
     }
     

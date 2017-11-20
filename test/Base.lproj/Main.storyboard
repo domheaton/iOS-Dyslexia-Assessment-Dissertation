@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -2671,7 +2671,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                     <connections>
                         <outlet property="imageLoaded" destination="HHD-oQ-cA3" id="cMD-Gg-6wa"/>
                         <outlet property="wordToTest" destination="SAU-Za-p6M" id="n5L-6R-Gkz"/>
-                        <segue destination="syv-qC-yVD" kind="show" identifier="toBPVSCompleted" id="emP-OE-Zle"/>
+                        <segue destination="syv-qC-yVD" kind="show" identifier="toBPVScompleted" id="emP-OE-Zle"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eW0-SC-dyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2697,8 +2697,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="returnToMenuPressed:" destination="syv-qC-yVD" eventType="touchUpInside" id="H6P-hW-uwu"/>
-                                    <segue destination="jXw-g2-1CQ" kind="show" identifier="BPVStoMenu" id="0XQ-Gq-Ndm"/>
+                                    <action selector="returnToMenuPressed:" destination="syv-qC-yVD" eventType="touchUpInside" id="N3x-z2-HRr"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="The test is now complete." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="giA-1p-Ye2">
@@ -2719,6 +2718,9 @@ NOTE: This subtest runs for 10 minutes.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bPH-U9-TVB"/>
                     </view>
+                    <connections>
+                        <segue destination="jXw-g2-1CQ" kind="show" identifier="BPVStoMenu" id="4nh-dz-HX7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ph-Kh-dCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
