@@ -26,6 +26,9 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     var getDashAlpha = Double()
     var getDashFree = Double()
     var getDashFinal = Double()
+    var getBPVSFinal = Double()
+    var getBPVSErrors = Double()
+    var getBPVSSetNum = Double()
     
     var testArray: [String]!
     var testScoresToDisplay: [Double]!
@@ -33,6 +36,7 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     var towrePercentage: Double?
     var digitSpanPercentage: Double?
     var dashPercentage: Double?
+    var bpvsPercentage: Double?
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
@@ -74,37 +78,71 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         
         towrePercentage = (getTowre2 / 147.0) * 100.0
         digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
-        //THIS IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
+        
+        //THESE IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
         dashPercentage = (((getDashFinal * 4)/400.0) * 100.0)
+        bpvsPercentage = (getBPVSFinal / (getBPVSSetNum*12.0)) * 100.0
         
         //select only the scores that are available
-        if getTowre2 == 0 && getDigitSpan == 0 {
-            testArray = ["DASH"]
-            testScoresToDisplay = [dashPercentage!]
+        if getTowre2 == 0 {
+            testArray = ["BPVS-3", "DASH", "Digit Span"]
+            testScoresToDisplay = [bpvsPercentage!, dashPercentage!, digitSpanPercentage!]
+        }
+        else if getBPVSFinal == 0 {
+            testArray = ["Towre-2", "DASH", "Digit Span"]
+            testScoresToDisplay = [towrePercentage!, dashPercentage!, digitSpanPercentage!]
+        }
+        else if getDashFinal == 0 {
+            testArray = ["Towre-2", "BPVS-3", "Digit Span"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!, digitSpanPercentage!]
+        }
+        else if getDigitSpan == 0 {
+            testArray = ["Towre-2", "BPVS-3", "DASH"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!, dashPercentage!]
+        }
+        else if getTowre2 == 0 && getDigitSpan == 0 {
+            testArray = ["BPVS-3", "DASH"]
+            testScoresToDisplay = [towrePercentage!, digitSpanPercentage!]
         }
         else if getTowre2 == 0 && getDashFinal == 0 {
-            testArray = ["Digit Span"]
-            testScoresToDisplay = [digitSpanPercentage!]
+            testArray = ["BPVS-3", "Digit Span"]
+            testScoresToDisplay = [bpvsPercentage!, digitSpanPercentage!]
         }
-        else if getDashFinal == 0 && getDigitSpan == 0 {
-            testArray = ["Towre-2"]
-            testScoresToDisplay = [towrePercentage!]
-        }
-        else if getTowre2 == 0 {
+        else if getTowre2 == 0 && getBPVSFinal == 0 {
             testArray = ["DASH", "Digit Span"]
             testScoresToDisplay = [dashPercentage!, digitSpanPercentage!]
         }
-        else if getDigitSpan == 0 {
-            testArray = ["Towre-2", "DASH"]
-            testScoresToDisplay = [towrePercentage!, dashPercentage!]
+        else if getDashFinal == 0 && getDigitSpan == 0 {
+            testArray = ["Towre-2", "BPVS-3"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!]
         }
-        else if getDashFinal == 0 {
+        else if getBPVSFinal == 0 && getDashFinal == 0 {
             testArray = ["Towre-2", "Digit Span"]
             testScoresToDisplay = [towrePercentage!, digitSpanPercentage!]
         }
-        else {
+        else if getBPVSFinal == 0 && getDigitSpan == 0 {
+            testArray = ["Towre-2", "DASH"]
+            testScoresToDisplay = [towrePercentage!, dashPercentage!]
+        }
+        else if getTowre2 == 0 {
+            testArray = ["BPVS-3", "DASH", "Digit Span"]
+            testScoresToDisplay = [bpvsPercentage!, dashPercentage!, digitSpanPercentage!]
+        }
+        else if getDigitSpan == 0 {
+            testArray = ["Towre-2", "BPVS-3", "DASH"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!, dashPercentage!]
+        }
+        else if getDashFinal == 0 {
+            testArray = ["Towre-2", "BPVS-3", "Digit Span"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!, digitSpanPercentage!]
+        }
+        else if getBPVSFinal == 0 {
             testArray = ["Towre-2", "DASH", "Digit Span"]
-            testScoresToDisplay = [towrePercentage!, dashPercentage!, digitSpanPercentage!]
+                        testScoresToDisplay = [towrePercentage!, dashPercentage!, digitSpanPercentage!]
+        }
+        else {
+            testArray = ["Towre-2", "BPVS-3", "DASH", "Digit Span"]
+            testScoresToDisplay = [towrePercentage!, bpvsPercentage!, dashPercentage!, digitSpanPercentage!]
         }
         
         for i in 0..<testArray.count {
@@ -168,6 +206,12 @@ class IndividualScore: UIViewController, ChartViewDelegate {
             nextVC.getDashAlpha = getDashAlpha
             nextVC.getDashFree = getDashFree
             nextVC.getDashFinal = getDashFinal
+        }
+        else if selectedBarFromChart == "BPVS-3" {
+            nextVC.getTest = selectedBarFromChart!
+            nextVC.getBPVSFinal = getBPVSFinal
+            nextVC.getBPVSErrors = getBPVSErrors
+            nextVC.getBPVSSetNum = getBPVSSetNum
         }
     }
     

@@ -27,6 +27,9 @@ class IndepthScores: UIViewController {
     var getDashAlpha = Double()
     var getDashFree = Double()
     var getDashFinal = Double()
+    var getBPVSFinal = Double()
+    var getBPVSErrors = Double()
+    var getBPVSSetNum = Double()
     
     var testArray: [String]!
     var testScoresToDisplay: [Double]!
@@ -99,6 +102,14 @@ class IndepthScores: UIViewController {
             self.subtest1Score.text = String(getDashFinal)
             self.subtest2Score.text = ""
         }
+        else if getTest == "BPVS-3" {
+            
+            self.subtest1Label.text = "Test Raw Score:"
+            self.subtest2Label.text = "Limit lines apply to the Raw Score mark"
+            
+            self.subtest1Score.text = String(getBPVSFinal)
+            self.subtest2Score.text = ""
+        }
     }
     
     @objc func saveGraph() {
@@ -126,6 +137,10 @@ class IndepthScores: UIViewController {
             testArray = ["Copy Best", "Copy Fast", "Alphabet", "Free"]
             testScoresToDisplay = [getDashBest, getDashFast, getDashAlpha, getDashFree]
         }
+        else if getTest == "BPVS-3" {
+            testArray = ["Raw Score", "No. Errors", "Final Set"]
+            testScoresToDisplay = [getBPVSFinal, getBPVSErrors, getBPVSSetNum]
+        }
         
         for i in 0..<testArray.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: testScoresToDisplay[i])
@@ -149,6 +164,14 @@ class IndepthScores: UIViewController {
             barChartView.leftAxis.addLimitLine(limitlineLower)
             let scaledUpperLimitline = (116.0 / 145.0) * 100.0
             let limitlineUpper = ChartLimitLine(limit: scaledUpperLimitline, label: "Above Average")
+            barChartView.leftAxis.addLimitLine(limitlineUpper)
+        }
+        else if getTest == "BPVS-3" {
+            let limitline = ChartLimitLine(limit: 78.0, label: "9-11 Years Average")
+            barChartView.leftAxis.addLimitLine(limitline)
+            let limitlineLower = ChartLimitLine(limit: 65.0, label: "Below Average")
+            barChartView.leftAxis.addLimitLine(limitlineLower)
+            let limitlineUpper = ChartLimitLine(limit: 90.0, label: "Above Average")
             barChartView.leftAxis.addLimitLine(limitlineUpper)
         }
         

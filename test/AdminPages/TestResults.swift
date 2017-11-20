@@ -22,8 +22,11 @@ class TestResults {
     var testDashAlpha: Double?
     var testDashFree: Double?
     var testDashFinal: Double?
+    var testBPVSFinal: Double?
+    var testBPVSErrors: Double?
+    var testBPVSSetNum: Double?
     
-    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testTowre2: Double?, testForwardDigitSpan: Double?, testRevDigitSpan: Double?, testDigitSpan: Double?, testDashBest: Double?, testDashFast: Double?, testDashAlpha: Double?, testDashFree: Double?, testDashFinal: Double?) {
+    init(name: String?, testName: String?, testTowreSWE: Double?, testTowrePDE: Double?, testTowre2: Double?, testForwardDigitSpan: Double?, testRevDigitSpan: Double?, testDigitSpan: Double?, testDashBest: Double?, testDashFast: Double?, testDashAlpha: Double?, testDashFree: Double?, testDashFinal: Double?, testBPVSFinal: Double?, testBPVSErrors: Double?, testBPVSSetNum: Double?) {
         self.name = name
         self.testName = testName
         self.testTowreSWE = testTowreSWE
@@ -37,6 +40,9 @@ class TestResults {
         self.testDashAlpha = testDashAlpha
         self.testDashFree = testDashFree
         self.testDashFinal = testDashFinal
+        self.testBPVSFinal = testBPVSFinal
+        self.testBPVSErrors = testBPVSErrors
+        self.testBPVSSetNum = testBPVSSetNum
     }
     
 }

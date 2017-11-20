@@ -70,9 +70,12 @@ class TableMenuController: UITableViewController {
                     let testDashAlpha = nameObject?["Dash CopyAlpha"]
                     let testDashFree = nameObject?["Dash Free"]
                     let testDashFinal = nameObject?["Dash Final"]
+                    let testBPVSFinal = nameObject?["BPVS Final"]
+                    let testBPVSErrors = nameObject?["BPVS Errors"]
+                    let testBPVSSetNum = nameObject?["BPVS Set Num"]
                    
                     //value to be printed in tableViewController Cells
-                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testTowre2: testTowre2 as! Double?, testForwardDigitSpan: testForwardDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?, testDigitSpan: testDigitSpan as! Double?, testDashBest: testDashBest as! Double?, testDashFast: testDashFast as! Double?, testDashAlpha: testDashAlpha as! Double?, testDashFree: testDashFree as! Double?, testDashFinal: testDashFinal as! Double?)
+                    let values = TestResults(name: userName as! String?, testName: testName as! String?, testTowreSWE: testTowreSWE as! Double?, testTowrePDE: testTowrePDE as! Double?, testTowre2: testTowre2 as! Double?, testForwardDigitSpan: testForwardDigitSpan as! Double?, testRevDigitSpan: testRevDigitSpan as! Double?, testDigitSpan: testDigitSpan as! Double?, testDashBest: testDashBest as! Double?, testDashFast: testDashFast as! Double?, testDashAlpha: testDashAlpha as! Double?, testDashFree: testDashFree as! Double?, testDashFinal: testDashFinal as! Double?, testBPVSFinal: testBPVSFinal as! Double?, testBPVSErrors: testBPVSErrors as! Double?, testBPVSSetNum: testBPVSSetNum as! Double?)
                     self.resultsList.append(values)
                 }
                 self.tableNames.reloadData()
@@ -88,23 +91,33 @@ class TableMenuController: UITableViewController {
         let detailsToPass: TestResults
         detailsToPass = resultsList[indexPath.row]
         nextVC.getName = detailsToPass.name!
-        if detailsToPass.testTowreSWE != nil {
-            nextVC.getTowreSWE = detailsToPass.testTowreSWE!
-        }
-        if detailsToPass.testTowrePDE != nil {
-            nextVC.getTowrePDE = detailsToPass.testTowrePDE!
-        }
-        if detailsToPass.testForwardDigitSpan != nil {
-          nextVC.getForwardDigitSpan = detailsToPass.testForwardDigitSpan!
-        }
-        if detailsToPass.testRevDigitSpan != nil {
-            nextVC.getRevDigitSpan = detailsToPass.testRevDigitSpan!
-        }
+//        if detailsToPass.testTowreSWE != nil {
+//            nextVC.getTowreSWE = detailsToPass.testTowreSWE!
+//        }
+//        if detailsToPass.testTowrePDE != nil {
+//            nextVC.getTowrePDE = detailsToPass.testTowrePDE!
+//        }
+//        if detailsToPass.testForwardDigitSpan != nil {
+//          nextVC.getForwardDigitSpan = detailsToPass.testForwardDigitSpan!
+//        }
+//        if detailsToPass.testRevDigitSpan != nil {
+//            nextVC.getRevDigitSpan = detailsToPass.testRevDigitSpan!
+//        }
+//        if detailsToPass.testTowre2 != nil {
+//            nextVC.getTowre2 = detailsToPass.testTowre2!
+//        }
+//        if detailsToPass.testDigitSpan != nil {
+//            nextVC.getDigitSpan = detailsToPass.testDigitSpan!
+//        }
         if detailsToPass.testTowre2 != nil {
             nextVC.getTowre2 = detailsToPass.testTowre2!
+            nextVC.getTowrePDE = detailsToPass.testTowrePDE!
+            nextVC.getTowreSWE = detailsToPass.testTowreSWE!
         }
         if detailsToPass.testDigitSpan != nil {
             nextVC.getDigitSpan = detailsToPass.testDigitSpan!
+            nextVC.getForwardDigitSpan = detailsToPass.testForwardDigitSpan!
+            nextVC.getRevDigitSpan = detailsToPass.testRevDigitSpan!
         }
         if detailsToPass.testDashFinal != nil {
             nextVC.getDashFinal = detailsToPass.testDashFinal!
@@ -112,6 +125,11 @@ class TableMenuController: UITableViewController {
             nextVC.getDashFast = detailsToPass.testDashFast!
             nextVC.getDashAlpha = detailsToPass.testDashAlpha!
             nextVC.getDashFree = detailsToPass.testDashFree!
+        }
+        if detailsToPass.testBPVSFinal != nil {
+            nextVC.getBPVSFinal = detailsToPass.testBPVSFinal!
+            nextVC.getBPVSErrors = detailsToPass.testBPVSErrors!
+            nextVC.getBPVSSetNum = detailsToPass.testBPVSSetNum!
         }
 
         self.navigationController?.pushViewController(nextVC, animated: true)
