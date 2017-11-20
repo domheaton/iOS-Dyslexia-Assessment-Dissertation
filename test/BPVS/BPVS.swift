@@ -15,9 +15,11 @@ class BPVS: UIViewController {
     
     var wordsToTest: [String] = []
     var wordsToTestAnswer: [Int] = []
+    var imagesToTest: [UIImage] = []
     var initialWord = 72 //starts the wordsToTest array at the set of words for age 9-11
     var currentWord: Int?
     var wordToTestAnswer: Int?
+    var imageToTest: UIImage?
     var errorsInSet = 0 //errors made within the set
     var numberWordInSet = 1 //words in set numbered from 1 to 12
     var sets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] //Available sets
@@ -52,11 +54,10 @@ class BPVS: UIViewController {
         
         wordsToTest = brain.setWordsToTest
         wordsToTestAnswer = brain.setWordsToTestAnswer
+        imagesToTest = brain.setImagesToTest
         
         loadInitialWord()
         findingBaselSet = true
-        
-        //Set name of image to be displayed on screen
         
         brain.zeroScore()
     }
@@ -123,7 +124,9 @@ class BPVS: UIViewController {
     func loadInitialWord() {
         wordToTest.text! = wordsToTest[initialWord]
         wordToTestAnswer = wordsToTestAnswer[initialWord]
+        imageToTest = imagesToTest[initialWord]
         currentWord = initialWord
+        loadPicture()
     }
     
     func loadWord() {
@@ -202,6 +205,12 @@ class BPVS: UIViewController {
 
         wordToTest.text! = wordsToTest[currentWord!]
         wordToTestAnswer = wordsToTestAnswer[currentWord!]
+        imageToTest = imagesToTest[currentWord!]
+        loadPicture()
+    }
+    
+    func loadPicture() {
+        imageLoaded.image = imageToTest
     }
     
     func endTest() {
