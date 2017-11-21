@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1625,13 +1625,13 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                 <rect key="frame" x="16" y="210" width="344" height="411"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1) DASH is made up of four subtests with different instructions explained before the tests begin.
+                                <string key="text">1) DASH is made up of four subtests with different instructions explained before the tests begin.
 
 2) The administrator should read out the instructions as necessary to the candidate and answer any questions before pressing 'Begin Test'.  3) The subtests run for different lengths of time as indicated on the instructions page for each test.
 
 4) When the timer finishes for a test, a results input page will appear where the administrator should enter the required information before advancing to the next subtest.
 
-5) Swipe right for instructions to read to the student or to begin the test.</mutableString>
+5) Swipe right for instructions to read to the student or to begin the test.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1676,7 +1676,7 @@ When ready, press 'Begin Test' and read the first pattern to the student.</strin
                                 <rect key="frame" x="16" y="84" width="342" height="448"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The first subtest "Copy Best" will run for two minutes.
+                                <string key="text">The first subtest "Copy Best" will run for two minutes.
 
 The student should copy the following phrase in their best handwriting as many times as possible before the timer expires:
 
@@ -1686,7 +1686,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
 
-NOTE: This subtest runs for 2 minutes only.</mutableString>
+NOTE: This subtest runs for 2 minutes only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2093,7 +2093,7 @@ NOTE: This subtest runs for 2 minutes only.</string>
                                 <rect key="frame" x="16" y="80" width="343" height="494"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">The third subtest "Alphabet Copy" will run for two minutes.
+                                <string key="text">The third subtest "Alphabet Copy" will run for one minute.
 
 The student should write/copy out the alphabet as fast as possible and as many times as possible before the timer expires.
 
@@ -2101,7 +2101,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete letters the student has managed to form within the time limit before the next subtest is explained.
 
-NOTE: This subtest runs for 2 minutes only.</string>
+NOTE: This subtest runs for 1 minute only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2535,7 +2535,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                                 <color key="pageIndicatorTintColor" red="0.2901960784" green="0.80392156859999997" blue="0.6588235294" alpha="0.27415988870000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.2901960784" green="0.80392156859999997" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="For DASH, the student should control this device:" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-A6-vVs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="For BPVS 3, the student should control this device:" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-A6-vVs">
                                 <rect key="frame" x="16" y="144" width="344" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2546,7 +2546,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                                 <rect key="frame" x="16" y="210" width="344" height="398"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1) BPVS 3 is a single test of matching a word to a picture.
+                                <string key="text">1) BPVS 3 is a single test of matching a word to a picture.
 
 2) On beginning the test a word will appear on the screen along with four images.  3) The student should read the word and select the image they deem desrcibes the word the best.
 
@@ -2554,7 +2554,7 @@ NOTE: This subtest runs for 10 minutes.</string>
 
 5) The test will automatically end once all the criteria are met - the student should just continue until the display says test complete.
 
-6) Swipe right for instructions to read to the student or to begin the test.</mutableString>
+6) Swipe right for instructions to read to the student or to begin the test.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2599,7 +2599,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                                 <rect key="frame" x="16" y="84" width="342" height="448"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Read the following to the student:
+                                <string key="text">Read the following to the student:
 
 "For this test I will pass you this device. When you press begin test a word will appear on the along with four images.
 
@@ -2608,7 +2608,7 @@ You should press the picture you think matches the word the best. There will be 
 Keep going until the 'Test Completed' page appears on the screen and then pass the device back to me.
 
 There is no time limit on this test, so take your time if you want to. Answers cannot be undone, so take care when selecting an answer." 
-When ready, pass device to the student and let them press 'Begin Test'.</mutableString>
+When ready, pass device to the student and let them press 'Begin Test'.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

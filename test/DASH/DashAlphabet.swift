@@ -18,7 +18,6 @@ class DashAlphabet: UIViewController {
     
     var timer3 = Timer()
     var timeSeconds = 0.0
-    var timeMinutes = 0
     
     @IBOutlet weak var timeElapsedLabel: UILabel!
     
@@ -46,28 +45,20 @@ class DashAlphabet: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //2 minute timer display = 0 : 00.0 -- min : sec.millisecond
+    //1 minute timer display = 0 : 00.0 -- min : sec.millisecond
     @objc func checkTimeElapsed() {
-        if timeMinutes != 2 {
             if timeSeconds < 60 {
                 timeSeconds += 0.1
-                timeElapsedLabel.text = String(timeMinutes) + " : " + String(format: "%.1f", timeSeconds)
+                timeElapsedLabel.text =  "0 : " + String(format: "%.1f", timeSeconds)
             }
             else {
+                //For debugging
+                print("Timer Expired")
+                
+                timer3.invalidate()
                 timeSeconds = 0.0
-                timeMinutes += 1
-                timeElapsedLabel.text = String(timeMinutes) + " : " + String(format: "%.1f", timeSeconds)
+                performSegue(withIdentifier: "toDashAlphabetAnswers", sender: nil)
             }
-        }
-        else {
-            //For debugging
-            print("Timer Expired")
-            
-            timer3.invalidate()
-            timeSeconds = 0.0
-            timeMinutes = 0
-            performSegue(withIdentifier: "toDashAlphabetAnswers", sender: nil)
-        }
     }
     
     @IBAction func tempSkip(_ sender: Any) {
@@ -76,7 +67,6 @@ class DashAlphabet: UIViewController {
         
         timer3.invalidate()
         timeSeconds = 0.0
-        timeMinutes = 0
         performSegue(withIdentifier: "toDashAlphabetAnswers", sender: nil)
     }
 }

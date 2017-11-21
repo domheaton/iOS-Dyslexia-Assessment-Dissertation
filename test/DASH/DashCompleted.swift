@@ -22,11 +22,11 @@ class DashCompleted: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! Menu
-        nextVC.copyBestWordsWritten = brain.getScaledCopyBest()
-        nextVC.copyFastWordsWritten = brain.getScaledCopyFast()
-        nextVC.copyAlphabetTotalWritten = brain.getScaledCopyAlphabet()
-        nextVC.freeWritingTotalWritten = brain.getScaledFreeWriting()
-        nextVC.finalResultDash = brain.getFinalResultDash()
+        nextVC.copyBestWordsWritten = brain.getCopyBest() //WPM
+        nextVC.copyFastWordsWritten = brain.getCopyFast() //WPM
+        nextVC.copyAlphabetTotalWritten = brain.getCopyAlphabet() //WPM
+        nextVC.freeWritingTotalWritten = brain.getFreeWriting() //WPM
+        nextVC.finalResultDash = brain.getFinalResultDash() //Scaled & Standardised
     }
 
     override func viewDidLoad() {
@@ -37,10 +37,11 @@ class DashCompleted: UIViewController {
         brain.scaleResults()
         
         //For debugging
-        print("Copy Best Result     : ", brain.getScaledCopyBest())
-        print("Copy Fast Result     : ", brain.getScaledCopyFast())
-        print("Alphabet Copy Result : ", brain.getScaledCopyAlphabet())
-        print("Free Writing Result  : ", brain.getScaledFreeWriting())
+        print("Copy Best Result     : ", brain.getCopyBest())
+        print("Copy Fast Result     : ", brain.getCopyFast())
+        print("Alphabet Copy Result : ", brain.getCopyAlphabet())
+        print("Free Writing Result  : ", brain.getFreeWriting())
+        print("Standardised Result  : ", brain.getFinalResultDash())
     }
     
     override func viewWillAppear(_ animated: Bool) {

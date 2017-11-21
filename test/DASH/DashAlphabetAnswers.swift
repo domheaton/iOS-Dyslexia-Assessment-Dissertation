@@ -35,7 +35,7 @@ class DashAlphabetAnswers: UIViewController {
         
         stepper.wraps = true
         stepper.autorepeat = true
-        stepper.maximumValue = 100
+        stepper.maximumValue = 130 //reasonable max for this test
         stepper.stepValue = 1
     }
     

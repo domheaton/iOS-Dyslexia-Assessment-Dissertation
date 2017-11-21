@@ -80,8 +80,8 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
         
         //THESE IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
-        dashPercentage = (((getDashFinal * 4)/400.0) * 100.0)
-        bpvsPercentage = (getBPVSFinal / (getBPVSSetNum*12.0)) * 100.0
+        dashPercentage = getDashFinal
+        bpvsPercentage = (getBPVSFinal / (getBPVSSetNum * 12.0)) * 100.0
         
         //select only the scores that are available
         if getTowre2 == 0 {
