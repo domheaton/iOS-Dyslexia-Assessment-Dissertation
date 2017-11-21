@@ -103,7 +103,7 @@ class IndepthScores: UIViewController {
             getDashPercentile()
             
             //reverse the pectange process used in individualscore.swift
-            self.subtest1Score.text = String(format: "%.1f", getDashFinal * 100.0 / 146.0)
+            self.subtest1Score.text = String(getDashFinal)
             self.subtest2Score.text = dashPercentile!
         }
         else if getTest == "BPVS-3" {
@@ -444,115 +444,115 @@ class IndepthScores: UIViewController {
     }
     
     func getDashPercentile() {
-        let tempFinalResult = getDashFinal * 100.0 / 146.0
-        if tempFinalResult <= 16.0 {
+        let tempFinalResult = getDashFinal
+        if tempFinalResult <= 54.0 {
             dashPercentile = "0.2"
         }
         else {
             switch tempFinalResult {
-            case 17.0:
-                dashPercentile = "0.4"
-            case 18.0:
-                dashPercentile = "0.7"
-            case 19.0:
-                dashPercentile = "2.0"
-            case 20.0:
-                dashPercentile = "2.7"
-            case 21.0:
-                dashPercentile = "3.8"
-            case 22.0:
-                dashPercentile = "4.2"
-            case 23.0:
-                dashPercentile = "4.9"
-            case 24.0:
-                dashPercentile = "6.0"
-            case 25.0:
-                dashPercentile = "7.1"
-            case 26.0:
-                dashPercentile = "8.8"
-            case 27.0:
-                dashPercentile = "10.1"
-            case 28.0:
-                dashPercentile = "12.8"
-            case 29.0:
-                dashPercentile = "15.4"
-            case 30.0:
-                dashPercentile = "18.7"
-            case 31.0:
-                dashPercentile = "21.4"
-            case 32.0:
-                dashPercentile = "24.0"
-            case 33.0:
-                dashPercentile = "28.4"
-            case 34.0:
-                dashPercentile = "30.0"
-            case 35.0:
-                dashPercentile = "32.2"
-            case 36.0:
-                dashPercentile = "36.1"
-            case 37.0:
-                dashPercentile = "39.6"
-            case 38.0:
-                dashPercentile = "44.1"
-            case 39.0:
-                dashPercentile = "48.5"
-            case 40.0:
-                dashPercentile = "52.4"
-            case 41.0:
-                dashPercentile = "57.7"
-            case 42.0:
-                dashPercentile = "61.7"
-            case 43.0:
-                dashPercentile = "64.3"
-            case 44.0:
-                dashPercentile = "68.5"
-            case 45.0:
-                dashPercentile = "71.8"
-            case 46.0:
-                dashPercentile = "73.1"
-            case 47.0:
-                dashPercentile = "76.0"
-            case 48.0:
-                dashPercentile = "79.1"
-            case 49.0:
-                dashPercentile = "82.2"
-            case 50.0:
-                dashPercentile = "83.5"
-            case 51.0:
-                dashPercentile = "86.8"
-            case 52.0:
-                dashPercentile = "89.0"
-            case 53.0:
-                dashPercentile = "91.2"
-            case 54.0:
-                dashPercentile = "92.5"
-            case 55.0:
-                dashPercentile = "93.2"
-            case 56.0:
-                dashPercentile = "94.5"
-            case 57.0:
-                dashPercentile = "95.1"
-            case 58.0:
-                dashPercentile = "96.2"
             case 59.0:
-                dashPercentile = "97.1"
-            case 60.0:
-                dashPercentile = "97.4"
-            case 61.0:
-                dashPercentile = "98.4"
+                dashPercentile = "0.4"
             case 62.0:
-                dashPercentile = "98.7"
-            case 63.0:
-                dashPercentile = "98.9"
-            case 64.0:
-                dashPercentile = "99.1"
-            case 65.0:
-                dashPercentile = "99.3"
-            case 66.0:
-                dashPercentile = "99.6"
+                dashPercentile = "0.7"
             case 67.0:
+                dashPercentile = "2.0"
+            case 70.0:
+                dashPercentile = "2.7"
+            case 72.0:
+                dashPercentile = "3.8"
+            case 74.0:
+                dashPercentile = "4.2"
+            case 75.0:
+                dashPercentile = "4.9"
+            case 76.0:
+                dashPercentile = "6.0"
+            case 77.0:
+                dashPercentile = "7.1"
+            case 79.0:
+                dashPercentile = "8.8"
+            case 80.0:
+                dashPercentile = "10.1"
+            case 82.0:
+                dashPercentile = "12.8"
+            case 84.0:
+                dashPercentile = "15.4"
+            case 86.0:
+                dashPercentile = "18.7"
+            case 87.0:
+                dashPercentile = "21.4"
+            case 89.0:
+                dashPercentile = "24.0"
+            case 90.0:
+                dashPercentile = "28.4"
+            case 92.0:
+                dashPercentile = "30.0"
+            case 93.0:
+                dashPercentile = "32.2"
+            case 94.0:
+                dashPercentile = "36.1"
+            case 95.0:
+                dashPercentile = "39.6"
+            case 97.0:
+                dashPercentile = "44.1"
+            case 99.0:
+                dashPercentile = "48.5"
+            case 100.0:
+                dashPercentile = "52.4"
+            case 102.0:
+                dashPercentile = "57.7"
+            case 104.0:
+                dashPercentile = "61.7"
+            case 105.0:
+                dashPercentile = "64.3"
+            case 106.0:
+                dashPercentile = "68.5"
+            case 108.0:
+                dashPercentile = "71.8"
+            case 109.0:
+                dashPercentile = "73.1"
+            case 110.0:
+                dashPercentile = "76.0"
+            case 111.0:
+                dashPercentile = "79.1"
+            case 113.0:
+                dashPercentile = "82.2"
+            case 114.0:
+                dashPercentile = "83.5"
+            case 116.0:
+                dashPercentile = "86.8"
+            case 118.0:
+                dashPercentile = "89.0"
+            case 119.0:
+                dashPercentile = "91.2"
+            case 121.0:
+                dashPercentile = "92.5"
+            case 122.0:
+                dashPercentile = "93.2"
+            case 123.0:
+                dashPercentile = "94.5"
+            case 124.0:
+                dashPercentile = "95.1"
+            case 126.0:
+                dashPercentile = "96.2"
+            case 127.0:
+                dashPercentile = "97.1"
+            case 129.0:
+                dashPercentile = "97.4"
+            case 130.0:
+                dashPercentile = "98.4"
+            case 133.0:
+                dashPercentile = "98.7"
+            case 134.0:
+                dashPercentile = "98.9"
+            case 135.0:
+                dashPercentile = "99.1"
+            case 136.0:
+                dashPercentile = "99.3"
+            case 138.0:
+                dashPercentile = "99.6"
+            case 141.0:
                 dashPercentile = "99.8"
-            case 68.0:
+            case 146.0:
                 dashPercentile = "100.0"
             default:
                 dashPercentile = "Error Occurred"

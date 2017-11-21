@@ -47,11 +47,11 @@ struct DashCalculations {
     
     //Return Raw Values -- WPM
     func getCopyBest() -> Double {
-        return copyBestWordsWritten!/2.0
+        return copyBestWordsWritten!
     }
     
     func getCopyFast() -> Double {
-        return copyFastWordsWritten!/2.0
+        return copyFastWordsWritten!
     }
 
     func getCopyAlphabet() -> Double {
@@ -59,7 +59,7 @@ struct DashCalculations {
     }
     
     func getFreeWriting() -> Double {
-        return freeWritingTotalWritten!/10.0
+        return freeWritingTotalWritten!/5.0
     }
     
     //Return Scaled Values
@@ -84,7 +84,7 @@ struct DashCalculations {
     }
     
     mutating func standardiseCopyBest() {
-        let tempCopyBest = copyBestWordsWritten! / 2.0
+        let tempCopyBest = copyBestWordsWritten!
         if tempCopyBest > 24 {
             scaledCopyBest = 17.0
         }
@@ -145,7 +145,7 @@ struct DashCalculations {
     }
     
     mutating func standardiseCopyFast() {
-        let tempCopyFast = copyFastWordsWritten! / 2.0
+        let tempCopyFast = copyFastWordsWritten!
         if tempCopyFast > 30 {
             scaledCopyBest = 17.0
         }
@@ -270,7 +270,7 @@ struct DashCalculations {
     }
     
     mutating func standardiseFreeWriting() {
-        let tempFreeWriting = freeWritingTotalWritten! / 10.0
+        let tempFreeWriting = freeWritingTotalWritten! / 5.0
         if tempFreeWriting > 25 {
             scaledFreeWriting = 17.0
         }

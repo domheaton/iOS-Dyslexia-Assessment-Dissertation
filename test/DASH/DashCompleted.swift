@@ -38,9 +38,13 @@ class DashCompleted: UIViewController {
         
         //For debugging
         print("Copy Best Result     : ", brain.getCopyBest())
+        print("Copy Best Scaled     : ", brain.getScaledCopyBest())
         print("Copy Fast Result     : ", brain.getCopyFast())
+        print("Copy Fast Scaled     : ", brain.getScaledCopyFast())
         print("Alphabet Copy Result : ", brain.getCopyAlphabet())
+        print("Alphabet Copy Scaled : ", brain.getScaledCopyAlphabet())
         print("Free Writing Result  : ", brain.getFreeWriting())
+        print("Free Writing Scaled  : ", brain.getScaledFreeWriting())
         print("Standardised Result  : ", brain.getFinalResultDash())
     }
     
