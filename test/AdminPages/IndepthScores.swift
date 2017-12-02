@@ -41,6 +41,7 @@ class IndepthScores: UIViewController {
     var towrePercentageSWE: Double?
     var towrePercentagePDE: Double?
     var dashPercentile: String?
+    var getBPVSStandardised: Double?
     
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var nameOfStudentLabel: UILabel!
@@ -109,10 +110,12 @@ class IndepthScores: UIViewController {
         else if getTest == "BPVS-3" {
             
             self.subtest1Label.text = "Test Raw Score:"
-            self.subtest2Label.text = "Limit lines apply to the Raw Score mark"
+            self.subtest2Label.text = "Standardised Test Score:"
+            
+            standardiseBPVS()
             
             self.subtest1Score.text = String(format: "%.1f", getBPVSFinal)
-            self.subtest2Score.text = ""
+            self.subtest2Score.text = String(getBPVSStandardised!)
         }
     }
     
@@ -142,8 +145,8 @@ class IndepthScores: UIViewController {
             testScoresToDisplay = [getDashBest, getDashFast, getDashAlpha, getDashFree]
         }
         else if getTest == "BPVS-3" {
-            testArray = ["Raw Score", "No. Errors", "Final Set"]
-            testScoresToDisplay = [getBPVSFinal, getBPVSErrors, getBPVSSetNum]
+            testArray = ["Raw Score", "Standardised Score", "No. Errors", "Final Set"]
+            testScoresToDisplay = [getBPVSFinal, getBPVSStandardised!, getBPVSErrors, getBPVSSetNum]
         }
         
         for i in 0..<testArray.count {
@@ -556,6 +559,159 @@ class IndepthScores: UIViewController {
                 dashPercentile = "100.0"
             default:
                 dashPercentile = "Error Occurred"
+            }
+        }
+    }
+    
+    //Stats for Age 10years 0-2months
+    func standardiseBPVS() {
+        if getBPVSFinal < 99 {
+            getBPVSStandardised = 69.0
+        }
+        else {
+            switch getBPVSFinal {
+            case 99.0:
+                getBPVSStandardised = 70.0
+            case 100.0:
+                getBPVSStandardised = 71.0
+            case 101.0:
+                getBPVSStandardised = 72.0
+            case 102.0:
+                getBPVSStandardised = 73.0
+            case 103.0:
+                getBPVSStandardised = 74.0
+            case 104.0:
+                getBPVSStandardised = 75.0
+            case 105.0:
+                getBPVSStandardised = 76.0
+            case 106.0:
+                getBPVSStandardised = 77.0
+            case 107.0:
+                getBPVSStandardised = 78.0
+            case 108.0:
+                getBPVSStandardised = 79.0
+            case 109.0:
+                getBPVSStandardised = 80.0
+            case 110.0:
+                getBPVSStandardised = 80.0
+            case 111.0:
+                getBPVSStandardised = 81.0
+            case 112.0:
+                getBPVSStandardised = 81.0
+            case 113.0:
+                getBPVSStandardised = 82.0
+            case 114.0:
+                getBPVSStandardised = 82.0
+            case 115.0:
+                getBPVSStandardised = 83.0
+            case 116.0:
+                getBPVSStandardised = 83.0
+            case 117.0:
+                getBPVSStandardised = 84.0
+            case 118.0:
+                getBPVSStandardised = 84.0
+            case 119.0:
+                getBPVSStandardised = 85.0
+            case 120.0:
+                getBPVSStandardised = 86.0
+            case 121.0:
+                getBPVSStandardised = 87.0
+            case 122.0:
+                getBPVSStandardised = 87.0
+            case 123.0:
+                getBPVSStandardised = 88.0
+            case 124.0:
+                getBPVSStandardised = 89.0
+            case 125.0:
+                getBPVSStandardised = 90.0
+            case 126.0:
+                getBPVSStandardised = 92.0
+            case 127.0:
+                getBPVSStandardised = 93.0
+            case 128.0:
+                getBPVSStandardised = 94.0
+            case 129.0:
+                getBPVSStandardised = 95.0
+            case 130.0:
+                getBPVSStandardised = 96.0
+            case 131.0:
+                getBPVSStandardised = 97.0
+            case 132.0:
+                getBPVSStandardised = 98.0
+            case 133.0:
+                getBPVSStandardised = 99.0
+            case 134.0:
+                getBPVSStandardised = 100.0
+            case 135.0:
+                getBPVSStandardised = 101.0
+            case 136.0:
+                getBPVSStandardised = 102.0
+            case 137.0:
+                getBPVSStandardised = 102.0
+            case 138.0:
+                getBPVSStandardised = 103.0
+            case 139.0:
+                getBPVSStandardised = 104.0
+            case 140.0:
+                getBPVSStandardised = 105.0
+            case 141.0:
+                getBPVSStandardised = 106.0
+            case 142.0:
+                getBPVSStandardised = 107.0
+            case 143.0:
+                getBPVSStandardised = 107.0
+            case 144.0:
+                getBPVSStandardised = 108.0
+            case 145.0:
+                getBPVSStandardised = 109.0
+            case 146.0:
+                getBPVSStandardised = 110.0
+            case 147.0:
+                getBPVSStandardised = 112.0
+            case 148.0:
+                getBPVSStandardised = 113.0
+            case 149.0:
+                getBPVSStandardised = 114.0
+            case 150.0:
+                getBPVSStandardised = 115.0
+            case 151.0:
+                getBPVSStandardised = 117.0
+            case 152.0:
+                getBPVSStandardised = 118.0
+            case 153.0:
+                getBPVSStandardised = 120.0
+            case 154.0:
+                getBPVSStandardised = 121.0
+            case 155.0:
+                getBPVSStandardised = 122.0
+            case 156.0:
+                getBPVSStandardised = 123.0
+            case 157.0:
+                getBPVSStandardised = 125.0
+            case 158.0:
+                getBPVSStandardised = 126.0
+            case 159.0:
+                getBPVSStandardised = 127.0
+            case 160.0:
+                getBPVSStandardised = 128.0
+            case 161.0:
+                getBPVSStandardised = 129.0
+            case 162.0:
+                getBPVSStandardised = 131.0
+            case 163.0:
+                getBPVSStandardised = 132.0
+            case 164.0:
+                getBPVSStandardised = 133.0
+            case 165.0:
+                getBPVSStandardised = 134.0
+            case 166.0:
+                getBPVSStandardised = 135.0
+            case 167.0:
+                getBPVSStandardised = 137.0
+            case 168.0:
+                getBPVSStandardised = 138.0
+            default:
+                getBPVSStandardised = 0.0
             }
         }
     }
