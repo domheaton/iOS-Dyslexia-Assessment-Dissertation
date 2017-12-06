@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v3.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -267,7 +267,7 @@ To continue, press the button below.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXH-Ee-XBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572" y="-598"/>
+            <point key="canvasLocation" x="3572" y="-598.65067466266873"/>
         </scene>
         <!--Results Menu-->
         <scene sceneID="yjX-fF-wpH">
@@ -2742,7 +2742,7 @@ When ready, pass device to the student and let them press 'Begin Test'.</string>
         <image name="sotonLogo" width="2000" height="442"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cb1-OQ-9lb"/>
+        <segue reference="kv8-x0-OgO"/>
         <segue reference="dmi-6v-bNo"/>
     </inferredMetricsTieBreakers>
 </document>

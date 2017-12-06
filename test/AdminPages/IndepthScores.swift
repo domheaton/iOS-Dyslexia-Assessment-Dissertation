@@ -41,6 +41,7 @@ class IndepthScores: UIViewController {
     var towrePercentageSWE: Double?
     var towrePercentagePDE: Double?
     var dashPercentile: String?
+    var bpvsPercentile: String?
     var getBPVSStandardised: Double?
     
     @IBOutlet weak var barChartView: BarChartView!
@@ -109,13 +110,14 @@ class IndepthScores: UIViewController {
         }
         else if getTest == "BPVS-3" {
             
-            self.subtest1Label.text = "Test Raw Score:"
-            self.subtest2Label.text = "Standardised Test Score:"
+            self.subtest1Label.text = "Percentile Rank:"
+            self.subtest2Label.text = "Markers apply to Standardised Score Only"
             
             standardiseBPVS()
+            getBPVSPercentile()
             
-            self.subtest1Score.text = String(format: "%.1f", getBPVSFinal)
-            self.subtest2Score.text = String(getBPVSStandardised!)
+            self.subtest1Score.text = bpvsPercentile!
+            self.subtest2Score.text = ""
         }
     }
     
@@ -174,11 +176,18 @@ class IndepthScores: UIViewController {
             barChartView.leftAxis.addLimitLine(limitlineUpper)
         }
         else if getTest == "BPVS-3" {
-            let limitline = ChartLimitLine(limit: 78.0, label: "9-11 Years Average")
+            //Incorrect values??
+//            let limitline = ChartLimitLine(limit: 78.0, label: "9-11 Years Average")
+//            barChartView.leftAxis.addLimitLine(limitline)
+//            let limitlineLower = ChartLimitLine(limit: 65.0, label: "Below Average")
+//            barChartView.leftAxis.addLimitLine(limitlineLower)
+//            let limitlineUpper = ChartLimitLine(limit: 90.0, label: "Above Average")
+//            barChartView.leftAxis.addLimitLine(limitlineUpper)
+            let limitline = ChartLimitLine(limit: 100.0, label: "9-11 Years Average")
             barChartView.leftAxis.addLimitLine(limitline)
-            let limitlineLower = ChartLimitLine(limit: 65.0, label: "Below Average")
+            let limitlineLower = ChartLimitLine(limit: 70.0, label: "Below Average")
             barChartView.leftAxis.addLimitLine(limitlineLower)
-            let limitlineUpper = ChartLimitLine(limit: 90.0, label: "Above Average")
+            let limitlineUpper = ChartLimitLine(limit: 130.0, label: "Above Average")
             barChartView.leftAxis.addLimitLine(limitlineUpper)
         }
         
@@ -187,7 +196,11 @@ class IndepthScores: UIViewController {
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 105.0
+        if getTest == "BPVS-3" {
+            barChartView.leftAxis.axisMaximum = getBPVSFinal + 10.0
+        } else {
+            barChartView.leftAxis.axisMaximum = 105.0
+        }
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)
@@ -713,6 +726,78 @@ class IndepthScores: UIViewController {
             default:
                 getBPVSStandardised = 0.0
             }
+        }
+    }
+    
+    func getBPVSPercentile() {
+        if getBPVSStandardised! <= 65.0 {
+            bpvsPercentile = "1"
+        }
+        else if  getBPVSStandardised! > 65.0 && getBPVSStandardised! <= 75.0 {
+            bpvsPercentile = "5"
+        }
+        else if  getBPVSStandardised! > 75.0 && getBPVSStandardised! <= 81.0 {
+            bpvsPercentile = "10"
+        }
+        else if  getBPVSStandardised! > 81.0 && getBPVSStandardised! <= 84.0 {
+            bpvsPercentile = "15"
+        }
+        else if  getBPVSStandardised! > 84.0 && getBPVSStandardised! <= 87.0 {
+            bpvsPercentile = "20"
+        }
+        else if  getBPVSStandardised! > 87.0 && getBPVSStandardised! <= 90.0 {
+            bpvsPercentile = "25"
+        }
+        else if  getBPVSStandardised! > 90.0 && getBPVSStandardised! <= 92.0 {
+            bpvsPercentile = "30"
+        }
+        else if  getBPVSStandardised! > 92.0 && getBPVSStandardised! <= 94.0 {
+            bpvsPercentile = "35"
+        }
+        else if  getBPVSStandardised! > 94.0 && getBPVSStandardised! <= 96.0 {
+            bpvsPercentile = "40"
+        }
+        else if  getBPVSStandardised! > 96.0 && getBPVSStandardised! <= 98.0 {
+            bpvsPercentile = "45"
+        }
+        else if  getBPVSStandardised! > 98.0 && getBPVSStandardised! <= 100.0 {
+            bpvsPercentile = "50"
+        }
+        else if  getBPVSStandardised! > 100.0 && getBPVSStandardised! <= 102.0 {
+            bpvsPercentile = "55"
+        }
+        else if  getBPVSStandardised! > 102.0 && getBPVSStandardised! <= 104.0 {
+            bpvsPercentile = "60"
+        }
+        else if  getBPVSStandardised! > 104.0 && getBPVSStandardised! <= 106.0 {
+            bpvsPercentile = "65"
+        }
+        else if  getBPVSStandardised! > 106.0 && getBPVSStandardised! <= 108.0 {
+            bpvsPercentile = "70"
+        }
+        else if  getBPVSStandardised! > 108.0 && getBPVSStandardised! <= 110.0 {
+            bpvsPercentile = "75"
+        }
+        else if  getBPVSStandardised! > 110.0 && getBPVSStandardised! <= 112.0 {
+            bpvsPercentile = "80"
+        }
+        else if  getBPVSStandardised! > 112.0 && getBPVSStandardised! <= 115.0 {
+            bpvsPercentile = "85"
+        }
+        else if  getBPVSStandardised! > 115.0 && getBPVSStandardised! <= 119.0 {
+            bpvsPercentile = "90"
+        }
+        else if  getBPVSStandardised! > 119.0 && getBPVSStandardised! <= 124.0 {
+            bpvsPercentile = "95"
+        }
+        else if  getBPVSStandardised! > 124.0 && getBPVSStandardised! <= 135.0 {
+            bpvsPercentile = "99"
+        }
+        else if  getBPVSStandardised! > 135.0 {
+            bpvsPercentile = "50"
+        }
+        else {
+            bpvsPercentile = "Error"
         }
     }
     
