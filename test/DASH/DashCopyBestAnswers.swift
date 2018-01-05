@@ -14,6 +14,7 @@ import FirebaseDatabase
 class DashCopyBestAnswers: UIViewController {
     
     //    private var brain = DigitSpanCalculations()
+    @IBOutlet weak var stopStudentLabel: UILabel!
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -30,6 +31,8 @@ class DashCopyBestAnswers: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stopStudentLabel.adjustsFontSizeToFitWidth = true
         
         stepper.wraps = true
         stepper.autorepeat = true

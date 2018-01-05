@@ -17,6 +17,7 @@ class DashFreeAnswers: UIViewController {
     var copyFastWordsWritten = Double()
     var copyAlphabetTotalWritten = Double()
     
+    @IBOutlet weak var stopStudentLabel: UILabel!
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -33,6 +34,8 @@ class DashFreeAnswers: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stopStudentLabel.adjustsFontSizeToFitWidth = true
         
         stepper.wraps = true
         stepper.autorepeat = true

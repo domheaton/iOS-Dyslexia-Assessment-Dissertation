@@ -60,6 +60,8 @@ class IndepthScores: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Graph", style: UIBarButtonItemStyle.plain, target: self, action: #selector(saveGraph))
         getDetails()
         
+        nameOfStudentLabel.adjustsFontSizeToFitWidth = true
+        
         barChartView.noDataText = "Hmmm, there should be some data around here somewhere."
         updateGraph()
     }
@@ -112,6 +114,8 @@ class IndepthScores: UIViewController {
             
             self.subtest1Label.text = "Percentile Rank:"
             self.subtest2Label.text = "Markers apply to Standardised Score Only"
+            
+            self.subtest2Label.adjustsFontSizeToFitWidth = true
             
             standardiseBPVS()
             getBPVSPercentile()

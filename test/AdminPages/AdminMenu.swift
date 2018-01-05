@@ -14,11 +14,17 @@ import LocalAuthentication
 
 class AdminMenu: UIViewController {
     
+    @IBOutlet weak var welcomeToAdminMenuLabel: UILabel!
+    @IBOutlet weak var noteBeforeAdvancing: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //override the back button in the navigation controller
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOutAdmin(sender:)))
+        
+        welcomeToAdminMenuLabel.adjustsFontSizeToFitWidth = true
+        noteBeforeAdvancing.adjustsFontSizeToFitWidth = true
     }
     
     override func didReceiveMemoryWarning() {

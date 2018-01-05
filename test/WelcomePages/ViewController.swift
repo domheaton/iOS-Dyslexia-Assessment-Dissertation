@@ -14,6 +14,7 @@ import LocalAuthentication
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        titleLabel.adjustsFontSizeToFitWidth = true
     }
     
     //Functions to hide navigation bar
