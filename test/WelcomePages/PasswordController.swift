@@ -11,11 +11,13 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class PasswordController: UIViewController {
+class PasswordController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.usernameField.delegate = self;
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,10 @@ class PasswordController: UIViewController {
         }
     }
     
-    
+    //Dismiss keyboard when in textfields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
 }

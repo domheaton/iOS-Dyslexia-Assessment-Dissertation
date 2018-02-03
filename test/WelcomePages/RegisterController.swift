@@ -11,11 +11,15 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class RegisterController: UIViewController {
+class RegisterController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.emailRegisterField.delegate = self;
+        self.passwordRegisterField.delegate = self;
+        self.passwordRepeatRegisterField.delegate = self;
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,6 +79,12 @@ class RegisterController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+    }
+    
+    //Dismiss keyboard when in textfields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 

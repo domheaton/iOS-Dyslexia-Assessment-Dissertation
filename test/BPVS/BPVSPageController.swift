@@ -16,8 +16,9 @@ class BPVSPageController: UIPageViewController, UIPageViewControllerDataSource {
         
         let vc1 = storyboard.instantiateViewController(withIdentifier: "BPVSDescriptionPage1")
         let vc2 = storyboard.instantiateViewController(withIdentifier: "BPVSDescriptionPage2")
+        let vc3 = storyboard.instantiateViewController(withIdentifier: "BPVSDescriptionPage3")
         
-        return [vc1, vc2]
+        return [vc1, vc2, vc3]
     }()
     
     override func viewDidLoad() {

@@ -18,6 +18,8 @@ class TowrePDE: UIViewController {
     var timer2 = Timer()
     var time = 0
     
+    let uid = Auth.auth().currentUser?.uid
+    
     var finalResultsSWE = Double()
     var scaledResultSWE = Double()
     
@@ -34,6 +36,9 @@ class TowrePDE: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Fetch SWE results from firebase
+        getTowreSWEresults()
         
         timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TowrePDE.checkTimeElapsed), userInfo: nil, repeats: true)
         wordsToTest = brain.setWordsToTestPDE
@@ -107,7 +112,21 @@ class TowrePDE: UIViewController {
             performSegue(withIdentifier: "towreToTestCompleted", sender: nil)
         }
     }
+    
+    func getTowreSWEresults() {
+        let dbRef = Database.database().reference().child("results").child("user").child(uid!)
+        dbRef.child("finalResultsSWE").observeSingleEvent(of: .value) {
+            (snapshot) in
+            if let finalSWE = snapshot.value as? Double {
+                self.finalResultsSWE = finalSWE
+            }
+        }
+        dbRef.child("scaledResultSWE").observeSingleEvent(of: .value) {
+            (snapshot) in
+            if let scaledSWE = snapshot.value as? Double {
+                self.finalResultsSWE = scaledSWE
+            }
+        }
+    }
 
 }
-
-

@@ -41,9 +41,26 @@ class Towre: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! SubtestCompleted
-            nextVC.finalResultsSWE = brain.getFinalResults()
-            nextVC.scaledResultSWE = brain.getScaledScoreSWE()
+//        let nextVC = segue.destination as! TowreSubtestPageController
+//            nextVC.finalResultsSWE = brain.getFinalResults()
+//            nextVC.scaledResultSWE = brain.getScaledScoreSWE()
+        
+         saveResults()
+    }
+    
+    func saveResults() {
+        var refDatabase: DatabaseReference!
+        refDatabase = Database.database().reference().child("results").child("user")
+        
+        let userName = Auth.auth().currentUser?.email
+        let uid = Auth.auth().currentUser?.uid
+        let key = refDatabase.child(uid!).key
+        
+        var userResults: [String : Any]
+        
+            userResults = ["username":userName!, "finalResultsSWE":brain.getFinalResults(), "scaledResultSWE":brain.getScaledScoreSWE()] as [String : Any]
+        refDatabase.child(key).updateChildValues(userResults)
+        print("Saved to Firebase")
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +89,7 @@ class Towre: UIViewController {
     
     //Function to increment timer - ends test after 45 Seconds -- Objective-C function call
     @objc func checkTimeElapsed() {
-        if time < 45 {
+        if time < 45 { 
             time += 1
         }
         else {

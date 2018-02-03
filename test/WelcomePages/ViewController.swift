@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import LocalAuthentication
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         titleLabel.adjustsFontSizeToFitWidth = true
+        
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
     }
     
     //Functions to hide navigation bar
@@ -157,5 +160,10 @@ class ViewController: UIViewController {
         return message
     }
     
+    //Dismiss keyboard when in textfields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
 }

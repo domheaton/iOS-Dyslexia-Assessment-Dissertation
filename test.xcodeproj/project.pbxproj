@@ -32,6 +32,7 @@
 		117173F31F9BA4E9009F42FE /* Towre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117173F21F9BA4E9009F42FE /* Towre.swift */; };
 		117E9BE21F912F2D00BFEF59 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E9BE11F912F2D00BFEF59 /* PasswordController.swift */; };
 		11859C041FB0D3F9004A1080 /* IndepthScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859C031FB0D3F9004A1080 /* IndepthScores.swift */; };
+		118D87362025C22300960506 /* TowreSubtestPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D87352025C22300960506 /* TowreSubtestPageController.swift */; };
 		118FB1841F9CB2A7005F36C1 /* TestCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */; };
 		118FB1861F9CB486005F36C1 /* TowreCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1851F9CB486005F36C1 /* TowreCalculations.swift */; };
 		119619601FA243BC0083305F /* SubtestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196195F1FA243BC0083305F /* SubtestDescription.swift */; };
@@ -97,6 +98,7 @@
 		117173F21F9BA4E9009F42FE /* Towre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Towre.swift; sourceTree = "<group>"; };
 		117E9BE11F912F2D00BFEF59 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
 		11859C031FB0D3F9004A1080 /* IndepthScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndepthScores.swift; sourceTree = "<group>"; };
+		118D87352025C22300960506 /* TowreSubtestPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreSubtestPageController.swift; sourceTree = "<group>"; };
 		118FB1831F9CB2A7005F36C1 /* TestCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompleted.swift; sourceTree = "<group>"; };
 		118FB1851F9CB486005F36C1 /* TowreCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowreCalculations.swift; sourceTree = "<group>"; };
 		1196195F1FA243BC0083305F /* SubtestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtestDescription.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				1155D2801F9BA1D4006A5B8D /* TestDescriptionController.swift */,
 				117173F21F9BA4E9009F42FE /* Towre.swift */,
 				118FB1851F9CB486005F36C1 /* TowreCalculations.swift */,
+				118D87352025C22300960506 /* TowreSubtestPageController.swift */,
 				11A3926C1FA0BE1A00F1EE08 /* SubtestCompleted.swift */,
 				1196195F1FA243BC0083305F /* SubtestDescription.swift */,
 				111CC9FC1F9FA440006F6750 /* TowrePDE.swift */,
@@ -328,7 +331,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dominic Heaton";
 				TargetAttributes = {
 					1164AD791F83EA57006D00DE = {
@@ -461,6 +464,7 @@
 				11B5447F1FB8642400C611F5 /* DashAlphabetDescription.swift in Sources */,
 				110679281F9F67360002E0C7 /* TowrePageController.swift in Sources */,
 				11F583371FABB13A00FB64FF /* DigitSpan.swift in Sources */,
+				118D87362025C22300960506 /* TowreSubtestPageController.swift in Sources */,
 				1145DC671FABBBBD007B22D2 /* DigitCompleted.swift in Sources */,
 				11B5448F1FB8712400C611F5 /* BPVSPageController.swift in Sources */,
 				111CC9FD1F9FA441006F6750 /* TowrePDE.swift in Sources */,
@@ -533,6 +537,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -540,6 +545,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -590,6 +596,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -597,6 +604,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -631,6 +639,7 @@
 			baseConfigurationReference = 0E8F9319A0AA262514C70812 /* Pods-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM3PH4CHZS;
 				INFOPLIST_FILE = test/Info.plist;
@@ -647,6 +656,7 @@
 			baseConfigurationReference = 238689B1C46E43A3137E3AFA /* Pods-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM3PH4CHZS;
 				INFOPLIST_FILE = test/Info.plist;

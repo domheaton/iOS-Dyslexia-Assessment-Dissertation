@@ -13,21 +13,21 @@ import FirebaseDatabase
 
 class SubtestDescription: UIViewController {
     
-    var finalResultsSWE = Double()
-    var scaledResultSWE = Double()
+//    var finalResultsSWE = Double()
+//    var scaledResultSWE = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
         //For debugging
-        print("SubtestDescription: ", finalResultsSWE)
+//        print("SubtestDescription: ", finalResultsSWE)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! TowrePDE
-        nextVC.finalResultsSWE = finalResultsSWE
-        nextVC.scaledResultSWE = scaledResultSWE
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let nextVC = segue.destination as! TowrePDE
+//        nextVC.finalResultsSWE = finalResultsSWE
+//        nextVC.scaledResultSWE = scaledResultSWE
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

@@ -1,36 +1,52 @@
 //
-//  TowrePageController.swift
+//  TowreSubtestPageController.swift
 //  test
 //
-//  Created by Dominic Heaton on 24/10/2017.
-//  Copyright © 2017 Dominic Heaton. All rights reserved.
+//  Created by Dominic Heaton on 03/02/2018.
+//  Copyright © 2018 Dominic Heaton. All rights reserved.
 //
+
 
 import UIKit
 
-class TowrePageController: UIPageViewController, UIPageViewControllerDataSource {
-
+class TowreSubtestPageController: UIPageViewController, UIPageViewControllerDataSource {
+    
+//    var finalResultsSWE = Double()
+//    var scaledResultSWE = Double()
+    
+    //Function to hide back button from navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let nextVC = segue.destination as! SubtestCompleted
+//        nextVC.finalResultsSWE = finalResultsSWE
+//        nextVC.scaledResultSWE = scaledResultSWE
+//    }
+    
     lazy var viewControllerList:[UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc1 = storyboard.instantiateViewController(withIdentifier: "TowreDescriptionPage1")
-        let vc2 = storyboard.instantiateViewController(withIdentifier: "TowreDescriptionPage2")
-        let vc3 = storyboard.instantiateViewController(withIdentifier: "TowreDescriptionPage3")
-        let vc4 = storyboard.instantiateViewController(withIdentifier: "TowreDescriptionPage4")
+        let vc1 = storyboard.instantiateViewController(withIdentifier: "TowreSubtestDescriptionPage1")
+        let vc2 = storyboard.instantiateViewController(withIdentifier: "TowreSubtestDescriptionPage2")
+        let vc3 = storyboard.instantiateViewController(withIdentifier: "TowreSubtestDescriptionPage3")
         
-        return [vc1, vc2, vc3, vc4]
+        return [vc1, vc2, vc3]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.dataSource = self
         
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,5 +71,6 @@ class TowrePageController: UIPageViewController, UIPageViewControllerDataSource 
         guard viewControllerList.count > nextIndex else {return nil}
         return viewControllerList[nextIndex]
     }
-   
+    
 }
+

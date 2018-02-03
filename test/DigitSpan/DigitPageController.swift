@@ -15,8 +15,9 @@ class DigitPageController: UIPageViewController, UIPageViewControllerDataSource 
         
         let vc1 = storyboard.instantiateViewController(withIdentifier: "DigitDescriptionPage1")
         let vc2 = storyboard.instantiateViewController(withIdentifier: "DigitDescriptionPage2")
+        let vc3 = storyboard.instantiateViewController(withIdentifier: "DigitDescriptionPage3")
         
-        return [vc1, vc2]
+        return [vc1, vc2, vc3]
     }()
     
     override func viewDidLoad() {
