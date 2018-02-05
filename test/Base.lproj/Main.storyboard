@@ -63,11 +63,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SHA..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7O-8x-3DZ">
+                                <rect key="frame" x="16" y="447" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-eX-LeF">
+                                <rect key="frame" x="16" y="485" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SHA512"/>
+                                <connections>
+                                    <action selector="button:" destination="NoV-wc-6wb" eventType="touchUpInside" id="UvZ-th-8R7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SHA value appears here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-Ne-IIk">
+                                <rect key="frame" x="16" y="523" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2901960784" green="0.80392156859999997" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="VP5-pw-aRE"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="OZj-WQ-sGA"/>
+                    <connections>
+                        <outlet property="label" destination="iRW-Ne-IIk" id="EoA-Jt-5AX"/>
+                        <outlet property="textField" destination="m7O-8x-3DZ" id="GpL-GP-FJ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyt-XO-QaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +107,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v4.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v4.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pER-Y3-rK2">
                                 <rect key="frame" x="291" y="626" width="67" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1730,7 +1756,7 @@ For example, if I read out the numbers; 2  6,  you should say;  6   2." 
                                 <rect key="frame" x="16" y="84" width="342" height="448"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The first subtest "Copy Best" will run for two minutes.
+                                <string key="text">The first subtest "Copy Best" will run for two minutes.
 
 The student should copy the following phrase in their best handwriting as many times as possible before the timer expires:
 
@@ -1740,7 +1766,7 @@ The timer will begin as soon as 'Begin Test' is pressed and will count upwards.
 
 After the timer expires a page will appear allowing the administrator to input the number of complete words the student has managed to write within the time limit before the next subtest is explained.
 
-NOTE: This subtest runs for 2 minutes only.</mutableString>
+NOTE: This subtest runs for 2 minutes only.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2936,7 +2962,7 @@ NOTE: This subtest runs for 10 minutes.</string>
                                 <rect key="frame" x="16" y="315" width="343" height="303"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">"Ok, now you will read some longer lists of made-up words. The made-up words start out pretty easy, but they get harder as you go along. Read out as many as you can until I tell you to stop. Begin here (turn over the card to show the nonword list and point to the upper left corner of the list) and read down the list (draw finger down the list) before you start on the next list (point to top of second column). Read the made-up words in order, but if you come to one you can't read, skip it and go to the next one. Use your finger to keep your place if you want to, and if you skip more than one word, point to the word you are reading next (turn the card back over)."</mutableString>
+                                <string key="text">"Ok, now you will read some longer lists of made-up words. The made-up words start out pretty easy, but they get harder as you go along. Read out as many as you can until I tell you to stop. Begin here (turn over the card to show the nonword list and point to the upper left corner of the list) and read down the list (draw finger down the list) before you start on the next list (point to top of second column). Read the made-up words in order, but if you come to one you can't read, skip it and go to the next one. Use your finger to keep your place if you want to, and if you skip more than one word, point to the word you are reading next (turn the card back over)."</string>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -3057,13 +3083,13 @@ NOTE: This subtest runs for 10 minutes.</string>
                                 <rect key="frame" x="16" y="126" width="343" height="345"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">"For this test I will pass you this device. When you press begin test a word will appear on the along with four images.
+                                <string key="text">"For this test I will pass you this device. When you press begin test a word will appear on the along with four images.
 
 You should press the picture you think matches the word the best. There will be lots of words to choose pictures for and some will be harder than others.
 
 Keep going until the 'Test Completed' page appears on the screen and then pass the device back to me.
 
-There is no time limit on this test, so take your time if you want to. Answers cannot be undone, so take care when selecting an answer."</mutableString>
+There is no time limit on this test, so take your time if you want to. Answers cannot be undone, so take care when selecting an answer."</string>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -3101,6 +3127,6 @@ There is no time limit on this test, so take your time if you want to. Answers c
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cb1-OQ-9lb"/>
-        <segue reference="7y8-p8-QQ7"/>
+        <segue reference="dmi-6v-bNo"/>
     </inferredMetricsTieBreakers>
 </document>

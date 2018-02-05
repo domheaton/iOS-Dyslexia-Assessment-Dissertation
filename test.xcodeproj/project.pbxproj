@@ -60,6 +60,7 @@
 		11B6C2E91FBF5F7500D751B6 /* BPVSCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6C2E81FBF5F7500D751B6 /* BPVSCalculations.swift */; };
 		11B6C2EB1FC062DB00D751B6 /* BPVSCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6C2EA1FC062DB00D751B6 /* BPVSCompleted.swift */; };
 		11BE11A11F8CD46900006802 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE11A01F8CD46900006802 /* RegisterController.swift */; };
+		11C4AC282028D5550038D927 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C4AC272028D5540038D927 /* CryptoSwift.framework */; };
 		11F583331FABB11D00FB64FF /* DigitPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583321FABB11D00FB64FF /* DigitPageController.swift */; };
 		11F583351FABB12D00FB64FF /* DigitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583341FABB12D00FB64FF /* DigitDescription.swift */; };
 		11F583371FABB13A00FB64FF /* DigitSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F583361FABB13A00FB64FF /* DigitSpan.swift */; };
@@ -127,6 +128,10 @@
 		11B6C2E81FBF5F7500D751B6 /* BPVSCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSCalculations.swift; sourceTree = "<group>"; };
 		11B6C2EA1FC062DB00D751B6 /* BPVSCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPVSCompleted.swift; sourceTree = "<group>"; };
 		11BE11A01F8CD46900006802 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		11C4AC212028D4E50038D927 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C4AC232028D4FE0038D927 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C4AC252028D53D0038D927 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CryptoSwift; path = Pods/CryptoSwift; sourceTree = "<group>"; };
+		11C4AC272028D5540038D927 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F583321FABB11D00FB64FF /* DigitPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitPageController.swift; sourceTree = "<group>"; };
 		11F583341FABB12D00FB64FF /* DigitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDescription.swift; sourceTree = "<group>"; };
 		11F583361FABB13A00FB64FF /* DigitSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpan.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C4AC282028D5550038D927 /* CryptoSwift.framework in Frameworks */,
 				115DE65B1FBDE67F0059A520 /* LocalAuthentication.framework in Frameworks */,
 				74E52295D799A9D797E962B0 /* Pods_test.framework in Frameworks */,
 			);
@@ -153,6 +159,10 @@
 		08571B4553000EF3EA08D074 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11C4AC272028D5540038D927 /* CryptoSwift.framework */,
+				11C4AC252028D53D0038D927 /* CryptoSwift */,
+				11C4AC232028D4FE0038D927 /* CryptoSwift.framework */,
+				11C4AC212028D4E50038D927 /* CryptoSwift.framework */,
 				115DE65A1FBDE6730059A520 /* LocalAuthentication.framework */,
 				ACF55275C1AC252C770F322E /* Pods_test.framework */,
 			);
@@ -386,6 +396,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -394,6 +405,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -629,6 +641,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
