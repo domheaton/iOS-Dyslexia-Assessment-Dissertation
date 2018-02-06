@@ -50,7 +50,7 @@ class Towre: UIViewController {
     
     func saveResults() {
         var refDatabase: DatabaseReference!
-        refDatabase = Database.database().reference().child("results").child("user")
+        refDatabase = Database.database().reference().child("intermediateResults").child("user")
         
         let userName = Auth.auth().currentUser?.email
         let uid = Auth.auth().currentUser?.uid

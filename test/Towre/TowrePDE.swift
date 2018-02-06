@@ -39,16 +39,18 @@ class TowrePDE: UIViewController {
         
         //Fetch SWE results from firebase
         getTowreSWEresults()
+//        print("finalResultsSWE: ", finalResultsSWE)
+//        print("scaledResultSWE: ", scaledResultSWE)
         
         timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TowrePDE.checkTimeElapsed), userInfo: nil, repeats: true)
         wordsToTest = brain.setWordsToTestPDE
         brain.setNumberOfWords(Double(wordsToTest.count))
         brain.zeroScore()
-        brain.setFinalResultsSWE(finalResultsSWE)
-        brain.setScaledScoreSWE(scaledResultSWE)
+//        brain.setFinalResultsSWE(finalResultsSWE)
+//        brain.setScaledScoreSWE(scaledResultSWE)
         
         //For debugging
-        print("TowrePDE: ", finalResultsSWE)
+        print("TowreSWE: ", finalResultsSWE)
 
         loadWord()
     }
@@ -114,17 +116,19 @@ class TowrePDE: UIViewController {
     }
     
     func getTowreSWEresults() {
-        let dbRef = Database.database().reference().child("results").child("user").child(uid!)
+        let dbRef = Database.database().reference().child("intermediateResults").child("user").child(uid!)
         dbRef.child("finalResultsSWE").observeSingleEvent(of: .value) {
             (snapshot) in
             if let finalSWE = snapshot.value as? Double {
-                self.finalResultsSWE = finalSWE
+//                self.finalResultsSWE = finalSWE
+                self.brain.setFinalResultsSWE(finalSWE)
             }
         }
         dbRef.child("scaledResultSWE").observeSingleEvent(of: .value) {
             (snapshot) in
             if let scaledSWE = snapshot.value as? Double {
-                self.finalResultsSWE = scaledSWE
+//                self.finalResultsSWE = scaledSWE
+                self.brain.setScaledScoreSWE(scaledSWE)
             }
         }
     }

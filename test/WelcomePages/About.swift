@@ -19,15 +19,23 @@ class About: UIViewController, UITextFieldDelegate {
     let iv: Array<UInt8> = AES.randomIV(AES.blockSize)
 
     var encrypted: [UInt8]?
+    var decryptedFirebase: [UInt8]?
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
     //Decrypt Function
     @IBAction func decryptButton(_ sender: UIButton) {
+        //Fetch results from Firebase
+        fetchResults()
+        
+        //For Debugging
+//        print("Result Fetched: ", "\(decryptedFirebase!)")
+        
         do {
             //Decrypt using AES
             let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(encrypted!)
+//            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(decryptedFirebase!)
             
             //From UInt8 to String
             let decryptedData = String(bytes: Data(decrypted), encoding: .utf8)
@@ -46,8 +54,6 @@ class About: UIViewController, UITextFieldDelegate {
     
     //Encrypt Function
     @IBAction func button(_ sender: UIButton) {
-        //          SHA512 Function
-        //          label.text = textField.text!.sha512()
         
         let input: [UInt8] = Array(textField.text!.utf8)
         
@@ -57,6 +63,9 @@ class About: UIViewController, UITextFieldDelegate {
             
             //Display encrypted value on label
             label.text = "\(encrypted!)"
+            
+            //Upload to Firebase
+            saveResults()
             
             //For Debugging
             print("P/T : ", textField.text!)
@@ -83,6 +92,33 @@ class About: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func saveResults() {
+        var refDatabase: DatabaseReference!
+        refDatabase = Database.database().reference().child("tests")
+        
+        let uid = "Encryption Test"
+        let key = refDatabase.child(uid).key
+        
+        var uploadTest: [String : [UInt8]]
+        
+        uploadTest = ["encrypted": encrypted!]
+        
+        refDatabase.child(key).updateChildValues(uploadTest)
+    }
+    
+    func fetchResults() {
+        let dbRef = Database.database().reference().child("tests").child("Encryption Test")
+        dbRef.child("encrypted").observeSingleEvent(of: .value) {
+            (snapshot) in
+            if let downloadTest = snapshot.value as? [UInt8] {
+                self.decryptedFirebase = downloadTest
+//                print("downloaded string: ", downloadTest)
+//                print("downloaded array : ", self.decryptedFirebase!)
+            }
+//            print("downloaded array : ", self.decryptedFirebase!)
+        }
     }
     
 }
