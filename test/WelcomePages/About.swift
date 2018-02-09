@@ -14,39 +14,38 @@ import CryptoSwift
 
 class About: UIViewController, UITextFieldDelegate {
     
-    let key: Array<UInt8> = [0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]
-    
+    let key: Array<UInt8> = [0x16,0x25,0x34,0x22,0x97,0x67,0x44,0x52,0x72,0x37,0x57,0x70,0x45,0x78,0x48,0x27]
     let iv: Array<UInt8> = AES.randomIV(AES.blockSize)
-
+    
+    var ciphertext: [UInt8] = []
     var encrypted: [UInt8]?
-    var decryptedFirebase: [UInt8]?
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
     //Decrypt Function
     @IBAction func decryptButton(_ sender: UIButton) {
+       
         //Fetch results from Firebase
-        fetchResults()
+        let fromFirebase = fetchResults()
         
-        //For Debugging
-//        print("Result Fetched: ", "\(decryptedFirebase!)")
+        //For debugging
+        print("fromFirebase", fromFirebase)
         
         do {
             //Decrypt using AES
-            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(encrypted!)
-//            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(decryptedFirebase!)
-            
+            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(fromFirebase)
+
             //From UInt8 to String
             let decryptedData = String(bytes: Data(decrypted), encoding: .utf8)
-            
+
             //Display encrypted value on label
             label.text = decryptedData!
-            
+
             //For Debugging
             print("C/T*: ", encrypted!)
             print("P/T*: ", decryptedData!)
-        
+
         } catch {
             print(error)
         }
@@ -75,12 +74,42 @@ class About: UIViewController, UITextFieldDelegate {
             print(error)
         }
     }
+    
+    //save encrypted value to firebase
+    func saveResults() {
+        var refDatabase: DatabaseReference!
+        refDatabase = Database.database().reference().child("tests")
+        
+        let uid = "Encryption Test"
+        let key = refDatabase.child(uid).key
+        
+        var uploadTest: [String : [UInt8]]
+        uploadTest = ["encrypted": encrypted!]
+        
+        refDatabase.child(key).updateChildValues(uploadTest)
+    }
+    
+    //fetch encrypted value from firebase
+    func fetchResults() -> [UInt8] {
+        let dbRef = Database.database().reference().child("tests").child("Encryption Test")
+        dbRef.observe(DataEventType.value, with: {(snapshot) in
+            if let firebaseSnap = snapshot.value as? [String: AnyObject] {
+                self.ciphertext = firebaseSnap["encrypted"] as! [UInt8]
+            } else {
+                print("error")
+            }
+        })
+        return self.ciphertext
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.textField.delegate = self;
+        
+        let initializeFirebase = fetchResults()
+        print("Initializing Firebase: ", initializeFirebase)
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,33 +121,6 @@ class About: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-    
-    func saveResults() {
-        var refDatabase: DatabaseReference!
-        refDatabase = Database.database().reference().child("tests")
-        
-        let uid = "Encryption Test"
-        let key = refDatabase.child(uid).key
-        
-        var uploadTest: [String : [UInt8]]
-        
-        uploadTest = ["encrypted": encrypted!]
-        
-        refDatabase.child(key).updateChildValues(uploadTest)
-    }
-    
-    func fetchResults() {
-        let dbRef = Database.database().reference().child("tests").child("Encryption Test")
-        dbRef.child("encrypted").observeSingleEvent(of: .value) {
-            (snapshot) in
-            if let downloadTest = snapshot.value as? [UInt8] {
-                self.decryptedFirebase = downloadTest
-//                print("downloaded string: ", downloadTest)
-//                print("downloaded array : ", self.decryptedFirebase!)
-            }
-//            print("downloaded array : ", self.decryptedFirebase!)
-        }
     }
     
 }
