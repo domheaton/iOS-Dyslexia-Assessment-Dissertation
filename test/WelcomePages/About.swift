@@ -25,37 +25,17 @@ class About: UIViewController, UITextFieldDelegate {
     
     //Decrypt Function
     @IBAction func decryptButton(_ sender: UIButton) {
-       
-        //Fetch results from Firebase
-        let fromFirebase = fetchResults()
-        
-        //For debugging
-        print("fromFirebase", fromFirebase)
-        
-        do {
-            //Decrypt using AES
-            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(fromFirebase)
-
-            //From UInt8 to String
-            let decryptedData = String(bytes: Data(decrypted), encoding: .utf8)
-
-            //Display encrypted value on label
-            label.text = decryptedData!
-
-            //For Debugging
-            print("C/T*: ", encrypted!)
-            print("P/T*: ", decryptedData!)
-
-        } catch {
-            print(error)
-        }
+        aesDecrypt()
     }
     
     //Encrypt Function
     @IBAction func button(_ sender: UIButton) {
-        
         let input: [UInt8] = Array(textField.text!.utf8)
-        
+        aesEncrypt(input)
+    }
+    
+    //AES Encryption
+    func aesEncrypt(_ input: [UInt8]) {
         do {
             //encrypt using AES
             encrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).encrypt(input)
@@ -69,7 +49,33 @@ class About: UIViewController, UITextFieldDelegate {
             //For Debugging
             print("P/T : ", textField.text!)
             print("C/T : ", encrypted!)
-
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+    func aesDecrypt() {
+        //Fetch results from Firebase
+        let fromFirebase = fetchResults()
+        
+        //For debugging
+        print("fromFirebase", fromFirebase)
+        
+        do {
+            //Decrypt using AES
+            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(fromFirebase)
+            
+            //From UInt8 to String
+            let decryptedData = String(bytes: Data(decrypted), encoding: .utf8)
+            
+            //Display encrypted value on label
+            label.text = decryptedData!
+            
+            //For Debugging
+            print("C/T*: ", encrypted!)
+            print("P/T*: ", decryptedData!)
+            
         } catch {
             print(error)
         }
