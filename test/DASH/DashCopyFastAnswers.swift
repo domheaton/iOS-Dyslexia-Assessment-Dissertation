@@ -15,7 +15,7 @@ class DashCopyFastAnswers: UIViewController {
     
     var copyBestWordsWritten = Double()
     
-    @IBOutlet weak var stopStudentLabel: UILabel!
+//    @IBOutlet weak var stopStudentLabel: UILabel!
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -39,7 +39,7 @@ class DashCopyFastAnswers: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stopStudentLabel.adjustsFontSizeToFitWidth = true
+//        stopStudentLabel.adjustsFontSizeToFitWidth = true
         
         stepper.wraps = true
         stepper.autorepeat = true

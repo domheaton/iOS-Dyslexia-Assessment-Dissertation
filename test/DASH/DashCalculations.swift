@@ -147,7 +147,7 @@ struct DashCalculations {
     mutating func standardiseCopyFast() {
         let tempCopyFast = copyFastWordsWritten!
         if tempCopyFast > 30 {
-            scaledCopyBest = 17.0
+            scaledCopyFast = 17.0
         }
         else {
             switch tempCopyFast {

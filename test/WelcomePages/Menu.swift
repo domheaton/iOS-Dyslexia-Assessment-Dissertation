@@ -122,8 +122,8 @@ class Menu: UIViewController {
             encrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).encrypt(input)
             
             //For Debugging
-            print("username:  ", userName)
-            print("encrypted: ", encrypted!)
+//            print("username:  ", userName)
+//            print("encrypted: ", encrypted!)
         } catch {
             print(error)
         }

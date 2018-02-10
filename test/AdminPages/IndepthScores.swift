@@ -202,6 +202,8 @@ class IndepthScores: UIViewController {
         barChartView.leftAxis.axisMinimum = 0.0
         if getTest == "BPVS-3" {
             barChartView.leftAxis.axisMaximum = getBPVSFinal + 10.0
+        } else if getTest == "DASH" {
+            barChartView.leftAxis.axisMaximum = getDashAlpha + 10.0
         } else {
             barChartView.leftAxis.axisMaximum = 105.0
         }
