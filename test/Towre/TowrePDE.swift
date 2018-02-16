@@ -117,14 +117,14 @@ class TowrePDE: UIViewController {
     
     func getTowreSWEresults() {
         let dbRef = Database.database().reference().child("intermediateResults").child("user").child(uid!)
-        dbRef.child("finalResultsSWE").observeSingleEvent(of: .value) {
+        dbRef.child("e46a4ae21385ca0fa7be3552e9c2a91caf423f2e").observeSingleEvent(of: .value) {
             (snapshot) in
             if let finalSWE = snapshot.value as? Double {
 //                self.finalResultsSWE = finalSWE
                 self.brain.setFinalResultsSWE(finalSWE)
             }
         }
-        dbRef.child("scaledResultSWE").observeSingleEvent(of: .value) {
+        dbRef.child("cadc3ac6af74c083f9699d3ef2ad30524e7fec2c").observeSingleEvent(of: .value) {
             (snapshot) in
             if let scaledSWE = snapshot.value as? Double {
 //                self.finalResultsSWE = scaledSWE

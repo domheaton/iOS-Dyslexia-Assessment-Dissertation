@@ -29,7 +29,7 @@ class DashFreeAnswers: UIViewController {
         super.viewWillAppear(true)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationItem.title = "Subtest 4: Alphabet Copy"
+        self.navigationItem.title = "Subtest 4: Free Writing"
     }
     
     override func viewDidLoad() {

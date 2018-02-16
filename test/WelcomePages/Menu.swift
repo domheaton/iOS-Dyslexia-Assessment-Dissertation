@@ -92,19 +92,19 @@ class Menu: UIViewController {
         var userResults: [String : Any]
         
         if finalResultsTowre == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "UserCode":userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "Forward Digit Span".sha1():finalResultsDigit, "Reverse Digit Span".sha1():finalResultsRevDigit, "Digit Span".sha1():finalResultsDigitSpan, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "UserCode":userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWE, "TowrePDE".sha1():finalResultsPDE, "Towre-2".sha1():finalResultsTowre, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultsTowre == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash, "UserCode":userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "Dash CopyBest".sha1():copyBestWordsWritten, "Dash CopyFast".sha1():copyFastWordsWritten, "Dash CopyAlpha".sha1():copyAlphabetTotalWritten, "Dash Free".sha1():freeWritingTotalWritten, "Dash Final".sha1():finalResultDash, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsTowre == 0 && finalResultDash == 0 && finalResultsDigitSpan == 0 {
-            userResults = ["username":userName, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS, "UserCode":userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "BPVS Final".sha1():finalResultBPVS, "BPVS Errors".sha1():finalErrorsBPVS, "BPVS Set Num".sha1():finalSetBPVS, "UserCode".sha1():userCode] as [String : Any]
         }
         else {
-            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS, "UserCode":userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWE, "TowrePDE".sha1():finalResultsPDE, "Towre-2".sha1():finalResultsTowre, "Forward Digit Span".sha1():finalResultsDigit, "Reverse Digit Span".sha1():finalResultsRevDigit, "Digit Span".sha1():finalResultsDigitSpan, "Dash CopyBest".sha1():copyBestWordsWritten, "Dash CopyFast".sha1():copyFastWordsWritten, "Dash CopyAlpha".sha1():copyAlphabetTotalWritten, "Dash Free".sha1():freeWritingTotalWritten, "Dash Final".sha1():finalResultDash, "BPVS Final".sha1():finalResultBPVS, "BPVS Errors".sha1():finalErrorsBPVS, "BPVS Set Num".sha1():finalSetBPVS, "UserCode".sha1():userCode] as [String : Any]
         }
         refDatabase.child(userKey).updateChildValues(userResults)
     }

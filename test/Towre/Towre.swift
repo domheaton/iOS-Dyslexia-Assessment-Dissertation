@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import CryptoSwift
 
 class Towre: UIViewController {
     
@@ -52,13 +53,13 @@ class Towre: UIViewController {
         var refDatabase: DatabaseReference!
         refDatabase = Database.database().reference().child("intermediateResults").child("user")
         
-        let userName = Auth.auth().currentUser?.email
+//        let userName = Auth.auth().currentUser?.email
         let uid = Auth.auth().currentUser?.uid
         let key = refDatabase.child(uid!).key
         
         var userResults: [String : Any]
         
-            userResults = ["username":userName!, "finalResultsSWE":brain.getFinalResults(), "scaledResultSWE":brain.getScaledScoreSWE()] as [String : Any]
+            userResults = ["finalResultsSWE".sha1():brain.getFinalResults(), "scaledResultSWE".sha1():brain.getScaledScoreSWE()] as [String : Any]
         refDatabase.child(key).updateChildValues(userResults)
         print("Saved to Firebase")
     }

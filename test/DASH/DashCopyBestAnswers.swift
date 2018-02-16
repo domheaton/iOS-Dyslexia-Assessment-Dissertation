@@ -12,9 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class DashCopyBestAnswers: UIViewController {
-    
-    //    private var brain = DigitSpanCalculations()
-    
+
 //    @IBOutlet weak var stopStudentLabel: UILabel!
     @IBOutlet weak var value1Label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
