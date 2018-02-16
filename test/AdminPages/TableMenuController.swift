@@ -15,7 +15,7 @@ import CryptoSwift
 class TableMenuController: UITableViewController {
     
     //Encryption Variables
-    let key: Array<UInt8> = [0x16,0x25,0x34,0x22,0x97,0x67,0x44,0x52,0x72,0x37,0x57,0x70,0x45,0x78,0x48,0x27]
+//    let key: Array<UInt8> = [0x16,0x25,0x34,0x22,0x97,0x67,0x44,0x52,0x72,0x37,0x57,0x70,0x45,0x78,0x48,0x27]
     let iv: Array<UInt8> = [0x26,0x54,0x72,0x45,0x77,0x27,0x99,0x57,036,0x34,0x37,0x66,0x11,0x10,0x73,0x98]
     var ciphertext: [UInt8] = []
     
@@ -66,7 +66,8 @@ class TableMenuController: UITableViewController {
                 
                 for details in snapshot.children.allObjects as![DataSnapshot]{
                     let nameObject = details.value as? [String: AnyObject]
-                    let userName = self.aesDecrypt(nameObject?["username"] as! [UInt8])
+                    let downloadedKey = nameObject?["UserCode"] as! [UInt8]
+                    let userName = self.aesDecrypt(nameObject?["username"] as! [UInt8], downloadedKey)
                     let testName = nameObject?["test"]
                     let testTowreSWE = nameObject?["TowreSWE"]
                     let testTowrePDE = nameObject?["TowrePDE"]
@@ -145,12 +146,13 @@ class TableMenuController: UITableViewController {
     }
     
     //AES Decryption
-    func aesDecrypt(_ username: [UInt8]) -> String {
+    func aesDecrypt(_ username: [UInt8],_ downloadedKey: [UInt8]) -> String {
         var decryptedData: String?
         do {
             
             //Decrypt using AES
-            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(username)
+//            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(username)
+            let decrypted = try AES(key: downloadedKey, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(username)
 
             //From UInt8 to String
             decryptedData = String(bytes: Data(decrypted), encoding: .utf8)

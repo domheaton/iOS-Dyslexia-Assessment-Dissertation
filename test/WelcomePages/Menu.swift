@@ -15,7 +15,9 @@ import CryptoSwift
 class Menu: UIViewController {
     
     //Encryption Variables
-    let key: Array<UInt8> = [0x16,0x25,0x34,0x22,0x97,0x67,0x44,0x52,0x72,0x37,0x57,0x70,0x45,0x78,0x48,0x27]
+//    let key: Array<UInt8> = [0x16,0x25,0x34,0x22,0x97,0x67,0x44,0x52,0x72,0x37,0x57,0x70,0x45,0x78,0x48,0x27]
+    var key: Array<UInt8> = []
+    var generatedKey: [UInt8]?
     let iv: Array<UInt8> = [0x26,0x54,0x72,0x45,0x77,0x27,0x99,0x57,036,0x34,0x37,0x66,0x11,0x10,0x73,0x98]
     var ciphertext: [UInt8] = []
     var encrypted: [UInt8]?
@@ -40,6 +42,14 @@ class Menu: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //check the user's secure key has been loaded (is not nil)
+        if key == [] {
+            key = generateKey(Auth.auth().currentUser!.email!)
+            
+            //For debugging
+            print("Secure Key: ", key)
+        }
         
         //For debugging
         print("SWE        :", finalResultsSWE)
@@ -72,29 +82,32 @@ class Menu: UIViewController {
         var refDatabase: DatabaseReference!
         refDatabase = Database.database().reference().child("results").child("user")
 
+        //uploading key to Firebase
+        let userCode = key
+        
 //        let userName = Auth.auth().currentUser?.email
         let userName = aesEncrypt((Auth.auth().currentUser?.email)!)
         let uid = Auth.auth().currentUser?.uid
-        let key = refDatabase.child(uid!).key
+        let userKey = refDatabase.child(uid!).key
         
         var userResults: [String : Any]
         
         if finalResultsTowre == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan] as [String : Any]
+            userResults = ["username":userName, "Forward Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "UserCode":userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre] as [String : Any]
+            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "UserCode":userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultsTowre == 0 && finalResultBPVS == 0 {
-            userResults = ["username":userName, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash] as [String : Any]
+            userResults = ["username":userName, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash, "UserCode":userCode] as [String : Any]
         }
         else if finalResultsTowre == 0 && finalResultDash == 0 && finalResultsDigitSpan == 0 {
-            userResults = ["username":userName, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS] as [String : Any]
+            userResults = ["username":userName, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS, "UserCode":userCode] as [String : Any]
         }
         else {
-            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS] as [String : Any]
+            userResults = ["username":userName, "TowreSWE":finalResultsSWE, "TowrePDE":finalResultsPDE, "Towre-2":finalResultsTowre, "Digit Span":finalResultsDigit, "Reverse Digit Span":finalResultsRevDigit, "Digit Span":finalResultsDigitSpan, "Dash CopyBest":copyBestWordsWritten, "Dash CopyFast":copyFastWordsWritten, "Dash CopyAlpha":copyAlphabetTotalWritten, "Dash Free":freeWritingTotalWritten, "Dash Final":finalResultDash, "BPVS Final":finalResultBPVS, "BPVS Errors":finalErrorsBPVS, "BPVS Set Num":finalSetBPVS, "UserCode":userCode] as [String : Any]
         }
-        refDatabase.child(key).updateChildValues(userResults)
+        refDatabase.child(userKey).updateChildValues(userResults)
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,6 +116,9 @@ class Menu: UIViewController {
     }
     
     @objc func signOut(sender: AnyObject) {
+        
+        //clear key ready for next user to login
+        key = []
         
         let firebaseAuth = Auth.auth()
         do {
@@ -128,6 +144,20 @@ class Menu: UIViewController {
             print(error)
         }
         return encrypted!
+    }
+    
+    //Generate the secure key for the user
+    func generateKey(_ username: String) -> [UInt8] {
+        let password: Array<UInt8> = Array(username.utf8)
+        let salt: Array<UInt8> = Array("dominicheaton".utf8)
+        
+        do {
+            generatedKey = try PKCS5.PBKDF2(password: password, salt: salt, iterations: 4096, variant: .sha256).calculate()
+        } catch {
+            print(error)
+        }
+        
+        return generatedKey!
     }
     
 }
