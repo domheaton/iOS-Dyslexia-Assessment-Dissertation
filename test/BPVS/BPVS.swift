@@ -40,7 +40,7 @@ class BPVS: UIViewController {
         super.viewWillAppear(true)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationItem.title = "Test: BPVS 3"
+        self.navigationItem.title = "Test: Word Association"
     }
     
     override func viewDidLoad() {
