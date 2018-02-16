@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Towre-2 copyright of Pro-Ed, Digit Span available from Dyslexia International, DASH copyright of Pearson" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-Jq-dB7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="TOWRE-2 copyright of Pro-Ed, Digit Span available from Dyslexia International, DASH copyright of Pearson." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-Jq-dB7">
                                 <rect key="frame" x="16" y="463" width="343" height="77"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
