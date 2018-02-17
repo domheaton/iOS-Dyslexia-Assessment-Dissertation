@@ -10,8 +10,15 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import CryptoSwift
 
 class TowrePDE: UIViewController {
+    
+    //Encryption Variables
+    var key: Array<UInt8> = []
+    var generatedKey: [UInt8]?
+    let iv: Array<UInt8> = [0x26,0x54,0x72,0x45,0x77,0x27,0x99,0x57,036,0x34,0x37,0x66,0x11,0x10,0x73,0x98]
+    var ciphertext: [UInt8] = []
     
     var wordsToTest: [String] = []
     var counter = 0
@@ -36,6 +43,14 @@ class TowrePDE: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //check the user's secure key has been loaded (is not nil)
+        if key == [] {
+            key = generateKey(Auth.auth().currentUser!.email!)
+            
+            //For debugging
+            print("Secure Key: ", key)
+        }
         
         //Fetch SWE results from firebase
         getTowreSWEresults()
@@ -119,18 +134,54 @@ class TowrePDE: UIViewController {
         let dbRef = Database.database().reference().child("intermediateResults").child("user").child(uid!)
         dbRef.child("e46a4ae21385ca0fa7be3552e9c2a91caf423f2e").observeSingleEvent(of: .value) {
             (snapshot) in
-            if let finalSWE = snapshot.value as? Double {
+            if let finalSWE = snapshot.value as? AnyObject {
 //                self.finalResultsSWE = finalSWE
-                self.brain.setFinalResultsSWE(finalSWE)
+                self.brain.setFinalResultsSWE(self.aesDecryptResult(finalSWE as? [UInt8] ?? Array("0".utf8), self.key)!)
             }
         }
         dbRef.child("cadc3ac6af74c083f9699d3ef2ad30524e7fec2c").observeSingleEvent(of: .value) {
             (snapshot) in
-            if let scaledSWE = snapshot.value as? Double {
+            if let scaledSWE = snapshot.value as? AnyObject {
 //                self.finalResultsSWE = scaledSWE
-                self.brain.setScaledScoreSWE(scaledSWE)
+                self.brain.setScaledScoreSWE(self.aesDecryptResult(scaledSWE as? [UInt8] ?? Array("0".utf8), self.key)!)
             }
         }
+    }
+    
+    //AES Decryption
+    func aesDecryptResult(_ resultToDecrypt: [UInt8],_ downloadedKey: [UInt8]) -> Double? {
+        var decryptedResult: String?
+        var decryptedResultDouble: Double?
+        do {
+            
+            //Decrypt using AES
+            //            let decrypted = try AES(key: key, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(username)
+            let decrypted = try AES(key: downloadedKey, blockMode: .CBC(iv: iv), padding: .pkcs7).decrypt(resultToDecrypt)
+            
+            //From UInt8 to String
+            decryptedResult = (String(bytes: Data(decrypted), encoding: .utf8))
+            
+            //From String to Double
+            decryptedResultDouble = Double(decryptedResult!)
+            
+        } catch {
+            print(error)
+        }
+        return decryptedResultDouble
+    }
+    
+    //Generate the secure key for the user
+    func generateKey(_ username: String) -> [UInt8] {
+        let password: Array<UInt8> = Array(username.utf8)
+        let salt: Array<UInt8> = Array("dominicheaton".utf8)
+        
+        do {
+            generatedKey = try PKCS5.PBKDF2(password: password, salt: salt, iterations: 4096, variant: .sha256).calculate()
+        } catch {
+            print(error)
+        }
+        
+        return generatedKey!
     }
 
 }

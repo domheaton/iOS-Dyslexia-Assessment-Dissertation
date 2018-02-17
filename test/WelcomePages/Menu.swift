@@ -39,6 +39,22 @@ class Menu: UIViewController {
     var finalErrorsBPVS = Double()
     var finalSetBPVS = Double()
     
+    //Encrypted Variables for Upload
+    var finalResultsDigitSpanUpload: [UInt8] = []       //Digit Span Combined
+    var finalResultsDigitUpload: [UInt8] = []           //Forward Digit Span
+    var finalResultsRevDigitUpload: [UInt8] = []        //Reverse Digit Span
+    var finalResultsSWEUpload: [UInt8] = []             //Towre SWE
+    var finalResultsPDEUpload: [UInt8] = []             //Towre PDE
+    var finalResultsTowreUpload: [UInt8] = []           //Towre 2
+    var copyBestWordsWrittenUpload: [UInt8] = []        //DASH Copy Best
+    var copyFastWordsWrittenUpload: [UInt8] = []        //DASH Copy Fast
+    var copyAlphabetTotalWrittenUpload: [UInt8] = []    //DASH Copy Alphabet
+    var freeWritingTotalWrittenUpload: [UInt8] = []     //DASH Free Writing
+    var finalResultDashUpload: [UInt8] = []             //DASH Final
+    var finalResultBPVSUpload: [UInt8] = []             //Word Association Final
+    var finalErrorsBPVSUpload: [UInt8] = []             //Word Association Errors Made
+    var finalSetBPVSUpload: [UInt8] = []                //Word Association Set Number
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +88,23 @@ class Menu: UIViewController {
         let testScoresToSave: [Double]! = [finalResultsSWE, finalResultsPDE, finalResultsDigit, finalResultsRevDigit, finalResultsTowre, finalResultsDigitSpan, copyBestWordsWritten, copyFastWordsWritten, copyAlphabetTotalWritten, freeWritingTotalWritten, finalResultDash, finalResultBPVS, finalErrorsBPVS, finalSetBPVS]
         
         if testScoresToSave[0] != 0 || testScoresToSave[1] != 0 || testScoresToSave[2] != 0 || testScoresToSave[3] != 0 || testScoresToSave[4] != 0 || testScoresToSave[5] != 0 || testScoresToSave[6] != 0 || testScoresToSave[7] != 0 || testScoresToSave[8] != 0 || testScoresToSave[9] != 0 || testScoresToSave[10] != 0 || testScoresToSave[11] != 0 || testScoresToSave[12] != 0 || testScoresToSave[13] != 0 {
+            
+            //Encrypt Scores for Upload to Firebase
+            finalResultsDigitSpanUpload = aesEncrypt(String(finalResultsDigitSpan))
+            finalResultsDigitUpload = aesEncrypt(String(finalResultsDigit))
+            finalResultsRevDigitUpload = aesEncrypt(String(finalResultsRevDigit))
+            finalResultsSWEUpload = aesEncrypt(String(finalResultsSWE))
+            finalResultsPDEUpload = aesEncrypt(String(finalResultsPDE))
+            finalResultsTowreUpload = aesEncrypt(String(finalResultsTowre))
+            copyBestWordsWrittenUpload = aesEncrypt(String(copyBestWordsWritten))
+            copyFastWordsWrittenUpload = aesEncrypt(String(copyFastWordsWritten))
+            copyAlphabetTotalWrittenUpload = aesEncrypt(String(copyAlphabetTotalWritten))
+            freeWritingTotalWrittenUpload = aesEncrypt(String(freeWritingTotalWritten))
+            finalResultDashUpload = aesEncrypt(String(finalResultDash))
+            finalResultBPVSUpload = aesEncrypt(String(finalResultBPVS))
+            finalErrorsBPVSUpload = aesEncrypt(String(finalErrorsBPVS))
+            finalSetBPVSUpload = aesEncrypt(String(finalSetBPVS))
+            
             saveResults()
         }
 
@@ -92,19 +125,19 @@ class Menu: UIViewController {
         var userResults: [String : Any]
         
         if finalResultsTowre == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username".sha1():userName, "Forward Digit Span".sha1():finalResultsDigit, "Reverse Digit Span".sha1():finalResultsRevDigit, "Digit Span".sha1():finalResultsDigitSpan, "UserCode".sha1():userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "Forward Digit Span".sha1():finalResultsDigitUpload, "Reverse Digit Span".sha1():finalResultsRevDigitUpload, "Digit Span".sha1():finalResultsDigitSpanUpload, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultDash == 0 && finalResultBPVS == 0 {
-            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWE, "TowrePDE".sha1():finalResultsPDE, "Towre-2".sha1():finalResultsTowre, "UserCode".sha1():userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWEUpload, "TowrePDE".sha1():finalResultsPDEUpload, "Towre-2".sha1():finalResultsTowreUpload, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsDigitSpan == 0 && finalResultsTowre == 0 && finalResultBPVS == 0 {
-            userResults = ["username".sha1():userName, "Dash CopyBest".sha1():copyBestWordsWritten, "Dash CopyFast".sha1():copyFastWordsWritten, "Dash CopyAlpha".sha1():copyAlphabetTotalWritten, "Dash Free".sha1():freeWritingTotalWritten, "Dash Final".sha1():finalResultDash, "UserCode".sha1():userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "Dash CopyBest".sha1():copyBestWordsWrittenUpload, "Dash CopyFast".sha1():copyFastWordsWrittenUpload, "Dash CopyAlpha".sha1():copyAlphabetTotalWrittenUpload, "Dash Free".sha1():freeWritingTotalWrittenUpload, "Dash Final".sha1():finalResultDashUpload, "UserCode".sha1():userCode] as [String : Any]
         }
         else if finalResultsTowre == 0 && finalResultDash == 0 && finalResultsDigitSpan == 0 {
-            userResults = ["username".sha1():userName, "BPVS Final".sha1():finalResultBPVS, "BPVS Errors".sha1():finalErrorsBPVS, "BPVS Set Num".sha1():finalSetBPVS, "UserCode".sha1():userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "BPVS Final".sha1():finalResultBPVSUpload, "BPVS Errors".sha1():finalErrorsBPVSUpload, "BPVS Set Num".sha1():finalSetBPVSUpload, "UserCode".sha1():userCode] as [String : Any]
         }
         else {
-            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWE, "TowrePDE".sha1():finalResultsPDE, "Towre-2".sha1():finalResultsTowre, "Forward Digit Span".sha1():finalResultsDigit, "Reverse Digit Span".sha1():finalResultsRevDigit, "Digit Span".sha1():finalResultsDigitSpan, "Dash CopyBest".sha1():copyBestWordsWritten, "Dash CopyFast".sha1():copyFastWordsWritten, "Dash CopyAlpha".sha1():copyAlphabetTotalWritten, "Dash Free".sha1():freeWritingTotalWritten, "Dash Final".sha1():finalResultDash, "BPVS Final".sha1():finalResultBPVS, "BPVS Errors".sha1():finalErrorsBPVS, "BPVS Set Num".sha1():finalSetBPVS, "UserCode".sha1():userCode] as [String : Any]
+            userResults = ["username".sha1():userName, "TowreSWE".sha1():finalResultsSWEUpload, "TowrePDE".sha1():finalResultsPDEUpload, "Towre-2".sha1():finalResultsTowreUpload, "Forward Digit Span".sha1():finalResultsDigitUpload, "Reverse Digit Span".sha1():finalResultsRevDigitUpload, "Digit Span".sha1():finalResultsDigitSpanUpload, "Dash CopyBest".sha1():copyBestWordsWrittenUpload, "Dash CopyFast".sha1():copyFastWordsWrittenUpload, "Dash CopyAlpha".sha1():copyAlphabetTotalWrittenUpload, "Dash Free".sha1():freeWritingTotalWrittenUpload, "Dash Final".sha1():finalResultDashUpload, "BPVS Final".sha1():finalResultBPVSUpload, "BPVS Errors".sha1():finalErrorsBPVSUpload, "BPVS Set Num".sha1():finalSetBPVSUpload, "UserCode".sha1():userCode] as [String : Any]
         }
         refDatabase.child(userKey).updateChildValues(userResults)
     }
@@ -119,6 +152,23 @@ class Menu: UIViewController {
         //clear key ready for next user to login
         key = []
         
+        //clear all test results from local memory
+        finalResultsSWE = 0
+        finalResultsPDE = 0
+        finalResultsTowre = 0
+        finalResultsDigit = 0
+        finalResultsRevDigit = 0
+        finalResultsDigitSpan = 0
+        copyBestWordsWritten = 0
+        copyFastWordsWritten = 0
+        copyAlphabetTotalWritten = 0
+        freeWritingTotalWritten = 0
+        finalResultDash = 0
+        finalResultBPVS = 0
+        finalErrorsBPVS = 0
+        finalSetBPVS = 0
+        
+        //Sign Out
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -160,4 +210,3 @@ class Menu: UIViewController {
     }
     
 }
-

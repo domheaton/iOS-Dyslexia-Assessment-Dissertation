@@ -153,7 +153,7 @@ class IndepthScores: UIViewController {
             testScoresToDisplay = [getDashBest, getDashFast, getDashAlpha, getDashFree]
         }
         else if getTest == "BPVS-3" {
-            testArray = ["Raw Score", "Standardised Score", "No. Errors", "Final Set"]
+            testArray = ["Raw Score", "Percentage", "No. Errors", "Final Set"]
             testScoresToDisplay = [getBPVSFinal, getBPVSStandardised!, getBPVSErrors, getBPVSSetNum]
         }
         
@@ -580,155 +580,8 @@ class IndepthScores: UIViewController {
     
     //These stats are made up to show where official ones would be placed within the app
     func standardiseBPVS() {
-        if getBPVSFinal < 99 {
-            getBPVSStandardised = 1.0
-        }
-        else {
-            switch getBPVSFinal {
-            case 99.0:
-                getBPVSStandardised = 2.0
-            case 100.0:
-                getBPVSStandardised = 3.0
-            case 101.0:
-                getBPVSStandardised = 4.0
-            case 102.0:
-                getBPVSStandardised = 5.0
-            case 103.0:
-                getBPVSStandardised = 6.0
-            case 104.0:
-                getBPVSStandardised = 7.0
-            case 105.0:
-                getBPVSStandardised = 8.0
-            case 106.0:
-                getBPVSStandardised = 9.0
-            case 107.0:
-                getBPVSStandardised = 10.0
-            case 108.0:
-                getBPVSStandardised = 11.0
-            case 109.0:
-                getBPVSStandardised = 12.0
-            case 110.0:
-                getBPVSStandardised = 13.0
-            case 111.0:
-                getBPVSStandardised = 14.0
-            case 112.0:
-                getBPVSStandardised = 15.0
-            case 113.0:
-                getBPVSStandardised = 16.0
-            case 114.0:
-                getBPVSStandardised = 17.0
-            case 115.0:
-                getBPVSStandardised = 18.0
-            case 116.0:
-                getBPVSStandardised = 19.0
-            case 117.0:
-                getBPVSStandardised = 20.0
-            case 118.0:
-                getBPVSStandardised = 21.0
-            case 119.0:
-                getBPVSStandardised = 22.0
-            case 120.0:
-                getBPVSStandardised = 23.0
-            case 121.0:
-                getBPVSStandardised = 24.0
-            case 122.0:
-                getBPVSStandardised = 25.0
-            case 123.0:
-                getBPVSStandardised = 26.0
-            case 124.0:
-                getBPVSStandardised = 27.0
-            case 125.0:
-                getBPVSStandardised = 28.0
-            case 126.0:
-                getBPVSStandardised = 29.0
-            case 127.0:
-                getBPVSStandardised = 30.0
-            case 128.0:
-                getBPVSStandardised = 31.0
-            case 129.0:
-                getBPVSStandardised = 32.0
-            case 130.0:
-                getBPVSStandardised = 33.0
-            case 131.0:
-                getBPVSStandardised = 34.0
-            case 132.0:
-                getBPVSStandardised = 35.0
-            case 133.0:
-                getBPVSStandardised = 36.0
-            case 134.0:
-                getBPVSStandardised = 37.0
-            case 135.0:
-                getBPVSStandardised = 38.0
-            case 136.0:
-                getBPVSStandardised = 39.0
-            case 137.0:
-                getBPVSStandardised = 40.0
-            case 138.0:
-                getBPVSStandardised = 41.0
-            case 139.0:
-                getBPVSStandardised = 42.0
-            case 140.0:
-                getBPVSStandardised = 43.0
-            case 141.0:
-                getBPVSStandardised = 44.0
-            case 142.0:
-                getBPVSStandardised = 45.0
-            case 143.0:
-                getBPVSStandardised = 46.0
-            case 144.0:
-                getBPVSStandardised = 47.0
-            case 145.0:
-                getBPVSStandardised = 48.0
-            case 146.0:
-                getBPVSStandardised = 49.0
-            case 147.0:
-                getBPVSStandardised = 50.0
-            case 148.0:
-                getBPVSStandardised = 51.0
-            case 149.0:
-                getBPVSStandardised = 52.0
-            case 150.0:
-                getBPVSStandardised = 53.0
-            case 151.0:
-                getBPVSStandardised = 54.0
-            case 152.0:
-                getBPVSStandardised = 55.0
-            case 153.0:
-                getBPVSStandardised = 56.0
-            case 154.0:
-                getBPVSStandardised = 57.0
-            case 155.0:
-                getBPVSStandardised = 58.0
-            case 156.0:
-                getBPVSStandardised = 59.0
-            case 157.0:
-                getBPVSStandardised = 60.0
-            case 158.0:
-                getBPVSStandardised = 61.0
-            case 159.0:
-                getBPVSStandardised = 62.0
-            case 160.0:
-                getBPVSStandardised = 63.0
-            case 161.0:
-                getBPVSStandardised = 64.0
-            case 162.0:
-                getBPVSStandardised = 65.0
-            case 163.0:
-                getBPVSStandardised = 66.0
-            case 164.0:
-                getBPVSStandardised = 67.0
-            case 165.0:
-                getBPVSStandardised = 68.0
-            case 166.0:
-                getBPVSStandardised = 69.0
-            case 167.0:
-                getBPVSStandardised = 70.0
-            case 168.0:
-                getBPVSStandardised = 71.0
-            default:
-                getBPVSStandardised = 0.0
-            }
-        }
+        //A simple percentage calculation for the test
+        getBPVSStandardised = (getBPVSFinal / 168.0) * 100.0
     }
     
     func getBPVSPercentile() {
