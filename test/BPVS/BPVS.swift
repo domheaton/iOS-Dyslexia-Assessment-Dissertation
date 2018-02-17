@@ -16,14 +16,17 @@ class BPVS: UIViewController {
     var wordsToTest: [String] = []
     var wordsToTestAnswer: [Int] = []
     var imagesToTest: [UIImage] = []
-    var initialWord = 72 //starts the wordsToTest array at the set of words for age 9-11
+//    var initialWord = 72 //starts the wordsToTest array at the set of words for age 9-11
+    var initialWord = 36
     var currentWord: Int?
     var wordToTestAnswer: Int?
     var imageToTest: UIImage?
     var errorsInSet = 0 //errors made within the set
     var numberWordInSet = 1 //words in set numbered from 1 to 12
-    var sets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] //Available sets
-    var setSelector = 6 //Used to select set 7 to begin with
+//    var sets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] //Available sets
+    var sets = [1,2,3,4,5,6] //Available sets
+//    var setSelector = 6 //Used to select set 7 to begin with
+    var setSelector = 2 //Used to select set 3 to begin with
     var setInUse: Int?
     var previousSetInUse: Int?
     var findingBaselSet: Bool?
@@ -46,7 +49,7 @@ class BPVS: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setInUse = sets.remove(at: setSelector) //Load set 7 as default for age 10-11
+        setInUse = sets.remove(at: setSelector) //Load set 3
         setsDeleted += 1
         
         //For debugging
@@ -135,7 +138,14 @@ class BPVS: UIViewController {
         if findingBaselSet == true {
             if numberWordInSet == 12 {
                 if errorsInSet > 1 {
-                    setSelector -= 1
+                    if setSelector != 0 {
+                        setSelector -= 1
+                    }
+                    else if setSelector == 0 {
+                        brain.setCeilingSet(setInUse!)
+                        endTest()
+                        
+                    }
                     setInUse = sets.remove(at: (setSelector))
                     setsDeleted += 1
                     
@@ -167,15 +177,20 @@ class BPVS: UIViewController {
         else {
             if numberWordInSet == 12 {
                 if errorsInSet < 8 {
-                    setSelector += 1
-                    setInUse = sets[setSelector]
-                    setsDeleted += 1
-                    
-                    //For debugging
-                    print("Set incremented: ", setInUse!)
-                    
-                    numberWordInSet = 1
-                    errorsInSet = 0
+                    if setInUse == 6 {
+                        brain.setCeilingSet(setInUse!)
+                        endTest()
+                    } else {
+                        setSelector += 1
+                        setInUse = sets[setSelector]
+                        setsDeleted += 1
+                        
+                        //For debugging
+                        print("Set incremented: ", setInUse!)
+                        
+                        numberWordInSet = 1
+                        errorsInSet = 0
+                    }
                 }
                 else {
                     brain.setCeilingSet(setInUse!)
