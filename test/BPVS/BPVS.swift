@@ -17,7 +17,7 @@ class BPVS: UIViewController {
     var wordsToTestAnswer: [Int] = []
     var imagesToTest: [UIImage] = []
 //    var initialWord = 72 //starts the wordsToTest array at the set of words for age 9-11
-    var initialWord = 36
+    var initialWord = 24 //first word in set 3
     var currentWord: Int?
     var wordToTestAnswer: Int?
     var imageToTest: UIImage?
@@ -176,7 +176,7 @@ class BPVS: UIViewController {
         }
         else {
             if numberWordInSet == 12 {
-                if errorsInSet < 8 {
+                if errorsInSet < 2 { //Formally 8 errors
                     if setInUse == 6 {
                         brain.setCeilingSet(setInUse!)
                         endTest()
@@ -211,17 +211,23 @@ class BPVS: UIViewController {
                 currentWord! += 1
             }
         }
-        else if previousSetInUse! < setInUse! {
+        else if previousSetInUse! < setInUse! {//Skip sets already testsed
             currentWord = currentWord! + 1 + ((setInUse! - previousSetInUse!)-1)*12
         }
         
         //For debugging
         print("numberWordInSet: ", numberWordInSet)
-
-        wordToTest.text! = wordsToTest[currentWord!]
-        wordToTestAnswer = wordsToTestAnswer[currentWord!]
-        imageToTest = imagesToTest[currentWord!]
-        loadPicture()
+        
+        if currentWord! < 72 { //If displaying the final word in wordlist, do not load new word
+            wordToTest.text! = wordsToTest[currentWord!]
+            wordToTestAnswer = wordsToTestAnswer[currentWord!]
+            imageToTest = imagesToTest[currentWord!]
+            loadPicture()
+        }
+        else if currentWord == 72 { //if showing final word, end test
+            brain.setCeilingSet(setInUse!)
+            endTest()
+        }
     }
     
     func loadPicture() {

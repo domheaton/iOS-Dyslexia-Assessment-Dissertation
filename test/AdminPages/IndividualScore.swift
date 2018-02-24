@@ -85,7 +85,7 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         
         //THESE IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
         dashPercentage = (getDashFinal / 146) * 100
-        bpvsPercentage = (getBPVSFinal / (getBPVSSetNum * 12.0)) * 100.0
+        bpvsPercentage = getBPVSFinal / 73.0 * 100.0
         
         //select only the scores that are available
 //        if getTowre2 == 0 {

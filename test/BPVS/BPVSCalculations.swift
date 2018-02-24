@@ -51,6 +51,10 @@ struct BPVSCalculations {
         return numberOfErrorsMade
     }
     
+    func getCeilingSet() -> Int? {
+        return setCeilingSet
+    }
+    
     mutating func updateRawScore(_ answer: String) {
         if answer == "correct" {
             previousRawScore = rawScore!
