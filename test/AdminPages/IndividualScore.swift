@@ -80,13 +80,13 @@ class IndividualScore: UIViewController, ChartViewDelegate {
     func updateGraph() {
         var dataEntries: [BarChartDataEntry] = []
         
-        towrePercentage = (getTowre2 / 147.0) * 100.0
+//        towrePercentage = (getTowre2 / 147.0) * 100.0
+        towrePercentage = getTowre2
 //        digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
         digitSpanPercentage = getDigitSpan
-        
-        //THESE IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
-        dashPercentage = (getDashFinal / 146) * 100
-        bpvsPercentage = getBPVSFinal / 73.0 * 100.0
+//        dashPercentage = (getDashFinal / 146) * 100
+        dashPercentage = getDashFinal
+        bpvsPercentage = getBPVSFinal / 73.0 * 100.0 * 1.5
         
         //select only the scores that are available
 //        if getTowre2 == 0 {
@@ -187,9 +187,16 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        
         barChartView.leftAxis.axisMaximum = 150.0
-        
+        let scaledLimitline = 100.0
+        let limitline = ChartLimitLine(limit: scaledLimitline, label: "Average")
+        barChartView.leftAxis.addLimitLine(limitline)
+        let scaledLowerLimitline = 85.0
+        let limitlineLower = ChartLimitLine(limit: scaledLowerLimitline, label: "Below Average")
+        barChartView.leftAxis.addLimitLine(limitlineLower)
+        let scaledUpperLimitline = 115.0
+        let limitlineUpper = ChartLimitLine(limit: scaledUpperLimitline, label: "Above Average")
+        barChartView.leftAxis.addLimitLine(limitlineUpper)
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)

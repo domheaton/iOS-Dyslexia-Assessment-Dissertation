@@ -116,7 +116,7 @@ class IndepthScores: UIViewController {
             self.nameOfTestLabel.text = "Word Association"
             
             self.subtest1Label.text = "Percentile Rank:"
-            self.subtest2Label.text = "Raw Score out of 168"
+            self.subtest2Label.text = "Raw Score out of 72"
             
             self.subtest2Label.adjustsFontSizeToFitWidth = true
             
@@ -143,7 +143,8 @@ class IndepthScores: UIViewController {
         
         if getTest == "Towre-2" {
             testArray = ["TowreSWE", "TowrePDE"]
-            testScoresToDisplay = [towrePercentageSWE!, towrePercentagePDE!]
+//            testScoresToDisplay = [towrePercentageSWE!, towrePercentagePDE!]
+            testScoresToDisplay = [getTowreSWE, getTowrePDE]
         }
         else if getTest == "Digit Span" {
             testArray = ["Forward Digit Span", "Reverse Digit Span"]
@@ -203,6 +204,8 @@ class IndepthScores: UIViewController {
             barChartView.leftAxis.axisMaximum = getDashAlpha + 10.0
         } else if getTest == "Digit Span" {
             barChartView.leftAxis.axisMaximum = 20.0
+        } else if getTest == "Towre-2" {
+            barChartView.leftAxis.axisMaximum = 150.0
         } else {
             barChartView.leftAxis.axisMaximum = 105.0
         }
