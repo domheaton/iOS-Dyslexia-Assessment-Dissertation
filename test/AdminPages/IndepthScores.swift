@@ -116,7 +116,7 @@ class IndepthScores: UIViewController {
             self.nameOfTestLabel.text = "Word Association"
             
             self.subtest1Label.text = "Percentile Rank:"
-            self.subtest2Label.text = "Raw Score out of 72"
+            self.subtest2Label.text = "Raw Score out of 73"
             
             self.subtest2Label.adjustsFontSizeToFitWidth = true
             
@@ -155,8 +155,8 @@ class IndepthScores: UIViewController {
             testScoresToDisplay = [getDashBest, getDashFast, getDashAlpha, getDashFree]
         }
         else if getTest == "BPVS-3" {
-            testArray = ["Raw Score", "Percentage", "No. Errors", "Final Set"]
-            testScoresToDisplay = [getBPVSFinal, getBPVSStandardised!, getBPVSErrors, getBPVSSetNum]
+            testArray = ["Raw Score", "No. Errors", "Final Set"]
+            testScoresToDisplay = [getBPVSFinal, getBPVSErrors, getBPVSSetNum]
         }
         
         for i in 0..<testArray.count {
