@@ -43,7 +43,7 @@ class DashCopyFastAnswers: UIViewController {
         
         stepper.wraps = true
         stepper.autorepeat = true
-        stepper.maximumValue = 60 //reasonable max for this test
+        stepper.maximumValue = 90 //reasonable max for this test
         stepper.stepValue = 1
     }
     
