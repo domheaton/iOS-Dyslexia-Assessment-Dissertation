@@ -46,8 +46,10 @@ class RevDigitSpan: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! DigitCompleted
-        nextVC.finalResultsDigit = finalResultsDigit
-        nextVC.finalResultsRevDigit = brain.getFinalResultsRevDigit()
+//        nextVC.finalResultsDigit = finalResultsDigit
+        nextVC.finalResultsDigit = finalRawDigit
+        nextVC.finalResultsRevDigit = brain.getRawScoreRevDigit()
+//        nextVC.finalResultsRevDigit = brain.getFinalResultsRevDigit()
         nextVC.finalResultDigitSpan = brain.getCombinedFinalResult()
     }
     

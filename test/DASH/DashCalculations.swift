@@ -59,7 +59,7 @@ struct DashCalculations {
     }
     
     func getFreeWriting() -> Double {
-        return freeWritingTotalWritten!/5.0
+        return freeWritingTotalWritten!/10.0
     }
     
     //Return Scaled Values
@@ -270,7 +270,7 @@ struct DashCalculations {
     }
     
     mutating func standardiseFreeWriting() {
-        let tempFreeWriting = freeWritingTotalWritten! / 5.0
+        let tempFreeWriting = freeWritingTotalWritten! / 10.0
         if tempFreeWriting > 25 {
             scaledFreeWriting = 17.0
         }

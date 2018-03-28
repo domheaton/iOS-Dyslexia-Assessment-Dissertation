@@ -85,7 +85,7 @@ class IndepthScores: UIViewController {
         }
         else if getTest == "Digit Span" {
             
-            self.subtest1Label.text = "Test Percentage:"
+            self.subtest1Label.text = "Standardised Score:"
             self.subtest2Label.text = "Percentile Equivalent:"
             
             testPercentage()
@@ -96,7 +96,8 @@ class IndepthScores: UIViewController {
             print("digitSpanPercentile: ", digitSpanPercentile!)
             print("digitSpanPercentage: ", digitSpanPercentage!)
             
-            self.subtest1Score.text = String(format: "%.1f", Float(digitSpanPercentage!))
+//            self.subtest1Score.text = String(format: "%.1f", Float(digitSpanPercentage!))
+            self.subtest1Score.text = String(getDigitSpan)
             self.subtest2Score.text = digitSpanPercentile!
         }
         else if getTest == "DASH" {
@@ -200,6 +201,8 @@ class IndepthScores: UIViewController {
             barChartView.leftAxis.axisMaximum = getBPVSFinal + 10.0
         } else if getTest == "DASH" {
             barChartView.leftAxis.axisMaximum = getDashAlpha + 10.0
+        } else if getTest == "Digit Span" {
+            barChartView.leftAxis.axisMaximum = 20.0
         } else {
             barChartView.leftAxis.axisMaximum = 105.0
         }

@@ -148,4 +148,8 @@ struct RevDigitSpanCalculations {
         return combinedScaledScore!
     }
     
+    func getRawScoreRevDigit() -> Double {
+        return rawScore!
+    }
+    
 }

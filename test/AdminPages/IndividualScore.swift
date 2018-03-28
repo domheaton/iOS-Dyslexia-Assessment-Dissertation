@@ -81,7 +81,8 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         var dataEntries: [BarChartDataEntry] = []
         
         towrePercentage = (getTowre2 / 147.0) * 100.0
-        digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
+//        digitSpanPercentage = (getDigitSpan / 157.0) * 100.0
+        digitSpanPercentage = getDigitSpan
         
         //THESE IS MADE UP AT THE MOMENT! -- REPLACE WITH REAL STATS
         dashPercentage = (getDashFinal / 146) * 100
@@ -186,7 +187,9 @@ class IndividualScore: UIViewController, ChartViewDelegate {
         barChartView.leftAxis.labelFont = UIFont(name: "HelveticaNeue", size: 10.0)!
         chartDataSet.valueFont = UIFont(name: "HelveticaNeue", size: 12.0)!
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 105.0
+        
+        barChartView.leftAxis.axisMaximum = 150.0
+        
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: testArray)
