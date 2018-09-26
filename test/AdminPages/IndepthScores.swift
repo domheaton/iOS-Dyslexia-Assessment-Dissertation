@@ -57,7 +57,7 @@ class IndepthScores: UIViewController {
         
         navigationItem.title = "Test Breakdown"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Graph", style: UIBarButtonItemStyle.plain, target: self, action: #selector(saveGraph))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Graph", style: UIBarButtonItem.Style.plain, target: self, action: #selector(saveGraph))
         getDetails()
         
         nameOfStudentLabel.adjustsFontSizeToFitWidth = true
@@ -132,8 +132,8 @@ class IndepthScores: UIViewController {
         let image = barChartView.getChartImage(transparent: false)
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        let alertController = UIAlertController(title: "Graph Saved", message: "The graph has been saved to Photos", preferredStyle: UIAlertControllerStyle.actionSheet)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        let alertController = UIAlertController(title: "Graph Saved", message: "The graph has been saved to Photos", preferredStyle: UIAlertController.Style.actionSheet)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }

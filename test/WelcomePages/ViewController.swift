@@ -68,8 +68,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 //.alert gives center screen error -- .actionSheet is near bottom of screen
-                let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertControllerStyle.actionSheet)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                let alertController = UIAlertController(title: "Error", message: "No user account found for that email and password combination. Please try again", preferredStyle: UIAlertController.Style.actionSheet)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
 
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -114,8 +114,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func showAlertWithTitle(_ title: String, _ message: String) {
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         
         DispatchQueue.main.async() { () -> Void in
             self.present(alertController, animated: true, completion: nil)

@@ -33,8 +33,8 @@ class PasswordController: UIViewController, UITextFieldDelegate {
                 //For Debugging
                 print("Error - Email not found")
                 
-                let alertController = UIAlertController(title: "Error", message: "No account was found for the entered email address. Please try again.", preferredStyle: UIAlertControllerStyle.actionSheet)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                let alertController = UIAlertController(title: "Error", message: "No account was found for the entered email address. Please try again.", preferredStyle: UIAlertController.Style.actionSheet)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
                 
                  self.present(alertController, animated: true, completion: nil)
             }
@@ -43,8 +43,8 @@ class PasswordController: UIViewController, UITextFieldDelegate {
                 print("Success - Sent recovery email")
                 
                 let alertController = UIAlertController(title: "Forgotten Password", message:
-                    "A recovery email has been sent to the entered email address", preferredStyle: UIAlertControllerStyle.actionSheet)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (action) in
+                    "A recovery email has been sent to the entered email address", preferredStyle: UIAlertController.Style.actionSheet)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { (action) in
                     self.performSegue(withIdentifier: "passwordReset", sender: nil)
                 }))
                 
